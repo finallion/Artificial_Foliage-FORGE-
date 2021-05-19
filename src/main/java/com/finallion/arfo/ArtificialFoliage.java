@@ -9,8 +9,6 @@ import com.finallion.arfo.init.ModBlocks;
 import com.finallion.arfo.init.ModFluids;
 import com.finallion.arfo.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

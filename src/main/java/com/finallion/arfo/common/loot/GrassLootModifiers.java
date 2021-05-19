@@ -1,6 +1,5 @@
 package com.finallion.arfo.common.loot;
 
-import com.finallion.arfo.ArtificialFoliage;
 import com.finallion.arfo.init.ModItems;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

@@ -1,7 +1,6 @@
 package com.finallion.arfo.client.textures;
 
 import com.finallion.arfo.init.ModBlocks;
-import com.finallion.arfo.init.ModFluids;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 

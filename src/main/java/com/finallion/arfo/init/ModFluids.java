@@ -2,10 +2,8 @@ package com.finallion.arfo.init;
 
 import com.finallion.arfo.ArtificialFoliage;
 import com.finallion.arfo.common.fluids.*;
-import net.minecraft.block.Block;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
 import java.util.List;

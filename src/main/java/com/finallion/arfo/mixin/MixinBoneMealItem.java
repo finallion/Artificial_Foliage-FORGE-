@@ -6,7 +6,6 @@ import com.finallion.arfo.common.blocks.ARFONetherSlabBlock;
 import com.finallion.arfo.init.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.NetherrackBlock;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
