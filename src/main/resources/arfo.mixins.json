@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.finallion.arfo.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "arfo.refmap.json",
+  "mixins": [
+    "MixinBoneMealItem",
+    "MixinBushBlock",
+    "MixinSpreadableSnowyDirtBlock"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

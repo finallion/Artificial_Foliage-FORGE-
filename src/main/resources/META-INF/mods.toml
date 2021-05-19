@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="All rights reserved"
+[[mods]]
+modId="arfo"
+version="1.5"
+displayName="Artificial Foliage"
+logoFile="examplemod.png"
+credits="Thanks for this example mod goes to Java"
+authors="Finallion"
+description='''
+This mod allows you to build and terraform anywhere with the grass and foliage color you like!
+'''
+
+[[dependencies.arfo]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35.1.4,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.arfo]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4,1.16.5)"
+    ordering="NONE"
+    side="BOTH"
