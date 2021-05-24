@@ -3,7 +3,7 @@ package com.finallion.arfo.mixin;
 
 import com.finallion.arfo.common.blocks.ARFOGlowingGrassBlock;
 import com.finallion.arfo.common.blocks.ARFONetherSlabBlock;
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.init.ARFOBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BoneMealItem;
@@ -31,8 +31,6 @@ public abstract class MixinBoneMealItem {
         ItemStack stack = context.getItemInHand();
         Random random = new Random();
 
-
-
         if (!world.isClientSide()) {
             if (state.is(Blocks.NETHERRACK)) {
                 boolean bl = false;
@@ -42,11 +40,11 @@ public abstract class MixinBoneMealItem {
                 while (var7.hasNext()) {
                     BlockPos blockPos = (BlockPos) var7.next();
                     BlockState blockState = world.getBlockState(blockPos);
-                    if (blockState.is(ModBlocks.WARPED_NYLIUM_SLAB) || blockState.is(Blocks.WARPED_NYLIUM) || blockState.is(ModBlocks.GLOWING_WARPED_NYLIUM)) {
+                    if (blockState.is(ARFOBlocks.WARPED_NYLIUM_SLAB) || blockState.is(Blocks.WARPED_NYLIUM) || blockState.is(ARFOBlocks.GLOWING_WARPED_NYLIUM)) {
                         bl2 = true;
                     }
 
-                    if (blockState.is(ModBlocks.CRIMSON_NYLIUM_SLAB) || blockState.is(Blocks.CRIMSON_NYLIUM) || blockState.is(ModBlocks.GLOWING_CRIMSON_NYLIUM)) {
+                    if (blockState.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB) || blockState.is(Blocks.CRIMSON_NYLIUM) || blockState.is(ARFOBlocks.GLOWING_CRIMSON_NYLIUM)) {
                         bl = true;
                     }
 
@@ -66,12 +64,12 @@ public abstract class MixinBoneMealItem {
 
                 stack.setCount(-1);
                 info.setReturnValue(ActionResultType.SUCCESS);
-            } else if (state.is(ModBlocks.GLOWING_CRIMSON_NYLIUM) || state.is(ModBlocks.GLOWING_WARPED_NYLIUM)) {
+            } else if (state.is(ARFOBlocks.GLOWING_CRIMSON_NYLIUM) || state.is(ARFOBlocks.GLOWING_WARPED_NYLIUM)) {
                 ARFOGlowingGrassBlock block = (ARFOGlowingGrassBlock) state.getBlock();
                 block.growNetherGrass((ServerWorld) world, random, pos, state);
 
                 info.setReturnValue(ActionResultType.SUCCESS);
-            } else if (state.is(ModBlocks.CRIMSON_NYLIUM_SLAB) || state.is(ModBlocks.WARPED_NYLIUM_SLAB)) {
+            } else if (state.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB) || state.is(ARFOBlocks.WARPED_NYLIUM_SLAB)) {
                 ARFONetherSlabBlock block = (ARFONetherSlabBlock) state.getBlock();
                 block.growNetherGrass((ServerWorld) world, random, pos, state);
 

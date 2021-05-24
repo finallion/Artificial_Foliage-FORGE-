@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XY "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:dirt"
+    },
+    "Y": {
+      "item": "arfo:grass_seed"
+    }
+  },
+  "result": {
+    "item": "arfo:artificial_soil",
+    "count": 4
+  }
+}

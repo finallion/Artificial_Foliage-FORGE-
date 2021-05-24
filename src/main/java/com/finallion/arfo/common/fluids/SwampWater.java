@@ -1,8 +1,8 @@
 package com.finallion.arfo.common.fluids;
 
-import com.finallion.arfo.init.ModBlocks;
-import com.finallion.arfo.init.ModFluids;
-import com.finallion.arfo.init.ModItems;
+import com.finallion.arfo.init.ARFOBlocks;
+import com.finallion.arfo.init.ARFOFluids;
+import com.finallion.arfo.init.ARFOItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.Fluid;
@@ -16,26 +16,26 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class SwampWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_SWAMP_WATER;
+        return ARFOFluids.FLOWING_SWAMP_WATER;
     }
 
     public Fluid getSource() {
-        return ModFluids.STILL_SWAMP_WATER;
+        return ARFOFluids.STILL_SWAMP_WATER;
     }
 
     public Item getBucket() {
-        return ModItems.SWAMP_WATER_BUCKET;
+        return ARFOItems.SWAMP_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return ModBlocks.SWAMP_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return ARFOBlocks.SWAMP_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
                 .translationKey("block.arfo.swamp_water")
-                .color(6388580)
+                .color(0xff617B64)
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);
     }

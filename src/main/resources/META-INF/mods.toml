@@ -3,7 +3,7 @@ loaderVersion="[35,)"
 license="All rights reserved"
 [[mods]]
 modId="arfo"
-version="1.5"
+version="2.0"
 displayName="Artificial Foliage"
 logoFile="examplemod.png"
 credits="Thanks for this example mod goes to Java"

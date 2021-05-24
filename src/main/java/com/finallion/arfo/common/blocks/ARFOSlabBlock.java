@@ -1,7 +1,7 @@
 package com.finallion.arfo.common.blocks;
 
 
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.utils.BlockMapping;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -50,10 +50,10 @@ public class ARFOSlabBlock extends SlabBlock {
     @Override
     public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
 
-        if (state.getBlock() != ModBlocks.GRASS_PATH_SLAB) {
+        if (state.getBlock() != ARFOBlocks.GRASS_PATH_SLAB) {
             if (toolType == ToolType.HOE && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.FARMLAND.defaultBlockState();
             else if (toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.GRASS_PATH.defaultBlockState();
-            else return toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.TOP ? ModBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.TOP) : null;
+            else return toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.TOP ? ARFOBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.TOP) : null;
         }
         return null;
     }
@@ -92,9 +92,9 @@ public class ARFOSlabBlock extends SlabBlock {
     public static void setToDirt(World world, BlockPos pos){
         BlockState state = world.getBlockState(pos);
 
-        if (state.getBlock().getClass() == ARFOSlabBlock.class) world.setBlock(pos, ModBlocks.DIRT_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
-        else if (state.getBlock() instanceof ARFOGrassBlockSlab) world.setBlock(pos, ModBlocks.ARTIFICIAL_SOIL_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
-        else if (state.getBlock() instanceof ARFOGrassBlock || state.getBlock() instanceof ARFOGlowingGrassBlock) world.setBlock(pos, ModBlocks.ARTIFICIAL_SOIL.defaultBlockState(), 3);
+        if (state.getBlock().getClass() == ARFOSlabBlock.class) world.setBlock(pos, ARFOBlocks.DIRT_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
+        else if (state.getBlock() instanceof ARFOGrassBlockSlab) world.setBlock(pos, ARFOBlocks.ARTIFICIAL_SOIL_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
+        else if (state.getBlock() instanceof ARFOGrassBlock || state.getBlock() instanceof ARFOGlowingGrassBlock) world.setBlock(pos, ARFOBlocks.ARTIFICIAL_SOIL.defaultBlockState(), 3);
         else {
             world.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
         }
@@ -108,18 +108,18 @@ public class ARFOSlabBlock extends SlabBlock {
 
                 if (ARFOSlabBlock.canSpread(state, world, newPos)) {
 
-                    if (state.getBlock().getClass() == ARFOGrassBlockSlab.class && newState.is(ModBlocks.ARTIFICIAL_SOIL)) {
+                    if (state.getBlock().getClass() == ARFOGrassBlockSlab.class && newState.is(ARFOBlocks.ARTIFICIAL_SOIL)) {
                         for (Block b : BlockMapping.slabAndBlocks.keySet()) {
                             if (BlockMapping.slabAndBlocks.get(b).defaultBlockState().getBlock() == state.getBlock()) {
                                 newState = b.defaultBlockState();
                             }
                         }
                         if (!world.getBlockState(newPos.above()).getMaterial().isSolid()) world.setBlock(newPos, newState, 3);
-                    } else if (state.getBlock() == ModBlocks.GRASS_SLAB && newState.is(Blocks.DIRT)) {
+                    } else if (state.getBlock() == ARFOBlocks.GRASS_SLAB && newState.is(Blocks.DIRT)) {
                         if (!world.getBlockState(newPos.above()).getMaterial().isSolid()) world.setBlock(newPos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
-                    } else if (state.getBlock() == ModBlocks.MYCELIUM_SLAB && newState.is(Blocks.DIRT)) {
+                    } else if (state.getBlock() == ARFOBlocks.MYCELIUM_SLAB && newState.is(Blocks.DIRT)) {
                         if (!world.getBlockState(newPos.above()).getMaterial().isSolid()) world.setBlock(newPos, Blocks.MYCELIUM.defaultBlockState(), 3);
-                    } else if ((state.getBlock() instanceof ARFOGrassBlock || state.getBlock().getClass() == ARFOGrassBlockSlab.class) && newState.is(ModBlocks.ARTIFICIAL_SOIL_SLAB)) {
+                    } else if ((state.getBlock() instanceof ARFOGrassBlock || state.getBlock().getClass() == ARFOGrassBlockSlab.class) && newState.is(ARFOBlocks.ARTIFICIAL_SOIL_SLAB)) {
                         BlockState matchingSlabState = newState;
                         for (Block b : BlockMapping.slabAndBlocks.keySet()) {
                             if (BlockMapping.slabAndBlocks.get(b).defaultBlockState().getBlock() == state.getBlock())
@@ -136,23 +136,23 @@ public class ARFOSlabBlock extends SlabBlock {
 
                         }
 
-                    } else if ((state.getBlock() == Blocks.GRASS_BLOCK || state.getBlock() == ModBlocks.GRASS_SLAB) && newState.is(ModBlocks.DIRT_SLAB)) {
+                    } else if ((state.getBlock() == Blocks.GRASS_BLOCK || state.getBlock() == ARFOBlocks.GRASS_SLAB) && newState.is(ARFOBlocks.DIRT_SLAB)) {
                         if (!world.getBlockState(newPos.above()).getMaterial().isSolid()) {
                             if (newState.getValue(TYPE) == SlabType.BOTTOM) {
-                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, ModBlocks.GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, ARFOBlocks.GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             } else {
-                                world.setBlock(newPos, ModBlocks.GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                world.setBlock(newPos, ARFOBlocks.GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             }
 
                         }
 
 
-                    } else if ((state.getBlock() == Blocks.MYCELIUM || state.getBlock() == ModBlocks.MYCELIUM_SLAB) && newState.is(ModBlocks.DIRT_SLAB)) {
+                    } else if ((state.getBlock() == Blocks.MYCELIUM || state.getBlock() == ARFOBlocks.MYCELIUM_SLAB) && newState.is(ARFOBlocks.DIRT_SLAB)) {
                         if (!world.getBlockState(newPos.above()).getMaterial().isSolid()) {
                             if (newState.getValue(TYPE) == SlabType.BOTTOM) {
-                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, ModBlocks.MYCELIUM_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, ARFOBlocks.MYCELIUM_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             } else {
-                                world.setBlock(newPos, ModBlocks.MYCELIUM_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                world.setBlock(newPos, ARFOBlocks.MYCELIUM_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             }
 
                         }

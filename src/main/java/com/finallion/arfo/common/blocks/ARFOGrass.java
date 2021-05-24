@@ -1,6 +1,6 @@
 package com.finallion.arfo.common.blocks;
 
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.utils.MapUtils;
 import net.minecraft.block.*;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -52,7 +52,7 @@ public class ARFOGrass extends BushBlock implements IGrowable, IPlantable {
 
     @Override
     public void performBonemeal(ServerWorld world, Random p_225535_2_, BlockPos pos, BlockState state) {
-        initMap();
+        MapUtils.initGrassMap(grassFeatures);
         DoublePlantBlock tallFlowerBlock = (DoublePlantBlock)Blocks.TALL_GRASS;
         for (Block block : grassFeatures.keySet()) {
             if (state.is(block)) {
@@ -65,26 +65,6 @@ public class ARFOGrass extends BushBlock implements IGrowable, IPlantable {
         }
     }
 
-
-    private void initMap() {
-        grassFeatures.put(ModBlocks.JUNGLE_GRASS, ModBlocks.TALL_JUNGLE_GRASS);
-        grassFeatures.put(ModBlocks.JUNGLE_EDGE_GRASS, ModBlocks.TALL_JUNGLE_EDGE_GRASS);
-        grassFeatures.put(ModBlocks.BADLANDS_GRASS, ModBlocks.TALL_BADLANDS_GRASS);
-        grassFeatures.put(ModBlocks.SAVANNA_GRASS, ModBlocks.TALL_SAVANNA_GRASS);
-        grassFeatures.put(ModBlocks.FOREST_GRASS, ModBlocks.TALL_FOREST_GRASS);
-        grassFeatures.put(ModBlocks.BIRCH_FOREST_GRASS, ModBlocks.TALL_BIRCH_FOREST_GRASS);
-        grassFeatures.put(ModBlocks.DARK_FOREST_GRASS, ModBlocks.TALL_DARK_FOREST_GRASS);
-        grassFeatures.put(ModBlocks.PLAINS_GRASS, ModBlocks.TALL_PLAINS_GRASS);
-        grassFeatures.put(ModBlocks.SWAMP_GRASS, ModBlocks.TALL_SWAMP_GRASS);
-        grassFeatures.put(ModBlocks.LUSH_SWAMP_GRASS, ModBlocks.TALL_LUSH_SWAMP_GRASS);
-        grassFeatures.put(ModBlocks.MOUNTAINS_GRASS, ModBlocks.TALL_MOUNTAINS_GRASS);
-        grassFeatures.put(ModBlocks.MUSHROOM_FIELDS_GRASS, ModBlocks.TALL_MUSHROOM_FIELDS_GRASS);
-        grassFeatures.put(ModBlocks.TAIGA_GRASS, ModBlocks.TALL_TAIGA_GRASS);
-        grassFeatures.put(ModBlocks.MEGA_TAIGA_GRASS, ModBlocks.TALL_MEGA_TAIGA_GRASS);
-        grassFeatures.put(ModBlocks.SNOWY_GRASS, ModBlocks.TALL_SNOWY_GRASS);
-        grassFeatures.put(ModBlocks.SNOWY_BEACH_GRASS, ModBlocks.TALL_SNOWY_BEACH_GRASS);
-        grassFeatures.put(ModBlocks.WATERS_GRASS, ModBlocks.TALL_WATERS_GRASS);
-    }
 
 
 }

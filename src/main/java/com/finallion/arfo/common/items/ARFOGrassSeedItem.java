@@ -2,7 +2,7 @@ package com.finallion.arfo.common.items;
 
 
 import com.finallion.arfo.common.blocks.*;
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.init.ARFOBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.Item;
@@ -24,10 +24,6 @@ public class ARFOGrassSeedItem extends Item {
     public ARFOGrassSeedItem(Properties properties) {
         super(properties);
     }
-
-
-
-
 
     @Override
     public ActionResultType useOn(ItemUseContext context) {
@@ -52,7 +48,7 @@ public class ARFOGrassSeedItem extends Item {
         if (!world.isClientSide()) {
             if (blockState.getBlock() instanceof ARFOGrassBlock) {
                 ARFOGrassBlock grassBlock = (ARFOGrassBlock) blockState.getBlock();
-                if (!grassBlock.is(ModBlocks.ALPHA_GRASS_BLOCK)) {
+                if (!grassBlock.is(ARFOBlocks.ALPHA_GRASS_BLOCK)) {
                     grassBlock.growArtificialGrass(world, world.random, pos, blockState);
                     stack.setCount(-1);
                     return true;
@@ -73,7 +69,7 @@ public class ARFOGrassSeedItem extends Item {
                 soilBlock.grow(world, world.random, pos, blockState);
                 stack.setCount(-1);
                 return true;
-            } else if (blockState.getBlock().is(ModBlocks.ARTIFICIAL_SOIL_SLAB)) {
+            } else if (blockState.getBlock().is(ARFOBlocks.ARTIFICIAL_SOIL_SLAB)) {
                 ARFOSlabBlock grassSlab = (ARFOSlabBlock) blockState.getBlock();
                 grassSlab.grow(world, world.random, pos, blockState);
                 stack.setCount(-1);

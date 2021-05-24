@@ -1,6 +1,6 @@
 package com.finallion.arfo.common.loot;
 
-import com.finallion.arfo.init.ModItems;
+import com.finallion.arfo.init.ARFOItems;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -39,69 +39,69 @@ public class GrassLootModifiers {
 
             for (String d : dyes) {
                 Item seedItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(d));
-                if ((seedItem == ModItems.JUNGLE_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.JUNGLE_DYE,5));
+                if ((seedItem == ARFOItems.JUNGLE_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.JUNGLE_DYE,5));
                     continue;
                 }
-                if ((seedItem == ModItems.JUNGLE_EDGE_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.JUNGLE_EDGE_DYE, 5));
+                if ((seedItem == ARFOItems.JUNGLE_EDGE_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.JUNGLE_EDGE_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.BADLANDS_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.BADLANDS_DYE, 5));
+                if ((seedItem == ARFOItems.BADLANDS_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.BADLANDS_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.SAVANNA_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.SAVANNA_DYE, 5));
+                if ((seedItem == ARFOItems.SAVANNA_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.SAVANNA_DYE, 5));
                 }
-                if ((seedItem == ModItems.FOREST_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.FOREST_DYE,5));
+                if ((seedItem == ARFOItems.FOREST_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.FOREST_DYE,5));
                     continue;
                 }
-                if ((seedItem == ModItems.BIRCH_FOREST_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.BIRCH_FOREST_DYE, 5));
+                if ((seedItem == ARFOItems.BIRCH_FOREST_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.BIRCH_FOREST_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.DARK_FOREST_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.DARK_FOREST_DYE, 5));
+                if ((seedItem == ARFOItems.DARK_FOREST_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.DARK_FOREST_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.PLAINS_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.PLAINS_DYE, 5));
+                if ((seedItem == ARFOItems.PLAINS_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.PLAINS_DYE, 5));
                 }
-                if ((seedItem == ModItems.SWAMP_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.SWAMP_DYE,5));
+                if ((seedItem == ARFOItems.SWAMP_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.SWAMP_DYE,5));
                     continue;
                 }
-                if ((seedItem == ModItems.LUSH_SWAMP_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.LUSH_SWAMP_DYE, 5));
+                if ((seedItem == ARFOItems.LUSH_SWAMP_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.LUSH_SWAMP_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.MOUNTAINS_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.MOUNTAINS_DYE, 5));
+                if ((seedItem == ARFOItems.MOUNTAINS_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.MOUNTAINS_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.MUSHROOM_FIELDS_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.MUSHROOM_FIELDS_DYE, 5));
+                if ((seedItem == ARFOItems.MUSHROOM_FIELDS_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.MUSHROOM_FIELDS_DYE, 5));
                 }
-                if ((seedItem == ModItems.TAIGA_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.TAIGA_DYE,5));
+                if ((seedItem == ARFOItems.TAIGA_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.TAIGA_DYE,5));
                     continue;
                 }
-                if ((seedItem == ModItems.MEGA_TAIGA_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.MEGA_TAIGA_DYE, 5));
+                if ((seedItem == ARFOItems.MEGA_TAIGA_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.MEGA_TAIGA_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.SNOWY_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.SNOWY_DYE, 5));
+                if ((seedItem == ARFOItems.SNOWY_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.SNOWY_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.SNOWY_BEACH_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.SNOWY_BEACH_DYE, 5));
+                if ((seedItem == ARFOItems.SNOWY_BEACH_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.SNOWY_BEACH_DYE, 5));
                     continue;
                 }
-                if ((seedItem == ModItems.WATERS_DYE)) {
-                    dropped_dye.add(new DyeEntry(ModItems.WATERS_DYE, 5));
+                if ((seedItem == ARFOItems.WATERS_DYE)) {
+                    dropped_dye.add(new DyeEntry(ARFOItems.WATERS_DYE, 5));
                 }
             }
         }

@@ -1,8 +1,8 @@
 package com.finallion.arfo.common.fluids;
 
-import com.finallion.arfo.init.ModBlocks;
-import com.finallion.arfo.init.ModFluids;
-import com.finallion.arfo.init.ModItems;
+import com.finallion.arfo.init.ARFOBlocks;
+import com.finallion.arfo.init.ARFOFluids;
+import com.finallion.arfo.init.ARFOItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.Fluid;
@@ -17,26 +17,26 @@ public abstract class WarmOceanWater extends ARFOWater {
 
 
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_WARM_OCEAN_WATER;
+        return ARFOFluids.FLOWING_WARM_OCEAN_WATER;
     }
 
     public Fluid getSource() {
-        return ModFluids.STILL_WARM_OCEAN_WATER;
+        return ARFOFluids.STILL_WARM_OCEAN_WATER;
     }
 
     public Item getBucket() {
-        return ModItems.WARM_OCEAN_WATER_BUCKET;
+        return ARFOItems.WARM_OCEAN_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return ModBlocks.WARM_OCEAN_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return ARFOBlocks.WARM_OCEAN_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
                 .translationKey("block.arfo.warm_ocean_water")
-                .color(4445678)
+                .color(0xff43D5EE)
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);
     }

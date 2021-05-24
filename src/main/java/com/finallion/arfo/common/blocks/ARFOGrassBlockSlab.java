@@ -1,9 +1,9 @@
 package com.finallion.arfo.common.blocks;
 
 
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.utils.BlockMapping;
-import com.finallion.arfo.utils.GrassFeatures;
+import com.finallion.arfo.utils.MapUtils;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -36,7 +36,7 @@ public class ARFOGrassBlockSlab extends ARFOSlabBlock {
     public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
         if (toolType == ToolType.HOE && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.FARMLAND.defaultBlockState();
         else if (toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.GRASS_PATH.defaultBlockState();
-        else return toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.TOP ? ModBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.TOP) : null;
+        else return toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.TOP ? ARFOBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.TOP) : null;
     }
 
 
@@ -45,12 +45,14 @@ public class ARFOGrassBlockSlab extends ARFOSlabBlock {
         BlockPos blockPos = pos.above();
         BlockState blockState = world.getBlockState(pos);
         BlockState failState = Blocks.AIR.defaultBlockState();
-        initMap();
+        MapUtils.initMap(grassFeatures);
         boolean large = false;
         List<Block> features = new ArrayList<>();
 
         for (Block b1 : BlockMapping.slabAndBlocks.keySet()) {
-            if (BlockMapping.slabAndBlocks.get(b1).is(blockState.getBlock())) features = grassFeatures.get(b1);
+            if (BlockMapping.slabAndBlocks.get(b1).is(blockState.getBlock())) {
+                features = grassFeatures.get(b1);
+            }
         }
 
 
@@ -107,23 +109,4 @@ public class ARFOGrassBlockSlab extends ARFOSlabBlock {
         }
     }
 
-    private void initMap() {
-        grassFeatures.put(ModBlocks.JUNGLE_GRASS_BLOCK, GrassFeatures.jungle);
-        grassFeatures.put(ModBlocks.JUNGLE_EDGE_GRASS_BLOCK, GrassFeatures.jungle_edge);
-        grassFeatures.put(ModBlocks.BADLANDS_GRASS_BLOCK, GrassFeatures.badlands);
-        grassFeatures.put(ModBlocks.SAVANNA_GRASS_BLOCK, GrassFeatures.savanna);
-        grassFeatures.put(ModBlocks.FOREST_GRASS_BLOCK, GrassFeatures.forest);
-        grassFeatures.put(ModBlocks.BIRCH_FOREST_GRASS_BLOCK, GrassFeatures.birch_forest);
-        grassFeatures.put(ModBlocks.DARK_FOREST_GRASS_BLOCK, GrassFeatures.dark_forest);
-        grassFeatures.put(ModBlocks.PLAINS_GRASS_BLOCK, GrassFeatures.plains);
-        grassFeatures.put(ModBlocks.SWAMP_GRASS_BLOCK, GrassFeatures.swamp);
-        grassFeatures.put(ModBlocks.LUSH_SWAMP_GRASS_BLOCK, GrassFeatures.lush_swamp);
-        grassFeatures.put(ModBlocks.MOUNTAINS_GRASS_BLOCK, GrassFeatures.mountains);
-        grassFeatures.put(ModBlocks.MUSHROOM_FIELDS_GRASS_BLOCK, GrassFeatures.mushrooms_fields);
-        grassFeatures.put(ModBlocks.TAIGA_GRASS_BLOCK, GrassFeatures.taiga);
-        grassFeatures.put(ModBlocks.MEGA_TAIGA_GRASS_BLOCK, GrassFeatures.mega_taiga);
-        grassFeatures.put(ModBlocks.SNOWY_GRASS_BLOCK, GrassFeatures.snowy_biomes);
-        grassFeatures.put(ModBlocks.SNOWY_BEACH_GRASS_BLOCK, GrassFeatures.snowy_beach);
-        grassFeatures.put(ModBlocks.WATERS_GRASS_BLOCK, GrassFeatures.waters);
-    }
 }

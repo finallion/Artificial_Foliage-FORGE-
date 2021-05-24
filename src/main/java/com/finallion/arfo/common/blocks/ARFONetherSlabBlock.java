@@ -1,7 +1,7 @@
 package com.finallion.arfo.common.blocks;
 
 
-import com.finallion.arfo.init.ModBlocks;
+import com.finallion.arfo.init.ARFOBlocks;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.state.BooleanProperty;
@@ -87,11 +87,11 @@ public class ARFONetherSlabBlock extends SlabBlock implements IGrowable {
         while(var7.hasNext()) {
             BlockPos blockPos = (BlockPos)var7.next();
             BlockState blockState = world.getBlockState(blockPos);
-            if (blockState.is(ModBlocks.WARPED_NYLIUM_SLAB) || blockState.is(Blocks.WARPED_NYLIUM)) {
+            if (blockState.is(ARFOBlocks.WARPED_NYLIUM_SLAB) || blockState.is(Blocks.WARPED_NYLIUM)) {
                 bl2 = true;
             }
 
-            if (blockState.is(ModBlocks.CRIMSON_NYLIUM_SLAB) || blockState.is(Blocks.CRIMSON_NYLIUM)) {
+            if (blockState.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB) || blockState.is(Blocks.CRIMSON_NYLIUM)) {
                 bl = true;
             }
 
@@ -102,11 +102,11 @@ public class ARFONetherSlabBlock extends SlabBlock implements IGrowable {
 
         if (state.is(this)) {
             if (bl2 && bl) {
-                world.setBlock(pos, random.nextBoolean() ? ModBlocks.WARPED_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)) : ModBlocks.CRIMSON_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, random.nextBoolean() ? ARFOBlocks.WARPED_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)) : ARFOBlocks.CRIMSON_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl2) {
-                world.setBlock(pos, ModBlocks.WARPED_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, ARFOBlocks.WARPED_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl) {
-                world.setBlock(pos, ModBlocks.CRIMSON_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, ARFOBlocks.CRIMSON_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             }
         } else {
             if (bl2 && bl) {
@@ -123,11 +123,11 @@ public class ARFONetherSlabBlock extends SlabBlock implements IGrowable {
     public void growNetherGrass(ServerWorld p_225535_1_, Random p_225535_2_, BlockPos p_225535_3_, BlockState p_225535_4_) {
         BlockState blockstate = p_225535_1_.getBlockState(p_225535_3_);
         BlockPos blockpos = p_225535_3_.above();
-        if (blockstate.is(ModBlocks.CRIMSON_NYLIUM_SLAB)) {
+        if (blockstate.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB)) {
             if (blockstate.getValue(TYPE) != SlabType.BOTTOM) {
                 NetherVegetationFeature.place(p_225535_1_, p_225535_2_, blockpos, Features.Configs.CRIMSON_FOREST_CONFIG, 1, 1);
             }
-        } else if (blockstate.is(ModBlocks.WARPED_NYLIUM_SLAB)) {
+        } else if (blockstate.is(ARFOBlocks.WARPED_NYLIUM_SLAB)) {
             if (blockstate.getValue(TYPE) != SlabType.BOTTOM) {
                 NetherVegetationFeature.place(p_225535_1_, p_225535_2_, blockpos, Features.Configs.WARPED_FOREST_CONFIG, 1, 1);
                 NetherVegetationFeature.place(p_225535_1_, p_225535_2_, blockpos, Features.Configs.NETHER_SPROUTS_CONFIG, 1, 1);
