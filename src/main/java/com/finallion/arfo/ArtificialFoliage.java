@@ -5,6 +5,9 @@ import com.finallion.arfo.client.textures.Renders;
 import com.finallion.arfo.common.items.ARFOGrassSeedItem;
 
 import com.finallion.arfo.common.loot.GrassLootModifiers;
+import com.finallion.arfo.compat.BYG.BYGBlocks;
+import com.finallion.arfo.compat.BYG.BYGItems;
+import com.finallion.arfo.compat.BYG.BYGRender;
 import com.finallion.arfo.compat.Traverse.*;
 import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.init.ARFOFluids;
@@ -47,6 +50,13 @@ public class ArtificialFoliage {
         }
     };
 
+    public static ItemGroup itemGroupAddonTwo = new ItemGroup("arfo") {
+        public ItemStack makeIcon() {
+            return new ItemStack(ARFOItems.BADLANDS_DYE);
+        }
+    };
+
+
 
     public ArtificialFoliage() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -59,6 +69,7 @@ public class ArtificialFoliage {
         LOGGER.debug("ArFo: \"Client Setup\" Event Starting...");
         Renders.init();
         TraverseRender.init();
+        BYGRender.init();
 
         LOGGER.info("ArFo: \"Client Setup\" Event Complete!");
     }
@@ -71,6 +82,7 @@ public class ArtificialFoliage {
             ArtificialFoliage.LOGGER.debug("ArFo: Registering blocks...");
             ARFOBlocks.init();
             TraverseBlocks.init();
+            BYGBlocks.init();
             ARFOBlocks.blocksList.forEach(block -> event.getRegistry().register(block));
 
 
@@ -83,6 +95,7 @@ public class ArtificialFoliage {
             ArtificialFoliage.LOGGER.debug("ArFo: Registering items...");
             ARFOItems.init();
             TraverseItems.init();
+            BYGItems.init();
             ARFOItems.itemsList.forEach(item -> event.getRegistry().register(item));
 
             ArtificialFoliage.LOGGER.info("ArFo: Items registered!");

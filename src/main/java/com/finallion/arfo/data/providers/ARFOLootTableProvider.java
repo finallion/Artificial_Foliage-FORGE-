@@ -42,4 +42,8 @@ public class ARFOLootTableProvider extends BaseLootTableProvider {
 
     }
 
+    @Override
+    public String getName() {
+        return "Artificial Foliage loot tables";
+    }
 }

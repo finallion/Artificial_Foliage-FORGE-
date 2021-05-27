@@ -15,6 +15,10 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
 
+        generator.addProvider(new ARFOBlockStateProvider(generator, ArtificialFoliage.MODID, event.getExistingFileHelper()));
+        generator.addProvider(new ARFOItemModelProvider(generator, ArtificialFoliage.MODID, event.getExistingFileHelper()));
+
+
 
         if (event.includeServer()) {
             generator.addProvider(new ARFOLootTableProvider(generator));

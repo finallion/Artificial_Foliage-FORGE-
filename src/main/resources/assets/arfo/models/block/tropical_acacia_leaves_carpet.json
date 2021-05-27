@@ -1,7 +1,0 @@
-{
-  "parent": "arfo:block/leaf_carpet",
-  "textures": {
-    "all": "minecraft:block/acacia_leaves"
-  }
-}
-}

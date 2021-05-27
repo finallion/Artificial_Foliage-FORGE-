@@ -26,11 +26,8 @@ public class ARFOLangProvider extends LanguageProvider {
             }
         }
 
-        /*
-        add(ArtificialFoliage.itemGroup, "Artificial Foliage");
-        add(CompatItemGroup.itemGroupAddon, "Artificial Foliage Plus");
+        add("itemGroup.arfo", "Artificial Foliage");
 
-         */
 
     }
 
@@ -58,5 +55,10 @@ public class ARFOLangProvider extends LanguageProvider {
         }
 
         return buildName;
+    }
+
+    @Override
+    public String getName() {
+        return "Artificial Foliage lang";
     }
 }
