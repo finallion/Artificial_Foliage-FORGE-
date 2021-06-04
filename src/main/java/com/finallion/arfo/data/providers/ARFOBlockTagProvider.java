@@ -1,15 +1,10 @@
 package com.finallion.arfo.data.providers;
 
 import com.finallion.arfo.init.ARFOBlocks;
-import com.finallion.arfo.init.ARFOItems;
-import com.finallion.arfo.utils.ARFOBlockTags;
-import com.finallion.arfo.utils.ARFOItemTags;
+import com.finallion.arfo.tags.ARFOBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.Item;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;

@@ -20,19 +20,20 @@ public class ARFOLootTableProvider extends BaseLootTableProvider {
     @Override
     protected void addTables() {
 
-        //FIX
         for (Block b : ARFOBlocks.blocksList) {
-            if (b.toString().contains("grass_block")) {
+            if (b.toString().contains("potted")) {
+                lootTables.put(b, createPottedTable(b.toString(), b));
+            } else if (b.toString().contains("slab")) {
+                lootTables.put(b, createSlabTable(b.toString(), b));
+            } else if (b.toString().contains("grass_block") || b.toString().contains("overgrown") || b.toString().contains("soil")) {
                 lootTables.put(b, createStandardTable(b.toString(), b));
             } else if (b.toString().contains("sugar_cane")) {
                 lootTables.put(b, createStandardTable(b.toString(), Blocks.SUGAR_CANE));
-            } else if (b.toString().contains("slab")) {
-                lootTables.put(b, createSlabTable(b.toString(), b));
             } else if (b.toString().contains("large") || b.toString().contains("tall") ) {
                 lootTables.put(b, createDoubleGrassTable(b.toString(), b));
             } else if (b.toString().contains("vine")) {
                 lootTables.put(b, createShearTable(b.toString(), Blocks.VINE));
-            } else if (b.toString().contains("water")) {
+            } else if (b.toString().contains("water}")) {
 
             } else {
                 lootTables.put(b, createShearTable(b.toString(), b));

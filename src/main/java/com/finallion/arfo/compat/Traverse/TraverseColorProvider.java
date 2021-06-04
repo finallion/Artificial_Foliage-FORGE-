@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TraverseColorProvider {
 
-    private static final IBlockColor ARID_HIGHLANDS_GRASS = new IBlockColor() {
+    public static final IBlockColor ARID_HIGHLANDS_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0xBACD78;
@@ -30,105 +30,105 @@ public class TraverseColorProvider {
     };
 
 
-    private static final IBlockColor ARID_HIGHLANDS_LEAVES = new IBlockColor() {
+    public static final IBlockColor ARID_HIGHLANDS_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x80A02E;
         }
     };
 
-    private static final IBlockColor AUTUMNAL_WOODS_GRASS = new IBlockColor() {
+    public static final IBlockColor AUTUMNAL_WOODS_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_x) {
             return 0xD6C23D;
         }
     };
 
-    private static final IBlockColor AUTUMNAL_WOODS_LEAVES = new IBlockColor() {
+    public static final IBlockColor AUTUMNAL_WOODS_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0xD2D31F;
         }
     };
 
-    private static final IBlockColor CLIFFS = ColorProvider.setDynamicBlockColorProvider(0.3F, 0.4F);
-    private static final IBlockColor SNOWY_CLIFFS = ColorProvider.setDynamicBlockColorProvider(0.22F, 0.4F);
+    public static final IBlockColor CLIFFS = ColorProvider.setDynamicBlockColorProvider(0.3F, 0.4F);
+    public static final IBlockColor SNOWY_CLIFFS = ColorProvider.setDynamicBlockColorProvider(0.22F, 0.4F);
 
-    private static final IBlockColor CONIFEROUS_FOREST_GRASS = new IBlockColor() {
+    public static final IBlockColor CONIFEROUS_FOREST_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x338235;
         }
     };
 
-    private static final IBlockColor CONIFEROUS_FOREST_LEAVES = new IBlockColor() {
+    public static final IBlockColor CONIFEROUS_FOREST_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x338235;
         }
     };
 
-    private static final IBlockColor SNOWY_CONIFEROUS_FOREST_GRASS = new IBlockColor() {
+    public static final IBlockColor SNOWY_CONIFEROUS_FOREST_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x338251;
         }
     };
 
-    private static final IBlockColor SNOWY_CONIFEROUS_FOREST_LEAVES = new IBlockColor() {
+    public static final IBlockColor SNOWY_CONIFEROUS_FOREST_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x338251;
         }
     };
 
-    private static final IBlockColor TRAVERSE_LUSH_SWAMP_GRASS = new IBlockColor() {
+    public static final IBlockColor TRAVERSE_LUSH_SWAMP_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x7FE03E;
         }
     };
 
-    private static final IBlockColor TRAVERSE_LUSH_SWAMP_LEAVES = new IBlockColor() {
+    public static final IBlockColor TRAVERSE_LUSH_SWAMP_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x58EA33;
         }
     };
 
-    private static final IBlockColor MEADOW_GRASS = new IBlockColor() {
+    public static final IBlockColor MEADOW_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x65CC53;
         }
     };
 
-    private static final IBlockColor MEADOW_LEAVES = new IBlockColor() {
+    public static final IBlockColor MEADOW_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x5DD64A;
         }
     };
 
-    private static final IBlockColor PLAINS_PLATEAU = ColorProvider.setDynamicBlockColorProvider(0.8F, 0.2F);
+    public static final IBlockColor PLAINS_PLATEAU = ColorProvider.setDynamicBlockColorProvider(0.8F, 0.2F);
 
-    private static final IBlockColor ROLLING_HILLS_GRASS = new IBlockColor() {
+    public static final IBlockColor ROLLING_HILLS_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x7FE03E;
         }
     };
 
-    private static final IBlockColor ROLLING_HILLS_LEAVES = new IBlockColor() {
+    public static final IBlockColor ROLLING_HILLS_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x58EA33;
         }
     };
 
-    private static final IBlockColor WOODED_ISLAND = ColorProvider.setDynamicBlockColorProvider(0.8F, 0.8F);
+    public static final IBlockColor WOODED_ISLAND = ColorProvider.setDynamicBlockColorProvider(0.8F, 0.8F);
 
-    private static final IBlockColor WOODLANDS_GRASS = new IBlockColor() {
+    public static final IBlockColor WOODLANDS_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x99A955;
@@ -136,7 +136,7 @@ public class TraverseColorProvider {
     };
 
 
-    private static final IBlockColor WOODLANDS_LEAVES = new IBlockColor() {
+    public static final IBlockColor WOODLANDS_LEAVES = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0x849E4A;

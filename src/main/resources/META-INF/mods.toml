@@ -3,13 +3,13 @@ loaderVersion="[35,)"
 license="All rights reserved"
 [[mods]]
 modId="arfo"
-version="2.0"
+version="2.1"
 displayName="Artificial Foliage"
 logoFile="examplemod.png"
 credits="Thanks for this example mod goes to Java"
 authors="Finallion"
 description='''
-This mod allows you to build and terraform anywhere with the grass and foliage color you like!
+Grass blocks, grass slabs, leaves, grass, fern, leaf carpet and more in every modded or vanilla biome color!
 '''
 
 [[dependencies.arfo]]

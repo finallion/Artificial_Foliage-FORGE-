@@ -231,14 +231,27 @@ public class TraverseRender {
         RenderTypeLookup.setRenderLayer(TraverseBlocks.GLOWING_TRAVERSE_WOODLANDS_GRASS_BLOCK, Renders.GRASS_BLOCK_LAYER);
 
 
-
-
         RenderTypeLookup.setRenderLayer(TraverseFluids.STILL_TRAVERSE_CLIFFS_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(TraverseFluids.FLOWING_TRAVERSE_CLIFFS_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(TraverseFluids.STILL_TRAVERSE_LUSH_SWAMP_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(TraverseFluids.FLOWING_TRAVERSE_LUSH_SWAMP_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(TraverseFluids.STILL_TRAVERSE_MINI_JUNGLE_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(TraverseFluids.FLOWING_TRAVERSE_MINI_JUNGLE_WATER, RenderType.translucent());
+
+
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_ARID_HIGHLANDS_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_AUTUMNAL_WOODS_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_CLIFFS_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_CONIFEROUS_FOREST_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_MEADOW_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_PLAINS_PLATEAU_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_ROLLING_HILLS_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_SNOWY_CLIFFS_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_SNOWY_CONIFEROUS_FOREST_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_TRAVERSE_LUSH_SWAMP_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_WOODED_ISLAND_FERN, Renders.POTTED_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(TraverseBlocks.POTTED_WOODLANDS_FERN, Renders.POTTED_BLOCK_LAYER);
+
 
 
     }

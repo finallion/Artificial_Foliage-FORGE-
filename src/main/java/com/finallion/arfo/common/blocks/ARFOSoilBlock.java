@@ -26,26 +26,6 @@ public class ARFOSoilBlock extends Block {
     }
 
 
-    public void grow(World world, Random random, BlockPos pos, BlockState state) {
-        Iterator var7 = BlockPos.betweenClosed(pos.offset(-1, -1, -1), pos.offset(1, 1, 1)).iterator();
-        boolean found = false;
-        BlockState blockState = world.getBlockState(pos);
-
-        while(var7.hasNext()) {
-            BlockPos blockPos = (BlockPos)var7.next();
-            blockState = world.getBlockState(blockPos);
-            if (blockState.getBlock() instanceof ARFOGrassBlock) {
-                found = true;
-                break;
-            }
-        }
-
-        if (!world.isClientSide() && found) {
-            world.setBlock(pos, blockState, 3);
-        }
-
-    }
-
     @Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, IPlantable plantable) {
         PlantType type = plantable.getPlantType(world, pos.relative(facing));

@@ -7,9 +7,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,27 +15,25 @@ public class ARFOBlocks {
 
     public static List<Block> blocksList = new ArrayList<>();
 
-    public static final Block ARTIFICIAL_SOIL = createBlock(new ARFOSoilBlock(), "artificial_soil");
+    public static final Block JUNGLE_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "jungle_grass_block");
+    public static final Block BADLANDS_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "badlands_grass_block");
+    public static final Block SAVANNA_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "savanna_grass_block");
+    public static final Block JUNGLE_EDGE_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "jungle_edge_grass_block");
+    public static final Block FOREST_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "forest_grass_block");
+    public static final Block BIRCH_FOREST_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "birch_forest_grass_block");
+    public static final Block DARK_FOREST_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "dark_forest_grass_block");
+    public static final Block LUSH_SWAMP_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "lush_swamp_grass_block");
+    public static final Block SWAMP_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "swamp_grass_block");
+    public static final Block PLAINS_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "plains_grass_block");
+    public static final Block WATERS_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "waters_grass_block");
+    public static final Block MUSHROOM_FIELDS_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "mushroom_fields_grass_block");
+    public static final Block MOUNTAINS_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "mountains_grass_block");
+    public static final Block SNOWY_BEACH_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "snowy_beach_grass_block");
+    public static final Block MEGA_TAIGA_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "mega_taiga_grass_block");
+    public static final Block TAIGA_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "taiga_grass_block");
+    public static final Block SNOWY_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "snowy_grass_block");
 
-    public static final Block JUNGLE_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "jungle_grass_block");
-    public static final Block BADLANDS_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "badlands_grass_block");
-    public static final Block SAVANNA_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "savanna_grass_block");
-    public static final Block JUNGLE_EDGE_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "jungle_edge_grass_block");
-    public static final Block FOREST_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "forest_grass_block");
-    public static final Block BIRCH_FOREST_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "birch_forest_grass_block");
-    public static final Block DARK_FOREST_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "dark_forest_grass_block");
-    public static final Block LUSH_SWAMP_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "lush_swamp_grass_block");
-    public static final Block SWAMP_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "swamp_grass_block");
-    public static final Block PLAINS_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "plains_grass_block");
-    public static final Block WATERS_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "waters_grass_block");
-    public static final Block MUSHROOM_FIELDS_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "mushroom_fields_grass_block");
-    public static final Block MOUNTAINS_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "mountains_grass_block");
-    public static final Block SNOWY_BEACH_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "snowy_beach_grass_block");
-    public static final Block MEGA_TAIGA_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "mega_taiga_grass_block");
-    public static final Block TAIGA_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "taiga_grass_block");
-    public static final Block SNOWY_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "snowy_grass_block");
-
-    public static final Block ALPHA_GRASS_BLOCK = createBlock(new ARFOGrassBlock(), "alpha_grass_block");
+    public static final Block ALPHA_GRASS_BLOCK = createBlock(new ARFOSpreadableGrassBlock(), "alpha_grass_block");
     public static final Block ALPHA_LEAVES = createBlock(new LeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES).harvestTool(ToolType.HOE).noOcclusion().sound(SoundType.GRASS)), "alpha_leaves");
 
     public static final Block TROPICAL_JUNGLE_LEAVES = createBlock(new ARFOJungleLeavesBlock(), "tropical_jungle_leaves");
@@ -296,35 +291,42 @@ public class ARFOBlocks {
     public static final Block WATERS_VINE = createBlock(new ARFOVinesBlock(), "waters_vine");
 
     // slabs
-    public static final Block JUNGLE_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "jungle_grass_slab");
-    public static final Block JUNGLE_EDGE_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "jungle_edge_grass_slab");
-    public static final Block BADLANDS_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "badlands_grass_slab");
-    public static final Block SAVANNA_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "savanna_grass_slab");
-    public static final Block FOREST_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "forest_grass_slab");
-    public static final Block BIRCH_FOREST_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "birch_forest_grass_slab");
-    public static final Block DARK_FOREST_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "dark_forest_grass_slab");
-    public static final Block PLAINS_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "plains_grass_slab");
-    public static final Block SWAMP_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "swamp_grass_slab");
-    public static final Block LUSH_SWAMP_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "lush_swamp_grass_slab");
-    public static final Block MOUNTAINS_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "mountains_grass_slab");
-    public static final Block MUSHROOM_FIELDS_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "mushroom_fields_grass_slab");
-    public static final Block TAIGA_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "taiga_grass_slab");
-    public static final Block MEGA_TAIGA_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "mega_taiga_grass_slab");
-    public static final Block SNOWY_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "snowy_grass_slab");
-    public static final Block SNOWY_BEACH_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "snowy_beach_grass_slab");
-    public static final Block WATERS_GRASS_SLAB = createBlock(new ARFOGrassBlockSlab(), "waters_grass_slab");
+    public static final Block JUNGLE_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "jungle_grass_slab");
+    public static final Block JUNGLE_EDGE_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "jungle_edge_grass_slab");
+    public static final Block BADLANDS_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "badlands_grass_slab");
+    public static final Block SAVANNA_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "savanna_grass_slab");
+    public static final Block FOREST_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "forest_grass_slab");
+    public static final Block BIRCH_FOREST_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "birch_forest_grass_slab");
+    public static final Block DARK_FOREST_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "dark_forest_grass_slab");
+    public static final Block PLAINS_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "plains_grass_slab");
+    public static final Block SWAMP_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "swamp_grass_slab");
+    public static final Block LUSH_SWAMP_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "lush_swamp_grass_slab");
+    public static final Block MOUNTAINS_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "mountains_grass_slab");
+    public static final Block MUSHROOM_FIELDS_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "mushroom_fields_grass_slab");
+    public static final Block TAIGA_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "taiga_grass_slab");
+    public static final Block MEGA_TAIGA_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "mega_taiga_grass_slab");
+    public static final Block SNOWY_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "snowy_grass_slab");
+    public static final Block SNOWY_BEACH_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "snowy_beach_grass_slab");
+    public static final Block WATERS_GRASS_SLAB = createBlock(new ARFOSpreadableGrassSlab(), "waters_grass_slab");
 
-    public static final Block GRASS_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.GRASS_BLOCK).harvestTool(ToolType.SHOVEL)), "grass_slab");
-    public static final Block DIRT_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.DIRT).harvestTool(ToolType.SHOVEL)), "dirt_slab");
-    public static final Block COARSE_DIRT_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.COARSE_DIRT).harvestTool(ToolType.SHOVEL)), "coarse_dirt_slab");
-    public static final Block PODZOL_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.PODZOL).harvestTool(ToolType.SHOVEL)), "podzol_slab");
-    public static final Block MYCELIUM_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.MYCELIUM).harvestTool(ToolType.SHOVEL)), "mycelium_slab");
-    public static final Block ARTIFICIAL_SOIL_SLAB = createBlock(new ARFOSlabBlock(AbstractBlock.Properties.copy(Blocks.DIRT).harvestTool(ToolType.SHOVEL)), "artificial_soil_slab");
 
-    public static final Block GRASS_PATH_SLAB = createBlock(new ARFOSmallerSlabBlock(AbstractBlock.Properties.copy(Blocks.GRASS_PATH).harvestTool(ToolType.SHOVEL)), "grass_path_slab");
-    public static final Block NETHERRACK_SLAB = createBlock(new ARFONetherSlabBlock(AbstractBlock.Properties.copy(Blocks.NETHERRACK).harvestTool(ToolType.PICKAXE)), "netherrack_slab");
-    public static final Block CRIMSON_NYLIUM_SLAB = createBlock(new ARFONetherSlabBlock(AbstractBlock.Properties.copy(Blocks.CRIMSON_NYLIUM).harvestTool(ToolType.PICKAXE)), "crimson_nylium_slab");
-    public static final Block WARPED_NYLIUM_SLAB = createBlock(new ARFONetherSlabBlock(AbstractBlock.Properties.copy(Blocks.WARPED_NYLIUM).harvestTool(ToolType.PICKAXE)), "warped_nylium_slab");
+    public static final Block GRASS_SLAB = createBlock(new ARFOSpreadableSlab(AbstractBlock.Properties.copy(Blocks.GRASS_BLOCK).harvestTool(ToolType.SHOVEL)), "grass_slab");
+    public static final Block DIRT_SLAB = createBlock(new ARFOSlab(AbstractBlock.Properties.copy(Blocks.DIRT)), "dirt_slab");
+    public static final Block COARSE_DIRT_SLAB = createBlock(new ARFOSlab(AbstractBlock.Properties.copy(Blocks.COARSE_DIRT)), "coarse_dirt_slab");
+    public static final Block PODZOL_SLAB = createBlock(new ARFOSlab(AbstractBlock.Properties.copy(Blocks.PODZOL)), "podzol_slab");
+    public static final Block MYCELIUM_SLAB = createBlock(new ARFOSpreadableSlab(AbstractBlock.Properties.copy(Blocks.MYCELIUM).harvestTool(ToolType.SHOVEL)), "mycelium_slab");
+
+    public static final Block GRASS_PATH_SLAB = createBlock(new ARFOSmallSlab(), "grass_path_slab");
+    public static final Block NETHERRACK_SLAB = createBlock(new ARFONyliumSlab(), "netherrack_slab");
+    public static final Block CRIMSON_NYLIUM_SLAB = createBlock(new ARFONyliumSlab(), "crimson_nylium_slab");
+    public static final Block WARPED_NYLIUM_SLAB = createBlock(new ARFONyliumSlab(), "warped_nylium_slab");
+
+    public static final Block ARTIFICIAL_SOIL = createBlock(new ARFOSoilBlock(), "artificial_soil");
+    public static final Block ARTIFICIAL_SOIL_SLAB = createBlock(new ARFOSlab(AbstractBlock.Properties.copy(Blocks.DIRT)), "artificial_soil_slab");
+    public static final Block ARTIFICIAL_STONE_SOIL = createBlock(new ARFOStoneSoilBlock(), "artificial_stone_soil");
+    public static final Block ARTIFICIAL_STONE_SOIL_SLAB = createBlock(new ARFOSlab(AbstractBlock.Properties.copy(Blocks.STONE)), "artificial_stone_soil_slab");
+
+
 
     public static final Block GLOWING_JUNGLE_GRASS_BLOCK = createBlock(new ARFOGlowingGrassBlock(), "glowing_jungle_grass_block");
     public static final Block GLOWING_JUNGLE_EDGE_GRASS_BLOCK = createBlock(new ARFOGlowingGrassBlock(), "glowing_jungle_edge_grass_block");
@@ -344,8 +346,8 @@ public class ARFOBlocks {
     public static final Block GLOWING_SNOWY_BEACH_GRASS_BLOCK = createBlock(new ARFOGlowingGrassBlock(), "glowing_snowy_beach_grass_block");
     public static final Block GLOWING_WATERS_GRASS_BLOCK = createBlock(new ARFOGlowingGrassBlock(), "glowing_waters_grass_block");
 
-    public static final Block GLOWING_CRIMSON_NYLIUM = createBlock(new ARFOGlowingGrassBlock(), "glowing_crimson_nylium");
-    public static final Block GLOWING_WARPED_NYLIUM = createBlock(new ARFOGlowingGrassBlock(), "glowing_warped_nylium");
+    public static final Block GLOWING_CRIMSON_NYLIUM = createBlock(new ARFOGlowingNyliumBlock(), "glowing_crimson_nylium");
+    public static final Block GLOWING_WARPED_NYLIUM = createBlock(new ARFOGlowingNyliumBlock(), "glowing_warped_nylium");
 
     public static final Block POTTED_JUNGLE_FERN = createPottedBlock(JUNGLE_FERN, "jungle_fern");
     public static final Block POTTED_JUNGLE_EDGE_FERN = createPottedBlock(JUNGLE_EDGE_FERN, "jungle_edge_fern");

@@ -35,8 +35,8 @@ public class ARFOItemModelProvider extends ItemModelProvider {
                 registerBasicARFOItem(name);
             } else if (name.contains("grass_seed")) {
                 registerBasicARFOItem(name);
-            } else if (name.contains("leaves") || name.contains("grass_block") || name.contains("slab") || name.contains("soil") || name.contains("glowing")) {
-                registerBlocItemModel(name);
+            } else if (name.contains("leaves") || name.contains("grass_block") || name.contains("slab") || name.contains("soil") || name.contains("glowing") || name.contains("overgrown")) {
+                registerBlockItemModel(name);
             } else if (name.contains("sugar_cane")) {
                 registerBasicItem(name, "sugar_cane");
             } else if (name.contains("vine")) {
@@ -56,7 +56,7 @@ public class ARFOItemModelProvider extends ItemModelProvider {
     }
 
 
-    private void registerBlocItemModel(String name) {
+    private void registerBlockItemModel(String name) {
         getBuilder(name).parent(new ModelFile.UncheckedModelFile(modLoc("block/" + name)));
     }
 

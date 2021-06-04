@@ -1,8 +1,8 @@
 package com.finallion.arfo.mixin;
 
 
-import com.finallion.arfo.common.blocks.ARFONetherSlabBlock;
-import com.finallion.arfo.common.blocks.ARFOSlabBlock;
+import com.finallion.arfo.common.blocks.ARFONyliumSlab;
+import com.finallion.arfo.common.blocks.ARFOSpreadableSlab;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BushBlock;
 import net.minecraft.state.EnumProperty;
@@ -24,7 +24,7 @@ public class MixinBushBlock {
     private void canSurvive(BlockState state, IWorldReader world, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
 
         BlockState blockState = world.getBlockState(pos);
-        if (blockState.getBlock() instanceof ARFOSlabBlock || blockState.getBlock() instanceof ARFONetherSlabBlock) {
+        if (blockState.getBlock() instanceof ARFOSpreadableSlab || blockState.getBlock() instanceof ARFONyliumSlab) {
             if (blockState.getValue(TYPE) != SlabType.BOTTOM) {
                 info.setReturnValue(true);
             }

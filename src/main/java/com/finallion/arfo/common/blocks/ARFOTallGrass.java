@@ -39,6 +39,6 @@ public class ARFOTallGrass extends TallFlowerBlock implements IPlantable {
     @Override
     protected boolean mayPlaceOn(BlockState state, IBlockReader world, BlockPos p_200014_3_) {
         Block block = state.getBlock();
-        return block instanceof ARFOGrassBlock || block instanceof ARFOGlowingGrassBlock || block instanceof ARFOSoilBlock || (block instanceof ARFOSlabBlock && state.getValue(TYPE) != SlabType.BOTTOM) || block.is(Blocks.GRASS_BLOCK) || block.is(Blocks.DIRT) || block.is(Blocks.COARSE_DIRT) || block.is(Blocks.PODZOL) || block.is(Blocks.FARMLAND);
+        return block instanceof ARFOSpreadableBlock|| block instanceof ARFOSoilBlock || (block instanceof ARFOSpreadableSlab && state.getValue(TYPE) != SlabType.BOTTOM) || block.is(Blocks.GRASS_BLOCK) || block.is(Blocks.DIRT) || block.is(Blocks.COARSE_DIRT) || block.is(Blocks.PODZOL) || block.is(Blocks.FARMLAND);
     }
 }

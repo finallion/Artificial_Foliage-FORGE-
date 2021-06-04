@@ -1,5 +1,6 @@
 package com.finallion.arfo.client.textures;
 
+import com.finallion.arfo.compat.BYG.BYGBlocks;
 import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.init.ARFOItems;
 import net.minecraft.block.BlockState;
@@ -42,14 +43,13 @@ public class ColorProvider {
         return (unknown, lightReader, pos, unknown2) -> lightReader != null && pos != null ? modifier.modifyColor(x, y, color) : BiomeColors.getAverageFoliageColor(lightReader, pos);
     }
 
-    // items, swamp color to debug
-    public static IItemColor setDynamicItemColorProvider(double temp, double humidity) {
-        return (stack, index) -> index == 0 ? GrassColors.get(temp, humidity) : BiomeAmbience.GrassColorModifier.SWAMP.modifyColor(temp, humidity, 6975545);
-    }
 
+    /*
     public static IItemColor setStaticItemColorProvider(double x, double y, int color, BiomeAmbience.GrassColorModifier modifier) {
         return (stack, index) -> index == 0 ? modifier.modifyColor(x, y, color) : BiomeAmbience.GrassColorModifier.SWAMP.modifyColor(x, y, 6975545);
     }
+
+     */
 
     // dynamic grass block colors
     public static final IBlockColor JUNGLE_COLOR = setDynamicBlockColorProvider(0.95, 0.9);
@@ -95,25 +95,32 @@ public class ColorProvider {
 
 
     // dynamic item colors
-    public static final IItemColor JUNGLE_ITEM_COLOR = setDynamicItemColorProvider(0.95, 0.9);
-    public static final IItemColor SAVANNA_ITEM_COLOR = setDynamicItemColorProvider(1.0, 0.0);
-    public static final IItemColor JUNGLE_EDGE_ITEM_COLOR = setDynamicItemColorProvider(0.95, 0.8);
-    public static final IItemColor FOREST_ITEM_COLOR = setDynamicItemColorProvider(0.7, 0.8);
-    public static final IItemColor BIRCH_FOREST_ITEM_COLOR = setDynamicItemColorProvider(0.6, 0.6);
-    public static final IItemColor PLAINS_ITEM_COLOR = setDynamicItemColorProvider(0.8, 0.4);
-    public static final IItemColor WATERS_ITEM_COLOR = setDynamicItemColorProvider(0.5, 0.5);
-    public static final IItemColor MOUNTAINS_ITEM_COLOR = setDynamicItemColorProvider(0.2, 0.3);
-    public static final IItemColor MUSHROOM_FIELDS_ITEM_COLOR = setDynamicItemColorProvider(0.9, 1.0);
-    public static final IItemColor SNOWY_ITEM_COLOR = setDynamicItemColorProvider(0.0, 0.5);
-    public static final IItemColor MEGA_TAIGA_ITEM_COLOR = setDynamicItemColorProvider(0.3, 0.8);
-    public static final IItemColor TAIGA_ITEM_COLOR = setDynamicItemColorProvider(0.25, 0.8);
-    public static final IItemColor SNOWY_BEACH_ITEM_COLOR = setDynamicItemColorProvider(0.05, 0.3);
+    public static final IItemColor JUNGLE_ITEM_COLOR = (item, layer) -> GrassColors.get(0.95, 0.9);
+    public static final IItemColor SAVANNA_ITEM_COLOR = (item, layer) -> GrassColors.get(1.0, 0.0);
+    public static final IItemColor JUNGLE_EDGE_ITEM_COLOR = (item, layer) -> GrassColors.get(0.95, 0.8);
+    public static final IItemColor FOREST_ITEM_COLOR = (item, layer) -> GrassColors.get(0.7, 0.8);
+    public static final IItemColor BIRCH_FOREST_ITEM_COLOR = (item, layer) -> GrassColors.get(0.6, 0.6);
+    public static final IItemColor PLAINS_ITEM_COLOR = (item, layer) -> GrassColors.get(0.8, 0.4);
+    public static final IItemColor WATERS_ITEM_COLOR = (item, layer) -> GrassColors.get(0.5, 0.5);
+    public static final IItemColor MOUNTAINS_ITEM_COLOR = (item, layer) -> GrassColors.get(0.2, 0.3);
+    public static final IItemColor MUSHROOM_FIELDS_ITEM_COLOR = (item, layer) -> GrassColors.get(0.9, 1.0);
+    public static final IItemColor SNOWY_ITEM_COLOR = (item, layer) -> GrassColors.get(0.0, 0.5);
+    public static final IItemColor MEGA_TAIGA_ITEM_COLOR = (item, layer) -> GrassColors.get(0.3, 0.8);
+    public static final IItemColor TAIGA_ITEM_COLOR = (item, layer) -> GrassColors.get(0.25, 0.8);
+    public static final IItemColor SNOWY_BEACH_ITEM_COLOR = (item, layer) -> GrassColors.get(0.05, 0.3);
 
     // hardcoded grass block colors
+    public static final IItemColor SWAMP_ITEM_COLOR = (item, layer) -> BiomeAmbience.GrassColorModifier.SWAMP.modifyColor(0.5, 0.5, 6975545);
+    public static final IItemColor LUSH_SWAMP_ITEM_COLOR = (item, layer) -> BiomeAmbience.GrassColorModifier.NONE.modifyColor(0.5, 0.5, 5011004);
+    public static final IItemColor DARK_FOREST_ITEM_COLOR = (item, layer) -> BiomeAmbience.GrassColorModifier.DARK_FOREST.modifyColor(0.5, 0.5, 6975545);
+    public static final IItemColor BADLANDS_ITEM_COLOR = (item, layer) -> BiomeAmbience.GrassColorModifier.NONE.modifyColor(0.5, 0.5, 9470285);
+    /*
     public static final IItemColor SWAMP_ITEM_COLOR = setStaticItemColorProvider(0.5, 0.5,6975545, BiomeAmbience.GrassColorModifier.SWAMP);
     public static final IItemColor LUSH_SWAMP_ITEM_COLOR = setStaticItemColorProvider(0.5, 0.5,5011004, BiomeAmbience.GrassColorModifier.NONE);
     public static final IItemColor DARK_FOREST_ITEM_COLOR = setStaticItemColorProvider(0.5, 0.5, 6975545, BiomeAmbience.GrassColorModifier.DARK_FOREST);
     public static final IItemColor BADLANDS_ITEM_COLOR = setStaticItemColorProvider(0.5, 0.5,9470285, BiomeAmbience.GrassColorModifier.NONE);
+
+     */
 
     @SubscribeEvent
     public static void onBlockColorsInit(ColorHandlerEvent.Item event) {
@@ -554,7 +561,7 @@ public class ColorProvider {
                 return reader != null && pos != null ?  BiomeColors.getAverageGrassColor(reader, pos) : GrassColors.get(0.5D, 1.0D);
 
             }
-        }, ARFOBlocks.GRASS_SLAB);
+        }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BYG_MEADOW_GRASS_SLAB);
 
     }
 
@@ -910,7 +917,7 @@ public class ColorProvider {
                 public int getColor(ItemStack stack, int tintIndex) {
                     return GrassColors.get(0.5D, 1.0D);
                 }
-            }, ARFOBlocks.GRASS_SLAB);
+            }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BYG_MEADOW_GRASS_SLAB);
 
 
         itemColors.register(new IItemColor() {

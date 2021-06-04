@@ -2,7 +2,8 @@ package com.finallion.arfo.mixin;
 
 
 
-import com.finallion.arfo.common.blocks.ARFOSlabBlock;
+import com.finallion.arfo.common.blocks.ARFOSpreadableBlock;
+import com.finallion.arfo.common.blocks.ARFOSpreadableSlab;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SpreadableSnowyDirtBlock;
 import net.minecraft.util.math.BlockPos;
@@ -20,6 +21,6 @@ public class MixinSpreadableSnowyDirtBlock {
     @Inject(method = "randomTick", at = @At("HEAD"), cancellable = true)
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo info) {
         // allows vanilla grass blocks to spread to ARFO slabs
-        ARFOSlabBlock.doTick(state, world, pos, random);
+        ARFOSpreadableBlock.doTick(state, world, pos, random);
     }
 }

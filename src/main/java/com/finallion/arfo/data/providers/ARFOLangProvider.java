@@ -27,7 +27,8 @@ public class ARFOLangProvider extends LanguageProvider {
         }
 
         add("itemGroup.arfo", "Artificial Foliage");
-
+        //add("itemGroup.arfo+", "Artificial Foliage for Traverse");
+        //add("itemGroup.arfo++", "Artificial Foliage for BYG");
 
     }
 
@@ -38,7 +39,13 @@ public class ARFOLangProvider extends LanguageProvider {
             name.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1)).append(" ");
         }
 
-        return name.toString().trim();
+        String buildName = name.toString().trim();
+
+        if (buildName.contains("Byg")) {
+            return buildName.replace("Byg", "BYG");
+        }
+
+        return buildName;
     }
 
     private String buildItemName(String id) {
@@ -49,6 +56,10 @@ public class ARFOLangProvider extends LanguageProvider {
         }
 
         String buildName = name.toString().trim();
+
+        if (buildName.contains("Byg")) {
+            buildName = buildName.replace("Byg", "BYG");
+        }
 
         if (buildName.contains("Dye")) {
             return buildName.replace("Dye", "Pigment");

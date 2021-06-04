@@ -1,6 +1,8 @@
 package com.finallion.arfo.data;
 
 import com.finallion.arfo.ArtificialFoliage;
+import com.finallion.arfo.common.blocks.ARFOFernBlock;
+import com.finallion.arfo.init.ARFOBlocks;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.advancements.criterion.EnchantmentPredicate;
@@ -23,13 +25,16 @@ import net.minecraft.loot.functions.*;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.Tags;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.locks.Condition;
+import java.util.stream.Collectors;
 
 public abstract class BaseLootTableProvider extends LootTableProvider {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
@@ -105,6 +110,37 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
         return LootTable.lootTable().withPool(builder);
     }
 
+    protected LootTable.Builder createPottedTable(String name, Block block) {
+        String fernName = block.toString().replace("potted_", "");
+
+        Set<Block> ferns = Registry.BLOCK.stream()
+                .filter(b -> b instanceof ARFOFernBlock)
+                .collect(Collectors.toSet());
+
+        Block fern = ARFOBlocks.JUNGLE_FERN;
+
+        for (Block b : ferns) {
+            if (b.toString().equals(fernName)) {
+                fern = b;
+            }
+        }
+
+        LootEntry.Builder<?> fernLoot = ItemLootEntry.lootTableItem(fern);
+        LootEntry.Builder<?> potLoot = ItemLootEntry.lootTableItem(Blocks.FLOWER_POT);
+
+        LootPool.Builder builder = LootPool.lootPool()
+                .setRolls(ConstantRange.exactly(1))
+                .add(fernLoot)
+                .when(SurvivesExplosion.survivesExplosion());
+
+        LootPool.Builder builderTwo = LootPool.lootPool()
+                .setRolls(ConstantRange.exactly(1))
+                .add(potLoot)
+                .when(SurvivesExplosion.survivesExplosion());
+
+        return LootTable.lootTable().withPool(builder).withPool(builderTwo);
+    }
+
 
 
 
@@ -136,6 +172,6 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 
     @Override
     public String getName() {
-        return "Artificial Foliage LootTables";
+        return "Artificial Foliage loot tables";
     }
 }

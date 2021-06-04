@@ -353,7 +353,7 @@ public class ARFOItems {
 
 
     public static final Item ARTIFICIAL_SOIL = createItem(new BlockItem(ARFOBlocks.ARTIFICIAL_SOIL, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ARTIFICIAL_SOIL));
-    public static final Item GRASS_SEED = createItem(new ARFOGrassSeedItem(new Item.Properties().tab(ArtificialFoliage.itemGroup)), "grass_seed");
+    public static final Item ARTIFICIAL_STONE_SOIL = createItem(new BlockItem(ARFOBlocks.ARTIFICIAL_STONE_SOIL, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ARTIFICIAL_STONE_SOIL));
     public static final Item ALPHA_GRASS_BLOCK = createItem(new BlockItem(ARFOBlocks.ALPHA_GRASS_BLOCK, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ALPHA_GRASS_BLOCK));
     public static final Item ALPHA_LEAVES = createItem(new BlockItem(ARFOBlocks.ALPHA_LEAVES, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ALPHA_LEAVES));
     public static final Item SPRUCE_LEAVES_CARPET = createItem(new BlockItem(ARFOBlocks.SPRUCE_LEAVES_CARPET, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.SPRUCE_LEAVES_CARPET));
@@ -364,6 +364,7 @@ public class ARFOItems {
     public static final Item PODZOL_SLAB = createItem(new BlockItem(ARFOBlocks.PODZOL_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.PODZOL_SLAB));
     public static final Item MYCELIUM_SLAB = createItem(new BlockItem(ARFOBlocks.MYCELIUM_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.MYCELIUM_SLAB));
     public static final Item ARTIFICIAL_SOIL_SLAB = createItem(new BlockItem(ARFOBlocks.ARTIFICIAL_SOIL_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ARTIFICIAL_SOIL_SLAB));
+    public static final Item ARTIFICIAL_STONE_SOIL_SLAB = createItem(new BlockItem(ARFOBlocks.ARTIFICIAL_STONE_SOIL_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ARTIFICIAL_STONE_SOIL_SLAB));
     public static final Item GRASS_PATH_SLAB = createItem(new BlockItem(ARFOBlocks.GRASS_PATH_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.GRASS_PATH_SLAB));
     public static final Item NETHERRACK_SLAB = createItem(new BlockItem(ARFOBlocks.NETHERRACK_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.NETHERRACK_SLAB));
     public static final Item CRIMSON_NYLIUM_SLAB = createItem(new BlockItem(ARFOBlocks.CRIMSON_NYLIUM_SLAB, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.CRIMSON_NYLIUM_SLAB));

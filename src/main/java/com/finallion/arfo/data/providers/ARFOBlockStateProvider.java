@@ -1,6 +1,7 @@
 package com.finallion.arfo.data.providers;
 
 import com.finallion.arfo.ArtificialFoliage;
+import com.finallion.arfo.compat.BYG.BYGBlocks;
 import com.finallion.arfo.compat.Traverse.TraverseBlocks;
 import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.utils.BlockMapping;
@@ -34,14 +35,13 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 .filter(b -> ArtificialFoliage.MODID.equals(Registry.BLOCK.getKey(b).getNamespace()))
                 .collect(Collectors.toSet());
 
-        // vine
-        // carpets
-
-
+        // manuel block states and models
         blocks.remove(ARFOBlocks.ALPHA_GRASS_BLOCK);
         blocks.remove(ARFOBlocks.ALPHA_LEAVES);
         blocks.remove(ARFOBlocks.ARTIFICIAL_SOIL);
         blocks.remove(ARFOBlocks.ARTIFICIAL_SOIL_SLAB);
+        blocks.remove(ARFOBlocks.ARTIFICIAL_STONE_SOIL);
+        blocks.remove(ARFOBlocks.ARTIFICIAL_STONE_SOIL_SLAB);
         blocks.remove(ARFOBlocks.GLOWING_CRIMSON_NYLIUM);
         blocks.remove(ARFOBlocks.GLOWING_WARPED_NYLIUM);
         blocks.remove(ARFOBlocks.GRASS_SLAB);
@@ -55,12 +55,40 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
         blocks.remove(ARFOBlocks.PODZOL_SLAB);
         blocks.remove(ARFOBlocks.SPRUCE_LEAVES_CARPET);
         blocks.remove(ARFOBlocks.BIRCH_LEAVES_CARPET);
+        blocks.remove(ARFOBlocks.SWAMP_WATER);
+        blocks.remove(ARFOBlocks.OCEAN_WATER);
+        blocks.remove(ARFOBlocks.COLD_OCEAN_WATER);
+        blocks.remove(ARFOBlocks.FROZEN_OCEAN_WATER);
+        blocks.remove(ARFOBlocks.WARM_OCEAN_WATER);
+        blocks.remove(ARFOBlocks.LUKEWARM_OCEAN_WATER);
+
+        blocks.remove(BYGBlocks.BYG_EMBUR_NYLIUM_SLAB);
+        blocks.remove(BYGBlocks.BYG_SYTHIAN_NYLIUM_SLAB);
+        blocks.remove(BYGBlocks.BYG_PODZOL_DACITE_SLAB);
+        blocks.remove(BYGBlocks.BYG_BLUE_NETHERRACK_SLAB);
+        blocks.remove(BYGBlocks.BYG_OVERGROWN_CRIMSON_BLACKSTONE_SLAB);
+        blocks.remove(BYGBlocks.BYG_MYCELIUM_NETHERRACK_SLAB);
+        blocks.remove(BYGBlocks.BYG_MEADOW_DIRT_SLAB);
+        blocks.remove(BYGBlocks.BYG_MEADOW_GRASS_SLAB);
+        blocks.remove(BYGBlocks.BYG_ETHEREAL_ISLANDS_WATER);
+        blocks.remove(BYGBlocks.BYG_BULBIS_GARDENS_WATER);
+        blocks.remove(BYGBlocks.BYG_CRAG_GARDENS_WATER);
+        blocks.remove(BYGBlocks.BYG_DEAD_SEA_WATER);
+        blocks.remove(BYGBlocks.BYG_GLOWSHROOM_BAYOU_WATER);
+        blocks.remove(BYGBlocks.BYG_IMPARIUS_GROVE_WATER);
+        blocks.remove(BYGBlocks.BYG_POLLUTED_LAKE_WATER);
+        blocks.remove(BYGBlocks.BYG_SHULKREN_FOREST_WATER);
+        blocks.remove(BYGBlocks.BYG_TROPICAL_ISLAND_WATER);
+        blocks.remove(BYGBlocks.BYG_VIBRANT_SWAMPLAND_WATER);
+
+        blocks.remove(TraverseBlocks.TRAVERSE_MINI_JUNGLE_WATER);
+        blocks.remove(TraverseBlocks.TRAVERSE_CLIFFS_WATER);
+        blocks.remove(TraverseBlocks.TRAVERSE_LUSH_SWAMP_WATER);
         blocks.remove(TraverseBlocks.TRAVERSE_RED_AUTUMNAL_LEAVES_CARPET);
         blocks.remove(TraverseBlocks.TRAVERSE_ORANGE_AUTUMNAL_LEAVES_CARPET);
         blocks.remove(TraverseBlocks.TRAVERSE_YELLOW_AUTUMNAL_LEAVES_CARPET);
         blocks.remove(TraverseBlocks.TRAVERSE_BROWN_AUTUMNAL_LEAVES_CARPET);
-        //blocks.removeIf((block -> block.toString().contains("vine")));
-        blocks.removeIf((block -> block.toString().contains("_water\"")));
+
 
         for (Block block : blocks) {
             String name = Registry.BLOCK.getKey(block).getPath();
@@ -120,7 +148,50 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .partialState().with(BlockStateProperties.SNOWY, true)
                         .setModels(new ConfiguredModel(snow));
 
-            } else if (block.toString().contains("slab")) {
+            } else if (block.toString().contains("overgrown_stone") && !block.toString().contains("slab")) {
+                ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top","arfo:blocks/byg_overgrown_stone_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("particle", "minecraft:block/stone")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+
+
+                ModelFile snow = models().cubeBottomTop("overgrown_stone_snowy",
+                        new ResourceLocation("arfo:blocks/byg_overgrown_stone_snow_side"),
+                        new ResourceLocation("minecraft:block/stone"),
+                        new ResourceLocation("minecraft:block/snow"))
+                        .texture("particle", "minecraft:block/stone");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.SNOWY, false)
+                        .setModels(new ConfiguredModel(normal),
+                                new ConfiguredModel(normal, 0, 90, false),
+                                new ConfiguredModel(normal, 0, 180, false),
+                                new ConfiguredModel(normal, 0, 270, false))
+                        .partialState().with(BlockStateProperties.SNOWY, true)
+                        .setModels(new ConfiguredModel(snow));
+
+            } else if (block.toString().contains("overgrown_stone_slab")) {
                 String grassBlockName = "";
 
                 for (Block b : BlockMapping.slabAndBlocks.keySet()) {
@@ -129,6 +200,450 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                     }
                 }
 
+
+                ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/stone")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top", "arfo:blocks/byg_overgrown_stone_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile slab_snow = models().withExistingParent(name + "_snow", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/stone")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top", "minecraft:block/snow")
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_snow_side")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").end()
+                        .face(Direction.NORTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.EAST).end()
+                        .end();
+
+                ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/stone")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top", "arfo:blocks/byg_overgrown_stone_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile slab_top_snow = models().withExistingParent(name + "_top_snow", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/stone")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top", "minecraft:block/snow")
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_snow_side")
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).end()
+                        .face(Direction.NORTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.EAST).end()
+                        .end();
+
+                ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("bottom", "minecraft:block/stone")
+                        .texture("top","arfo:blocks/byg_overgrown_stone_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("particle", "minecraft:block/stone")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile snow_block = models().cubeBottomTop("overgrown_stone_snowy",
+                        new ResourceLocation("arfo:blocks/byg_overgrown_stone_snow_side"),
+                        new ResourceLocation("minecraft:block/stone"),
+                        new ResourceLocation("minecraft:block/snow"))
+                        .texture("particle", "minecraft:block/stone");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
+                        .setModels(new ConfiguredModel(slab))
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.TOP)
+                        .setModels(new ConfiguredModel(slab_top))
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
+                        .setModels(new ConfiguredModel(grass_block))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
+                        .setModels(new ConfiguredModel(slab_snow))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.TOP)
+                        .setModels(new ConfiguredModel(slab_top_snow))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
+                        .setModels(new ConfiguredModel(snow_block));
+
+
+
+            } else if (block.toString().contains("overgrown_netherrack_slab")) {
+                String grassBlockName = "";
+
+                for (Block b : BlockMapping.slabAndBlocks.keySet()) {
+                    if (BlockMapping.slabAndBlocks.get(b).is(block)) {
+                        grassBlockName = Registry.BLOCK.getKey(b).getPath();
+                    }
+                }
+
+
+                ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/netherrack")
+                        .texture("bottom", "minecraft:block/netherrack")
+                        .texture("top", "arfo:blocks/byg_overgrown_netherrack_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+
+                ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "minecraft:block/netherrack")
+                        .texture("bottom", "minecraft:block/netherrack")
+                        .texture("top", "arfo:blocks/byg_overgrown_netherrack_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("bottom", "minecraft:block/netherrack")
+                        .texture("top","arfo:blocks/byg_overgrown_netherrack_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("particle", "minecraft:block/netherrack")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
+                        .setModels(new ConfiguredModel(slab))
+                        .partialState().with(BlockStateProperties.SLAB_TYPE, SlabType.TOP)
+                        .setModels(new ConfiguredModel(slab_top))
+                        .partialState().with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
+                        .setModels(new ConfiguredModel(grass_block));
+
+
+            } else if (block.toString().contains("overgrown_dacite_slab")) {
+                String grassBlockName = "";
+
+                for (Block b : BlockMapping.slabAndBlocks.keySet()) {
+                    if (BlockMapping.slabAndBlocks.get(b).is(block)) {
+                        grassBlockName = Registry.BLOCK.getKey(b).getPath();
+                    }
+                }
+
+
+                ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top", "arfo:blocks/byg_overgrown_dacite_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 8, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile slab_snow = models().withExistingParent(name + "_snow", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top", "minecraft:block/snow")
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_snow_side")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 8, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").end()
+                        .face(Direction.NORTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.EAST).end()
+                        .end();
+
+                ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top", "arfo:blocks/byg_overgrown_dacite_top")
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 8).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile slab_top_snow = models().withExistingParent(name + "_top_snow", new ResourceLocation("minecraft:block/slab"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top", "minecraft:block/snow")
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_snow_side")
+                        .element()
+                        .from(0, 8, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).end()
+                        .face(Direction.NORTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 2, 16, 10).texture("#side").cullface(Direction.EAST).end()
+                        .end();
+
+                ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top","arfo:blocks/byg_overgrown_dacite_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile snow_block = models().cubeBottomTop("overgrown_dacite_snowy",
+                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_snow_side"),
+                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_bottom"),
+                        new ResourceLocation("minecraft:block/snow"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
+                        .setModels(new ConfiguredModel(slab))
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.TOP)
+                        .setModels(new ConfiguredModel(slab_top))
+                        .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
+                        .setModels(new ConfiguredModel(grass_block))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
+                        .setModels(new ConfiguredModel(slab_snow))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.TOP)
+                        .setModels(new ConfiguredModel(slab_top_snow))
+                        .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
+                        .setModels(new ConfiguredModel(snow_block));
+
+            } else if (block.toString().contains("overgrown_netherrack") && !block.toString().contains("slab")) {
+                ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("bottom", "minecraft:block/netherrack")
+                        .texture("top","arfo:blocks/byg_overgrown_netherrack_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("particle", "minecraft:block/netherrack")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                getVariantBuilder(block)
+                        .partialState()
+                        .setModels(new ConfiguredModel(normal),
+                                new ConfiguredModel(normal, 0, 90, false),
+                                new ConfiguredModel(normal, 0, 180, false),
+                                new ConfiguredModel(normal, 0, 270, false));
+
+            } else if (block.toString().contains("overgrown_dacite") && !block.toString().contains("slab")) {
+                ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
+                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
+                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("top","arfo:blocks/byg_overgrown_dacite_top")
+                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+                        .face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").cullface(Direction.UP).tintindex(1).end()
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.WEST).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#side").cullface(Direction.EAST).end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.NORTH).tintindex(1).end()
+                        .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.SOUTH).tintindex(1).end()
+                        .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.WEST).tintindex(1).end()
+                        .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#overlay").cullface(Direction.EAST).tintindex(1).end()
+                        .end();
+
+                ModelFile snow = models().cubeBottomTop("overgrown_dacite_snowy",
+                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_snow_side"),
+                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_bottom"),
+                        new ResourceLocation("minecraft:block/snow"))
+                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.SNOWY, false)
+                        .setModels(new ConfiguredModel(normal),
+                                new ConfiguredModel(normal, 0, 90, false),
+                                new ConfiguredModel(normal, 0, 180, false),
+                                new ConfiguredModel(normal, 0, 270, false))
+                        .partialState().with(BlockStateProperties.SNOWY, true)
+                        .setModels(new ConfiguredModel(snow));
+
+            } else if (block.toString().contains("slab") && !block.toString().contains("overgrown")) {
+                String grassBlockName = "";
+
+                for (Block b : BlockMapping.slabAndBlocks.keySet()) {
+                    if (BlockMapping.slabAndBlocks.get(b).is(block)) {
+                        grassBlockName = Registry.BLOCK.getKey(b).getPath();
+                    }
+                }
 
                 ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
                         .texture("particle", "minecraft:block/dirt")
@@ -235,6 +750,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .setModels(new ConfiguredModel(slab_top_snow))
                         .partialState().with(BlockStateProperties.SNOWY, true).with(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE)
                         .setModels(new ConfiguredModel(snow_block));
+
 
 
             } else if (block.toString().contains("potted")) {
@@ -543,7 +1059,9 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .setModels(new ConfiguredModel(vine_4u));
 
 
-            }
+            } //else {
+            //    System.out.println(name);
+            //}
 
 
 
@@ -562,6 +1080,6 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
     @Nonnull
     @Override
     public String getName() {
-        return "Artificial Foliage blockstates";
+        return "Artificial Foliage block states";
     }
 }

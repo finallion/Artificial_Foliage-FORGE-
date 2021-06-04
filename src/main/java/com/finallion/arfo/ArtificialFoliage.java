@@ -2,10 +2,11 @@ package com.finallion.arfo;
 
 
 import com.finallion.arfo.client.textures.Renders;
-import com.finallion.arfo.common.items.ARFOGrassSeedItem;
+
 
 import com.finallion.arfo.common.loot.GrassLootModifiers;
 import com.finallion.arfo.compat.BYG.BYGBlocks;
+import com.finallion.arfo.compat.BYG.BYGFluids;
 import com.finallion.arfo.compat.BYG.BYGItems;
 import com.finallion.arfo.compat.BYG.BYGRender;
 import com.finallion.arfo.compat.Traverse.*;
@@ -33,6 +34,7 @@ import javax.annotation.Nonnull;
 
 @Mod("arfo")
 public class ArtificialFoliage {
+    
     public static final String MODID = "arfo";
     public static final Logger LOGGER = LogManager.getLogger();
     public static boolean isClient = false;
@@ -52,7 +54,7 @@ public class ArtificialFoliage {
 
     public static ItemGroup itemGroupAddonTwo = new ItemGroup("arfo") {
         public ItemStack makeIcon() {
-            return new ItemStack(ARFOItems.BADLANDS_DYE);
+            return new ItemStack(BYGItems.BYG_NETHER_DYE);
         }
     };
 
@@ -60,16 +62,17 @@ public class ArtificialFoliage {
 
     public ArtificialFoliage() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
-        MinecraftForge.EVENT_BUS.register(ARFOGrassSeedItem.class);
-
     }
 
     private void clientSetup(FMLClientSetupEvent event) {
         isClient = true;
         LOGGER.debug("ArFo: \"Client Setup\" Event Starting...");
         Renders.init();
+        LOGGER.debug("ArFo: ArFo Renders initialized...");
         TraverseRender.init();
+        LOGGER.debug("ArFo: Traverse Renders initialized...");
         BYGRender.init();
+        LOGGER.debug("ArFo: BYG Renders initialized...");
 
         LOGGER.info("ArFo: \"Client Setup\" Event Complete!");
     }
@@ -81,8 +84,11 @@ public class ArtificialFoliage {
         public static void registerBlocks(RegistryEvent.Register<Block> event) {
             ArtificialFoliage.LOGGER.debug("ArFo: Registering blocks...");
             ARFOBlocks.init();
+            LOGGER.debug("ArFo: ArFo Blocks initialized...");
             TraverseBlocks.init();
+            LOGGER.debug("ArFo: Traverse Blocks initialized...");
             BYGBlocks.init();
+            LOGGER.debug("ArFo: BYG Blocks initialized...");
             ARFOBlocks.blocksList.forEach(block -> event.getRegistry().register(block));
 
 
@@ -94,8 +100,11 @@ public class ArtificialFoliage {
         public static void registerItems(RegistryEvent.Register<Item> event) {
             ArtificialFoliage.LOGGER.debug("ArFo: Registering items...");
             ARFOItems.init();
+            LOGGER.debug("ArFo: ArFo Items initialized...");
             TraverseItems.init();
+            LOGGER.debug("ArFo: Traverse Items initialized...");
             BYGItems.init();
+            LOGGER.debug("ArFo: BYG Items initialized...");
             ARFOItems.itemsList.forEach(item -> event.getRegistry().register(item));
 
             ArtificialFoliage.LOGGER.info("ArFo: Items registered!");
@@ -105,7 +114,11 @@ public class ArtificialFoliage {
         public static void registerFluids(RegistryEvent.Register<Fluid> event) {
             ArtificialFoliage.LOGGER.debug("ArFo: Registering fluids...");
             ARFOFluids.init();
+            LOGGER.debug("ArFo: ArFo Fluids initialized...");
             TraverseFluids.init();
+            LOGGER.debug("ArFo: Traverse Fluids initialized...");
+            BYGFluids.init();
+            LOGGER.debug("ArFo: BYG Fluids initialized...");
             ARFOFluids.fluidList.forEach(fluid -> event.getRegistry().register(fluid));
 
             ArtificialFoliage.LOGGER.info("ArFo: Fluids registered!");
