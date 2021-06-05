@@ -34,7 +34,9 @@ import javax.annotation.Nonnull;
 
 @Mod("arfo")
 public class ArtificialFoliage {
-    
+
+    //TODO overgrown dacite and stone recipes with tags
+
     public static final String MODID = "arfo";
     public static final Logger LOGGER = LogManager.getLogger();
     public static boolean isClient = false;

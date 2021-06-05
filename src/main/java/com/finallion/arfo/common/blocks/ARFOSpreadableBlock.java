@@ -268,7 +268,7 @@ public class ARFOSpreadableBlock extends SpreadableSnowyDirtBlock implements IGr
     private static boolean canBeGrass(BlockState state, IWorldReader worldView, BlockPos pos) {
         BlockPos blockPos = pos.above();
         BlockState blockState = worldView.getBlockState(blockPos);
-        if (blockState.is(Blocks.SNOW) && (Integer) blockState.getValue(SnowBlock.LAYERS) > 1) {
+        if (blockState.is(Blocks.SNOW) && (Integer) blockState.getValue(SnowBlock.LAYERS) >= 1) {
             return false;
         } else if (blockState.getFluidState().getAmount() == 8) {
             return false;

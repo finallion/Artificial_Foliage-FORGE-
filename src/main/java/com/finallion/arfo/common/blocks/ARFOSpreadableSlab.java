@@ -153,15 +153,18 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
         BlockPos posUp = pos.above();
         BlockState stateUp = world.getBlockState(posUp);
 
-        if (stateUp.getBlock() == Blocks.SNOW && (Integer) stateUp.getValue(SnowBlock.LAYERS) > 1) {
+        if (stateUp.getBlock() == Blocks.SNOW && (Integer) stateUp.getValue(SnowBlock.LAYERS) >= 1) {
             return false;
         } else if (state.getBlock() instanceof ARFOSpreadableSlab && (state.getValue(WATERLOGGED) && state.getValue(TYPE) != SlabType.TOP && world.getFluidState(posUp).is(FluidTags.WATER)) || stateUp.getFluidState().getAmount() == 8) {
             return false;
-        } else if (state.getBlock() instanceof ARFOSpreadableSlab && !stateUp.getMaterial().isSolid() && state.getValue(TYPE) == SlabType.TOP) { ;
+        } else if (state.getBlock() instanceof ARFOSpreadableSlab && !stateUp.getMaterial().isSolid() && state.getValue(TYPE) == SlabType.TOP) {
             return true;
         } else {
+            if (stateUp.getBlock() instanceof ARFOLeavesCarpetBlock || stateUp.getBlock() instanceof LeavesBlock) {
+                return true;
+            }
+            // dont know why non opaque leaves kill the grass
             int i = LightEngine.getLightBlockInto(world, state, pos, stateUp, posUp, Direction.UP, stateUp.getLightBlock(world, posUp));
-
             return i < world.getMaxLightLevel();
         }
     }

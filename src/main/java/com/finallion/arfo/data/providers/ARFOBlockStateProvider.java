@@ -761,7 +761,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/fern");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("grass") && !block.toString().contains("tall") && !block.toString().contains("slab")) {
+            } else if (block.toString().contains("grass") && !block.toString().contains("tall") && !block.toString().contains("slab") && !block.toString().contains("vine")) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/grass");
                 simpleBlock(block, model);
