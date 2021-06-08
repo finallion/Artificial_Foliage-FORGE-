@@ -1,8 +1,6 @@
-package com.finallion.arfo.compat.BYG;
+package com.finallion.arfo.compat.BOP;
 
-import com.finallion.arfo.ArtificialFoliage;
 import com.finallion.arfo.client.textures.Renders;
-import com.finallion.arfo.init.ARFOBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -12,11 +10,11 @@ import net.minecraft.util.registry.Registry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class BYGRender {
+public class BOPRender {
 
     public static void init() {
         Set<Block> blocks = Registry.BLOCK.stream()
-                .filter(b -> Registry.BLOCK.getKey(b).getPath().contains("byg_"))
+                .filter(b -> Registry.BLOCK.getKey(b).getPath().contains("bop_"))
                 .collect(Collectors.toSet());
 
         for (Block block : blocks) {
@@ -28,7 +26,7 @@ public class BYGRender {
         }
 
         Set<Fluid> fluids = Registry.FLUID.stream()
-                .filter(b -> Registry.FLUID.getKey(b).getPath().contains("byg_"))
+                .filter(b -> Registry.FLUID.getKey(b).getPath().contains("bop_"))
                 .collect(Collectors.toSet());
 
         for (Fluid fluid : fluids) {

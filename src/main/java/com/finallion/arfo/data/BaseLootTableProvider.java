@@ -24,9 +24,11 @@ import net.minecraft.loot.conditions.*;
 import net.minecraft.loot.functions.*;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.SlabType;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.ToolType;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -85,7 +87,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 
     protected LootTable.Builder createShearTable(String name, Block block) {
         ILootCondition.IBuilder SHEAR = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
-
+        //ILootCondition.IBuilder SHEAR = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS));
         LootEntry.Builder<?> entry = ItemLootEntry.lootTableItem(block).when(SHEAR);
 
 
