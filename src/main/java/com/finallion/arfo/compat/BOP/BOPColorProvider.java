@@ -1,6 +1,7 @@
 package com.finallion.arfo.compat.BOP;
 
 import com.finallion.arfo.client.textures.ColorProvider;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
@@ -24,6 +25,12 @@ public class BOPColorProvider {
     @SubscribeEvent
     public static void onBlockColorsInit(ColorHandlerEvent.Item event) {
         final BlockColors blockColors = event.getBlockColors();
+
+        blockColors.register(BOP_ALPS, BOPBlocks.BOP_ALPS_GRASS_BLOCK, BOPBlocks.BOP_ALPS_GRASS_SLAB, BOPBlocks.GLOWING_BOP_ALPS_GRASS_BLOCK, BOPBlocks.BOP_ALPS_GRASS, BOPBlocks.BOP_ALPS_FERN, BOPBlocks.TALL_BOP_ALPS_GRASS, BOPBlocks.LARGE_BOP_ALPS_FERN, BOPBlocks.BOP_ALPS_SUGAR_CANE, BOPBlocks.POTTED_ALPS_FERN, BOPBlocks.BOP_ALPS_OVERGROWN_STONE, BOPBlocks.BOP_ALPS_OVERGROWN_STONE_SLAB, BOPBlocks.BOP_ALPS_OVERGROWN_DACITE, BOPBlocks.BOP_ALPS_OVERGROWN_DACITE_SLAB, BOPBlocks.BOP_ALPS_OVERGROWN_NETHERRACK, BOPBlocks.BOP_ALPS_OVERGROWN_NETHERRACK_SLAB);
+        blockColors.register(BOP_ALPS, BOPBlocks.BOP_ALPS_ACACIA_LEAVES, BOPBlocks.BOP_ALPS_ACACIA_LEAVES_CARPET, BOPBlocks.BOP_ALPS_OAK_LEAVES, BOPBlocks.BOP_ALPS_OAK_LEAVES_CARPET, BOPBlocks.BOP_ALPS_DARK_OAK_LEAVES, BOPBlocks.BOP_ALPS_DARK_OAK_LEAVES_CARPET, BOPBlocks.BOP_ALPS_JUNGLE_LEAVES, BOPBlocks.BOP_ALPS_JUNGLE_LEAVES_CARPET, BOPBlocks.BOP_ALPS_VINE);
+
+
+
     }
 
     @SubscribeEvent
@@ -113,14 +120,14 @@ public class BOPColorProvider {
     };
 
     // 0.85F, 0.05F
-    // same as dryland
-    private static final IBlockColor BOP_DRY_BONEYARD_GRASS = new IBlockColor() {
+    // same as dry boneyard
+    private static final IBlockColor BOP_DRYLAND_GRASS = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0xE5DFA9;
         }
     };
-    private static final IBlockColor BOP_DRY_BONEYARD_FOLIAGE = new IBlockColor() {
+    private static final IBlockColor BOP_DRYLAND_FOLIAGE = new IBlockColor() {
         @Override
         public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
             return 0xDAE0B3;
