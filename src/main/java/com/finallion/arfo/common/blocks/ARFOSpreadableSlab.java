@@ -34,6 +34,7 @@ import java.util.*;
 public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
     public static final EnumProperty<SlabType> TYPE;
     public static final BooleanProperty WATERLOGGED;
+    public static final BooleanProperty SLAB_PLACEMENT;
     public static final BooleanProperty SNOWY;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     private static final Map<Block, List<Block>> grassFeatures = new HashMap<>();
@@ -67,10 +68,12 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
             return false;
         }
 
+        /*
         if (state.getValue(TYPE) != SlabType.BOTTOM) {
             return true;
         }
-        return false;
+         */
+        return true;
     }
 
     @Override
@@ -82,6 +85,9 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
         boolean large = false;
         List<Block> features = new ArrayList<>();
 
+
+        // needs massive rework
+        //TODO check if block is instance and get direct without for-loop
         for (Block b1 : BlockMapping.slabAndBlocks.keySet()) {
             if (BlockMapping.slabAndBlocks.get(b1).is(blockState.getBlock())) {
                 features = grassFeatures.get(b1);
@@ -132,10 +138,27 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
                 }
 
                 if (blockState4.canSurvive(world, blockPos2)) {
-                    world.setBlock(blockPos2, blockState4, 3);
-                    if (large) {
-                        world.setBlock(blockPos2.above(), blockState4.getBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER), 3);
+
+                    // if slab is bottom slab, check if placed block can have value "open"
+                    // else do regular bone mealing
+                    if (world.getBlockState(blockPos2.below()).getBlock() instanceof ARFOSpreadableSlab && world.getBlockState(blockPos2.below()).getValue(TYPE) == SlabType.BOTTOM) {
+                        if (blockState4.getBlock() instanceof ARFOGrass || blockState4.getBlock() instanceof ARFOFernBlock || blockState4.getBlock() instanceof ARFOTallGrass || blockState4.getBlock() instanceof ARFOLargeFernBlock || blockState4.getBlock() instanceof ARFOLeavesCarpetBlock) {
+                            world.setBlock(blockPos2, blockState4.setValue(SLAB_PLACEMENT, true), 3);
+                        }
+                    } else {
+                        world.setBlock(blockPos2, blockState4, 3);
                     }
+
+
+                    if (large) {
+                        BlockState downState = world.getBlockState(blockPos2.below());
+                        if (downState.getBlock() instanceof ARFOSpreadableSlab && world.getBlockState(blockPos2.below()).getValue(TYPE) == SlabType.BOTTOM) {
+                            world.setBlock(blockPos2.above(), blockState4.getBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(SLAB_PLACEMENT, true), 3);
+                        } else {
+                            world.setBlock(blockPos2.above(), blockState4.getBlock().defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER), 3);
+                        }
+                    }
+
                     large = false;
                 }
             }
@@ -153,6 +176,8 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
         BlockPos posUp = pos.above();
         BlockState stateUp = world.getBlockState(posUp);
 
+        // stateUp.getMaterial().isSolid() needs reworks. Issues with not full blocks like fences.
+
         if (stateUp.getBlock() == Blocks.SNOW && (Integer) stateUp.getValue(SnowBlock.LAYERS) >= 1) {
             return false;
         } else if (state.getBlock() instanceof ARFOSpreadableSlab && (state.getValue(WATERLOGGED) && state.getValue(TYPE) != SlabType.TOP && world.getFluidState(posUp).is(FluidTags.WATER)) || stateUp.getFluidState().getAmount() == 8) {
@@ -160,7 +185,7 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
         } else if (state.getBlock() instanceof ARFOSpreadableSlab && !stateUp.getMaterial().isSolid() && state.getValue(TYPE) == SlabType.TOP) {
             return true;
         } else {
-            if (stateUp.getBlock() instanceof ARFOLeavesCarpetBlock || stateUp.getBlock() instanceof LeavesBlock) {
+            if (stateUp.getBlock() instanceof ARFOLeavesCarpetBlock || stateUp.getBlock() instanceof LeavesBlock || stateUp.getBlock() instanceof FenceGateBlock || stateUp.getBlock() instanceof FenceBlock ) {
                 return true;
             }
             // dont know why non opaque leaves kill the grass
@@ -321,17 +346,21 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
     @Override
     public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
 
-        if (state.getBlock() != ARFOBlocks.GRASS_PATH_SLAB) {
+        if (state.getBlock() == ARFOBlocks.GRASS_SLAB || state.getBlock() == ARFOBlocks.MYCELIUM_SLAB) {
             if (toolType == ToolType.HOE && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.FARMLAND.defaultBlockState();
-            else if (toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.DOUBLE) return Blocks.GRASS_PATH.defaultBlockState();
+            else if (toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.DOUBLE) return ARFOBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.DOUBLE);
+            else if (toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.BOTTOM) return ARFOBlocks.GRASS_PATH_SLAB.defaultBlockState();
             else return toolType == ToolType.SHOVEL && state.getValue(TYPE) == SlabType.TOP ? ARFOBlocks.GRASS_PATH_SLAB.defaultBlockState().setValue(TYPE, SlabType.TOP) : null;
         }
         return null;
     }
 
+
+
     static {
         TYPE = BlockStateProperties.SLAB_TYPE;
         WATERLOGGED = BlockStateProperties.WATERLOGGED;
         SNOWY = BlockStateProperties.SNOWY;
+        SLAB_PLACEMENT = BlockStateProperties.OPEN;
     }
 }

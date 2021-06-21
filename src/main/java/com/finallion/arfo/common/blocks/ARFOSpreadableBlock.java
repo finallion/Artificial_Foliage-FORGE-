@@ -67,6 +67,8 @@ public class ARFOSpreadableBlock extends SpreadableSnowyDirtBlock implements IGr
         boolean large = false;
         List<Block> features = new ArrayList<>();
 
+
+        //TODO check if block is instance and get direct without for-loop
         for (Block b2 : grassFeatures.keySet()) {
             if (blockState.getBlock().is(b2)) features = grassFeatures.get(b2);
         }
@@ -310,12 +312,6 @@ public class ARFOSpreadableBlock extends SpreadableSnowyDirtBlock implements IGr
         return false;
     }
 
-    @Nullable
-    @Override
-    public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
-        if (toolType == ToolType.HOE) return Blocks.FARMLAND.defaultBlockState();
-        else return toolType == ToolType.SHOVEL ? Blocks.GRASS_PATH.defaultBlockState() : null;
-    }
 
     static {
         TYPE = BlockStateProperties.SLAB_TYPE;
