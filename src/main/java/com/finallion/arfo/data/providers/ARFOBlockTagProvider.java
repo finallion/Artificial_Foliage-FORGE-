@@ -1,5 +1,6 @@
 package com.finallion.arfo.data.providers;
 
+import com.finallion.arfo.common.blocks.*;
 import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.tags.ARFOBlockTags;
 import net.minecraft.block.Block;
@@ -18,17 +19,17 @@ public class ARFOBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags() {
         for (Block block : ARFOBlocks.blocksList) {
-            if (block.toString().contains("grass_block")  && !block.toString().contains("glowing")) {
+            if (block instanceof ARFOSpreadableGrassBlock) {
                 this.tag(ARFOBlockTags.GRASS_BLOCKS).add(block);
             }
 
-            if (block.toString().contains("acacia_leaves") && !block.toString().contains("carpet")) {
+            if (block instanceof ARFOAcaciaLeavesBlock) {
                 this.tag(ARFOBlockTags.ACACIA_LEAVES).add(block);
-            } else if (block.toString().contains("dark_oak_leaves") && !block.toString().contains("carpet")) {
+            } else if (block instanceof ARFODarkOakLeavesBlock) {
                 this.tag(ARFOBlockTags.DARK_OAK_LEAVES).add(block);
-            } else if (block.toString().contains("oak_leaves") && !block.toString().contains("carpet")) {
+            } else if (block instanceof ARFOOakLeavesBlock) {
                 this.tag(ARFOBlockTags.OAK_LEAVES).add(block);
-            } else if (block.toString().contains("jungle_leaves") && !block.toString().contains("carpet")) {
+            } else if (block instanceof ARFOJungleLeavesBlock) {
                 this.tag(ARFOBlockTags.JUNGLE_LEAVES).add(block);
             }
 

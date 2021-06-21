@@ -1,6 +1,7 @@
 package com.finallion.arfo.data.providers;
 
 import com.finallion.arfo.ArtificialFoliage;
+import com.finallion.arfo.common.items.ARFODyeItem;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -31,9 +32,7 @@ public class ARFOItemModelProvider extends ItemModelProvider {
         for (Item item : items) {
             String name = Registry.ITEM.getKey(item).getPath();
 
-            if (name.contains("dye")) {
-                registerBasicARFOItem(name);
-            } else if (name.contains("grass_seed")) {
+            if (item instanceof ARFODyeItem) {
                 registerBasicARFOItem(name);
             } else if (name.contains("leaves") || name.contains("grass_block") || name.contains("slab") || name.contains("soil") || name.contains("glowing") || name.contains("overgrown")) {
                 registerBlockItemModel(name);

@@ -357,5 +357,114 @@ public class Renders {
 
 
 
+
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_STONE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_STONE_SLAB, GRASS_BLOCK_LAYER);
+
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_DACITE, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_DACITE_SLAB, GRASS_BLOCK_LAYER);
+
+
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_NETHERRACK, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.JUNGLE_EDGE_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MUSHROOM_FIELDS_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.FOREST_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BADLANDS_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SAVANNA_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.BIRCH_FOREST_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.DARK_FOREST_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.PLAINS_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SWAMP_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.LUSH_SWAMP_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MOUNTAINS_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.WATERS_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.TAIGA_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.MEGA_TAIGA_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_BEACH_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.SNOWY_OVERGROWN_NETHERRACK_SLAB, GRASS_BLOCK_LAYER);
+
+
+
     }
 }

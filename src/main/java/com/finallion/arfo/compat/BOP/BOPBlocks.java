@@ -1,35 +1,22 @@
 package com.finallion.arfo.compat.BOP;
 
 import com.finallion.arfo.common.blocks.*;
+import com.finallion.arfo.compat.BYG.BYGFluids;
 import com.finallion.arfo.init.ARFOBlocks;
 import net.minecraft.block.Block;
 
 public class BOPBlocks {
 
-    public static final Block BOP_ALPS_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_alps_grass_block");
-    public static final Block BOP_ALPS_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_alps_grass_slab");
-    public static final Block GLOWING_BOP_ALPS_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_alps_grass_block");
-    public static final Block BOP_ALPS_JUNGLE_LEAVES = ARFOBlocks.createBlock(new ARFOJungleLeavesBlock(), "bop_alps_jungle_leaves");
-    public static final Block BOP_ALPS_JUNGLE_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_alps_jungle_leaves_carpet");
-    public static final Block BOP_ALPS_OAK_LEAVES = ARFOBlocks.createBlock(new ARFOOakLeavesBlock(), "bop_alps_oak_leaves");
-    public static final Block BOP_ALPS_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_alps_oak_leaves_carpet");
-    public static final Block BOP_ALPS_DARK_OAK_LEAVES = ARFOBlocks.createBlock(new ARFODarkOakLeavesBlock(), "bop_alps_dark_oak_leaves");
-    public static final Block BOP_ALPS_DARK_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_alps_dark_oak_leaves_carpet");
-    public static final Block BOP_ALPS_ACACIA_LEAVES = ARFOBlocks.createBlock(new ARFOAcaciaLeavesBlock(), "bop_alps_acacia_leaves");
-    public static final Block BOP_ALPS_ACACIA_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_alps_acacia_leaves_carpet");
-    public static final Block BOP_ALPS_GRASS = ARFOBlocks.createBlock(new ARFOGrass(), "bop_alps_grass");
-    public static final Block TALL_BOP_ALPS_GRASS = ARFOBlocks.createBlock(new ARFOTallGrass(), "tall_bop_alps_grass");
-    public static final Block BOP_ALPS_FERN = ARFOBlocks.createBlock(new ARFOFernBlock(), "bop_alps_fern");
-    public static final Block LARGE_BOP_ALPS_FERN = ARFOBlocks.createBlock(new ARFOLargeFernBlock(), "large_bop_alps_fern");
-    public static final Block BOP_ALPS_SUGAR_CANE = ARFOBlocks.createBlock(new ARFOSugarCaneBlock(), "bop_alps_sugar_cane");
-    public static final Block BOP_ALPS_VINE = ARFOBlocks.createBlock(new ARFOVinesBlock(), "bop_alps_vine");
-    public static final Block POTTED_ALPS_FERN = ARFOBlocks.createPottedBlock(BOP_ALPS_FERN, "bop_alps_fern");
-    public static final Block BOP_ALPS_OVERGROWN_STONE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_alps_overgrown_stone");
-    public static final Block BOP_ALPS_OVERGROWN_STONE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_alps_overgrown_stone_slab");
-    public static final Block BOP_ALPS_OVERGROWN_DACITE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_alps_overgrown_dacite");
-    public static final Block BOP_ALPS_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_alps_overgrown_dacite_slab");
-    public static final Block BOP_ALPS_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_alps_overgrown_netherrack");
-    public static final Block BOP_ALPS_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_alps_overgrown_netherrack_slab");
+    public static void init() { }
+
+
+    public static final Block BOP_BAYOU_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_BAYOU_WATER, "bop_bayou_water");
+    public static final Block BOP_MYSTIC_GROVE_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_MYSTIC_GROVE_WATER, "bop_mystic_grove_water");
+    public static final Block BOP_OMINOUS_WOODS_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_OMINOUS_WOODS_WATER, "bop_ominous_woods_water");
+    public static final Block BOP_ORIGIN_VALLEY_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_ORIGIN_VALLEY_WATER, "bop_origin_valley_water");
+    public static final Block BOP_RAINFOREST_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_RAINFOREST_WATER, "bop_rainforest_water");
+    public static final Block BOP_WASTELAND_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_WASTELAND_WATER, "bop_wasteland_water");
+    public static final Block BOP_WETLAND_WATER = ARFOBlocks.createFluidBlock(BOPFluids.STILL_BOP_WETLAND_WATER, "bop_wetland_water");
 
     public static final Block BOP_BAMBOO_BLOSSOM_GROVE_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_bamboo_blossom_grove_grass_block");
     public static final Block BOP_BAMBOO_BLOSSOM_GROVE_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_bamboo_blossom_grove_grass_slab");
@@ -257,6 +244,26 @@ public class BOPBlocks {
     public static final Block BOP_FUNGAL_FIELD_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_fungal_field_overgrown_netherrack");
     public static final Block BOP_FUNGAL_FIELD_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_fungal_field_overgrown_netherrack_slab");
 
+
+    // fungal field grass color gets set between two values
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_fungal_field_variant_grass_block");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_fungal_field_variant_grass_slab");
+    public static final Block GLOWING_BOP_FUNGAL_FIELD_VARIANT_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_fungal_field_variant_grass_block");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_GRASS = ARFOBlocks.createBlock(new ARFOGrass(), "bop_fungal_field_variant_grass");
+    public static final Block TALL_BOP_FUNGAL_FIELD_VARIANT_GRASS = ARFOBlocks.createBlock(new ARFOTallGrass(), "tall_bop_fungal_field_variant_grass");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_FERN = ARFOBlocks.createBlock(new ARFOFernBlock(), "bop_fungal_field_variant_fern");
+    public static final Block LARGE_BOP_FUNGAL_FIELD_VARIANT_FERN = ARFOBlocks.createBlock(new ARFOLargeFernBlock(), "large_bop_fungal_field_variant_fern");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_SUGAR_CANE = ARFOBlocks.createBlock(new ARFOSugarCaneBlock(), "bop_fungal_field_variant_sugar_cane");
+    public static final Block POTTED_FUNGAL_FIELD_VARIANT_FERN = ARFOBlocks.createPottedBlock(BOP_FUNGAL_FIELD_VARIANT_FERN, "bop_fungal_field_variant_fern");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_STONE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_fungal_field_variant_overgrown_stone");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_STONE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_fungal_field_variant_overgrown_stone_slab");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_DACITE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_fungal_field_variant_overgrown_dacite");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_fungal_field_variant_overgrown_dacite_slab");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_fungal_field_variant_overgrown_netherrack");
+    public static final Block BOP_FUNGAL_FIELD_VARIANT_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_fungal_field_variant_overgrown_netherrack_slab");
+
+
+
     public static final Block BOP_GRAVEL_BEACH_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_gravel_beach_grass_block");
     public static final Block BOP_GRAVEL_BEACH_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_gravel_beach_grass_slab");
     public static final Block GLOWING_BOP_GRAVEL_BEACH_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_gravel_beach_grass_block");
@@ -306,31 +313,6 @@ public class BOPBlocks {
     public static final Block BOP_GROVE_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_grove_overgrown_dacite_slab");
     public static final Block BOP_GROVE_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_grove_overgrown_netherrack");
     public static final Block BOP_GROVE_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_grove_overgrown_netherrack_slab");
-
-    public static final Block BOP_HIGHLAND_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_highland_grass_block");
-    public static final Block BOP_HIGHLAND_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_highland_grass_slab");
-    public static final Block GLOWING_BOP_HIGHLAND_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_highland_grass_block");
-    public static final Block BOP_HIGHLAND_JUNGLE_LEAVES = ARFOBlocks.createBlock(new ARFOJungleLeavesBlock(), "bop_highland_jungle_leaves");
-    public static final Block BOP_HIGHLAND_JUNGLE_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_highland_jungle_leaves_carpet");
-    public static final Block BOP_HIGHLAND_OAK_LEAVES = ARFOBlocks.createBlock(new ARFOOakLeavesBlock(), "bop_highland_oak_leaves");
-    public static final Block BOP_HIGHLAND_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_highland_oak_leaves_carpet");
-    public static final Block BOP_HIGHLAND_DARK_OAK_LEAVES = ARFOBlocks.createBlock(new ARFODarkOakLeavesBlock(), "bop_highland_dark_oak_leaves");
-    public static final Block BOP_HIGHLAND_DARK_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_highland_dark_oak_leaves_carpet");
-    public static final Block BOP_HIGHLAND_ACACIA_LEAVES = ARFOBlocks.createBlock(new ARFOAcaciaLeavesBlock(), "bop_highland_acacia_leaves");
-    public static final Block BOP_HIGHLAND_ACACIA_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_highland_acacia_leaves_carpet");
-    public static final Block BOP_HIGHLAND_GRASS = ARFOBlocks.createBlock(new ARFOGrass(), "bop_highland_grass");
-    public static final Block TALL_BOP_HIGHLAND_GRASS = ARFOBlocks.createBlock(new ARFOTallGrass(), "tall_bop_highland_grass");
-    public static final Block BOP_HIGHLAND_FERN = ARFOBlocks.createBlock(new ARFOFernBlock(), "bop_highland_fern");
-    public static final Block LARGE_BOP_HIGHLAND_FERN = ARFOBlocks.createBlock(new ARFOLargeFernBlock(), "large_bop_highland_fern");
-    public static final Block BOP_HIGHLAND_SUGAR_CANE = ARFOBlocks.createBlock(new ARFOSugarCaneBlock(), "bop_highland_sugar_cane");
-    public static final Block BOP_HIGHLAND_VINE = ARFOBlocks.createBlock(new ARFOVinesBlock(), "bop_highland_vine");
-    public static final Block POTTED_HIGHLAND_FERN = ARFOBlocks.createPottedBlock(BOP_HIGHLAND_FERN, "bop_highland_fern");
-    public static final Block BOP_HIGHLAND_OVERGROWN_STONE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_highland_overgrown_stone");
-    public static final Block BOP_HIGHLAND_OVERGROWN_STONE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_highland_overgrown_stone_slab");
-    public static final Block BOP_HIGHLAND_OVERGROWN_DACITE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_highland_overgrown_dacite");
-    public static final Block BOP_HIGHLAND_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_highland_overgrown_dacite_slab");
-    public static final Block BOP_HIGHLAND_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_highland_overgrown_netherrack");
-    public static final Block BOP_HIGHLAND_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_highland_overgrown_netherrack_slab");
 
     public static final Block BOP_JADE_CLIFFS_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_jade_cliffs_grass_block");
     public static final Block BOP_JADE_CLIFFS_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_jade_cliffs_grass_slab");
@@ -756,56 +738,6 @@ public class BOPBlocks {
     public static final Block BOP_SHRUBLAND_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_shrubland_overgrown_dacite_slab");
     public static final Block BOP_SHRUBLAND_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_shrubland_overgrown_netherrack");
     public static final Block BOP_SHRUBLAND_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_shrubland_overgrown_netherrack_slab");
-
-    public static final Block BOP_SILKGLADE_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_silkglade_grass_block");
-    public static final Block BOP_SILKGLADE_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_silkglade_grass_slab");
-    public static final Block GLOWING_BOP_SILKGLADE_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_silkglade_grass_block");
-    public static final Block BOP_SILKGLADE_JUNGLE_LEAVES = ARFOBlocks.createBlock(new ARFOJungleLeavesBlock(), "bop_silkglade_jungle_leaves");
-    public static final Block BOP_SILKGLADE_JUNGLE_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_silkglade_jungle_leaves_carpet");
-    public static final Block BOP_SILKGLADE_OAK_LEAVES = ARFOBlocks.createBlock(new ARFOOakLeavesBlock(), "bop_silkglade_oak_leaves");
-    public static final Block BOP_SILKGLADE_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_silkglade_oak_leaves_carpet");
-    public static final Block BOP_SILKGLADE_DARK_OAK_LEAVES = ARFOBlocks.createBlock(new ARFODarkOakLeavesBlock(), "bop_silkglade_dark_oak_leaves");
-    public static final Block BOP_SILKGLADE_DARK_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_silkglade_dark_oak_leaves_carpet");
-    public static final Block BOP_SILKGLADE_ACACIA_LEAVES = ARFOBlocks.createBlock(new ARFOAcaciaLeavesBlock(), "bop_silkglade_acacia_leaves");
-    public static final Block BOP_SILKGLADE_ACACIA_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_silkglade_acacia_leaves_carpet");
-    public static final Block BOP_SILKGLADE_GRASS = ARFOBlocks.createBlock(new ARFOGrass(), "bop_silkglade_grass");
-    public static final Block TALL_BOP_SILKGLADE_GRASS = ARFOBlocks.createBlock(new ARFOTallGrass(), "tall_bop_silkglade_grass");
-    public static final Block BOP_SILKGLADE_FERN = ARFOBlocks.createBlock(new ARFOFernBlock(), "bop_silkglade_fern");
-    public static final Block LARGE_BOP_SILKGLADE_FERN = ARFOBlocks.createBlock(new ARFOLargeFernBlock(), "large_bop_silkglade_fern");
-    public static final Block BOP_SILKGLADE_SUGAR_CANE = ARFOBlocks.createBlock(new ARFOSugarCaneBlock(), "bop_silkglade_sugar_cane");
-    public static final Block BOP_SILKGLADE_VINE = ARFOBlocks.createBlock(new ARFOVinesBlock(), "bop_silkglade_vine");
-    public static final Block POTTED_SILKGLADE_FERN = ARFOBlocks.createPottedBlock(BOP_SILKGLADE_FERN, "bop_silkglade_fern");
-    public static final Block BOP_SILKGLADE_OVERGROWN_STONE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_silkglade_overgrown_stone");
-    public static final Block BOP_SILKGLADE_OVERGROWN_STONE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_silkglade_overgrown_stone_slab");
-    public static final Block BOP_SILKGLADE_OVERGROWN_DACITE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_silkglade_overgrown_dacite");
-    public static final Block BOP_SILKGLADE_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_silkglade_overgrown_dacite_slab");
-    public static final Block BOP_SILKGLADE_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_silkglade_overgrown_netherrack");
-    public static final Block BOP_SILKGLADE_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_silkglade_overgrown_netherrack_slab");
-
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_snowy_coniferous_forest_grass_block");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_snowy_coniferous_forest_grass_slab");
-    public static final Block GLOWING_BOP_SNOWY_CONIFEROUS_FOREST_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOGlowingGrassBlock(), "glowing_bop_snowy_coniferous_forest_grass_block");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_JUNGLE_LEAVES = ARFOBlocks.createBlock(new ARFOJungleLeavesBlock(), "bop_snowy_coniferous_forest_jungle_leaves");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_JUNGLE_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_snowy_coniferous_forest_jungle_leaves_carpet");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OAK_LEAVES = ARFOBlocks.createBlock(new ARFOOakLeavesBlock(), "bop_snowy_coniferous_forest_oak_leaves");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_snowy_coniferous_forest_oak_leaves_carpet");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_DARK_OAK_LEAVES = ARFOBlocks.createBlock(new ARFODarkOakLeavesBlock(), "bop_snowy_coniferous_forest_dark_oak_leaves");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_DARK_OAK_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_snowy_coniferous_forest_dark_oak_leaves_carpet");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_ACACIA_LEAVES = ARFOBlocks.createBlock(new ARFOAcaciaLeavesBlock(), "bop_snowy_coniferous_forest_acacia_leaves");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_ACACIA_LEAVES_CARPET = ARFOBlocks.createBlock(new ARFOLeavesCarpetBlock(), "bop_snowy_coniferous_forest_acacia_leaves_carpet");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_GRASS = ARFOBlocks.createBlock(new ARFOGrass(), "bop_snowy_coniferous_forest_grass");
-    public static final Block TALL_BOP_SNOWY_CONIFEROUS_FOREST_GRASS = ARFOBlocks.createBlock(new ARFOTallGrass(), "tall_bop_snowy_coniferous_forest_grass");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_FERN = ARFOBlocks.createBlock(new ARFOFernBlock(), "bop_snowy_coniferous_forest_fern");
-    public static final Block LARGE_BOP_SNOWY_CONIFEROUS_FOREST_FERN = ARFOBlocks.createBlock(new ARFOLargeFernBlock(), "large_bop_snowy_coniferous_forest_fern");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_SUGAR_CANE = ARFOBlocks.createBlock(new ARFOSugarCaneBlock(), "bop_snowy_coniferous_forest_sugar_cane");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_VINE = ARFOBlocks.createBlock(new ARFOVinesBlock(), "bop_snowy_coniferous_forest_vine");
-    public static final Block POTTED_SNOWY_CONIFEROUS_FOREST_FERN = ARFOBlocks.createPottedBlock(BOP_SNOWY_CONIFEROUS_FOREST_FERN, "bop_snowy_coniferous_forest_fern");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_STONE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_snowy_coniferous_forest_overgrown_stone");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_STONE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_snowy_coniferous_forest_overgrown_stone_slab");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_DACITE = ARFOBlocks.createBlock(new ARFOSpreadableStoneBlock(), "bop_snowy_coniferous_forest_overgrown_dacite");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_DACITE_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableStoneSlab(), "bop_snowy_coniferous_forest_overgrown_dacite_slab");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_NETHERRACK = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackBlock(), "bop_snowy_coniferous_forest_overgrown_netherrack");
-    public static final Block BOP_SNOWY_CONIFEROUS_FOREST_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "bop_snowy_coniferous_forest_overgrown_netherrack_slab");
 
     public static final Block BOP_TROPICS_GRASS_BLOCK = ARFOBlocks.createBlock(new ARFOSpreadableGrassBlock(), "bop_tropics_grass_block");
     public static final Block BOP_TROPICS_GRASS_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableGrassSlab(), "bop_tropics_grass_slab");

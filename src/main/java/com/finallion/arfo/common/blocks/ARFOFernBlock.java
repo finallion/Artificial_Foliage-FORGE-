@@ -1,25 +1,38 @@
 package com.finallion.arfo.common.blocks;
 
 
+import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.utils.MapUtils;
 import net.minecraft.block.*;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 
+import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 public class ARFOFernBlock extends BushBlock implements IGrowable, IPlantable {
     public static final EnumProperty<SlabType> TYPE = BlockStateProperties.SLAB_TYPE;
+    public static final BooleanProperty SLAB_PLACEMENT = BlockStateProperties.OPEN;
     private static final Map<Block, Block> grassFeatures = new HashMap<>();
+    public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
+
+    protected static final VoxelShape DOWN_SHAPE = Block.box(0.0D, -8.0D, 0.0D, 16.0D, 8.0D, 16.0D);
+    protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     public ARFOFernBlock() {
         super(AbstractBlock.Properties.copy(Blocks.FERN)
@@ -27,7 +40,10 @@ public class ARFOFernBlock extends BushBlock implements IGrowable, IPlantable {
                 .sound(SoundType.GRASS)
                 .noCollission()
                 .noOcclusion());
+
+        this.registerDefaultState(this.stateDefinition.any().setValue(SLAB_PLACEMENT, false));
     }
+
     @Override
     public boolean isValidBonemealTarget(IBlockReader p_176473_1_, BlockPos p_176473_2_, BlockState p_176473_3_, boolean p_176473_4_) {
         return true;
@@ -47,21 +63,71 @@ public class ARFOFernBlock extends BushBlock implements IGrowable, IPlantable {
     @Override
     protected boolean mayPlaceOn(BlockState state, IBlockReader p_200014_2_, BlockPos p_200014_3_) {
         Block block = state.getBlock();
-        return block instanceof ARFOSpreadableBlock || block instanceof ARFOSoilBlock || (block instanceof ARFOSpreadableSlab && state.getValue(TYPE) != SlabType.BOTTOM)  || block.is(Blocks.GRASS_BLOCK) || block.is(Blocks.DIRT) || block.is(Blocks.COARSE_DIRT) || block.is(Blocks.PODZOL) || block.is(Blocks.FARMLAND);
+        // (block instanceof ARFOSpreadableSlab && state.getValue(TYPE) != SlabType.BOTTOM)
+        return block instanceof ARFOSpreadableBlock || block instanceof ARFOSoilBlock || block instanceof ARFOSpreadableSlab || block instanceof ARFOSlab || block instanceof ARFONyliumSlab || block.is(Blocks.GRASS_BLOCK) || block.is(Blocks.DIRT) || block.is(Blocks.COARSE_DIRT) || block.is(Blocks.PODZOL) || block.is(Blocks.FARMLAND);
     }
 
     @Override
     public void performBonemeal(ServerWorld world, Random p_225535_2_, BlockPos pos, BlockState state) {
         MapUtils.initFernMap(grassFeatures);
-        DoublePlantBlock tallPlantBlock = (DoublePlantBlock) Blocks.LARGE_FERN;
+        ARFOLargeFernBlock tallPlantBlock = (ARFOLargeFernBlock) ARFOBlocks.LARGE_FOREST_FERN;
+
+        //TODO check if block is instance and get direct without for-loop
         for (Block block : grassFeatures.keySet()) {
             if (state.is(block)) {
-                tallPlantBlock = (DoublePlantBlock) grassFeatures.get(block);
+                tallPlantBlock = (ARFOLargeFernBlock) grassFeatures.get(block);
             }
         }
 
+
         if (tallPlantBlock.defaultBlockState().canSurvive(world, pos) && world.isEmptyBlock(pos.above())) {
-            tallPlantBlock.placeAt(world, pos, 2);
+            //tallPlantBlock.placeAt(world, pos, 2);
+
+            // checks if plant on which bone meal is used sits on bottom slab
+            // not ideal like placeAt, but it works...
+            if (state.getValue(SLAB_PLACEMENT)) {
+                world.setBlock(pos, tallPlantBlock.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(SLAB_PLACEMENT, true), 3);
+                world.setBlock(pos.above(), tallPlantBlock.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(SLAB_PLACEMENT, true), 3);
+            } else {
+                world.setBlock(pos, tallPlantBlock.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(SLAB_PLACEMENT, false), 3);
+                world.setBlock(pos.above(), tallPlantBlock.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(SLAB_PLACEMENT, false), 3);
+            }
+        }
+    }
+
+
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockItemUseContext context) {
+        BlockPos pos = context.getClickedPos();
+        BlockState target = context.getLevel().getBlockState(pos.below());
+
+        // if plant gets placed on bottom slab, the boolean property "open" changes to true
+        // this allows getShape to update the bounding box
+        // the blockstate.json now needs to variants, one for open=true, one for open=false
+
+        if (target.getBlock() instanceof ARFOSpreadableSlab || target.getBlock() instanceof ARFOSlab || target.getBlock() instanceof ARFONyliumSlab) {
+            if (target.getValue(TYPE) == SlabType.BOTTOM) {
+                return this.defaultBlockState().setValue(SLAB_PLACEMENT, true);
+            }
+        }
+
+        return this.defaultBlockState();
+    }
+
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> p_206840_1_) {
+        p_206840_1_.add(SLAB_PLACEMENT);
+    }
+
+
+
+
+    public VoxelShape getShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext context) {
+        if (state.getValue(SLAB_PLACEMENT)) {
+            return DOWN_SHAPE;
+        } else {
+            return SHAPE;
         }
     }
 

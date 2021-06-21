@@ -1,6 +1,8 @@
 package com.finallion.arfo.data.providers;
 
 import com.finallion.arfo.ArtificialFoliage;
+import com.finallion.arfo.common.blocks.*;
+import com.finallion.arfo.compat.BOP.BOPBlocks;
 import com.finallion.arfo.compat.BYG.BYGBlocks;
 import com.finallion.arfo.compat.Traverse.TraverseBlocks;
 import com.finallion.arfo.init.ARFOBlocks;
@@ -81,6 +83,14 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
         blocks.remove(BYGBlocks.BYG_TROPICAL_ISLAND_WATER);
         blocks.remove(BYGBlocks.BYG_VIBRANT_SWAMPLAND_WATER);
 
+        blocks.remove(BOPBlocks.BOP_BAYOU_WATER);
+        blocks.remove(BOPBlocks.BOP_MYSTIC_GROVE_WATER);
+        blocks.remove(BOPBlocks.BOP_OMINOUS_WOODS_WATER);
+        blocks.remove(BOPBlocks.BOP_ORIGIN_VALLEY_WATER);
+        blocks.remove(BOPBlocks.BOP_RAINFOREST_WATER);
+        blocks.remove(BOPBlocks.BOP_WASTELAND_WATER);
+        blocks.remove(BOPBlocks.BOP_WETLAND_WATER);
+
         blocks.remove(TraverseBlocks.TRAVERSE_MINI_JUNGLE_WATER);
         blocks.remove(TraverseBlocks.TRAVERSE_CLIFFS_WATER);
         blocks.remove(TraverseBlocks.TRAVERSE_LUSH_SWAMP_WATER);
@@ -96,40 +106,85 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
             if (block.toString().contains("acacia_leaves_carpet")) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation(ArtificialFoliage.MODID, "block/leaf_carpet"))
                         .texture("all", "minecraft:block/acacia_leaves");
-                simpleBlock(block, model);
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation(ArtificialFoliage.MODID, "block/leaf_carpet_down"))
+                        .texture("all", "minecraft:block/acacia_leaves");
+
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+
+                //simpleBlock(block, model);
             } else if (block.toString().contains("dark_oak_leaves_carpet")) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation(ArtificialFoliage.MODID,"block/leaf_carpet"))
                         .texture("all", "minecraft:block/dark_oak_leaves");
-                simpleBlock(block, model);
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation(ArtificialFoliage.MODID, "block/leaf_carpet_down"))
+                        .texture("all", "minecraft:block/dark_oak_leaves");
+
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+                //simpleBlock(block, model);
             } else if (block.toString().contains("oak_leaves_carpet")) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation(ArtificialFoliage.MODID,"block/leaf_carpet"))
                         .texture("all", "minecraft:block/oak_leaves");
-                simpleBlock(block, model);
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation(ArtificialFoliage.MODID, "block/leaf_carpet_down"))
+                        .texture("all", "minecraft:block/oak_leaves");
+
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+
+                //simpleBlock(block, model);
             } else if (block.toString().contains("jungle_leaves_carpet")) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation(ArtificialFoliage.MODID,"block/leaf_carpet"))
                         .texture("all", "minecraft:block/jungle_leaves");
-                simpleBlock(block, model);
-            } else if (block.toString().contains("acacia_leaves")) {
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation(ArtificialFoliage.MODID, "block/leaf_carpet_down"))
+                        .texture("all", "minecraft:block/jungle_leaves");
+
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+
+                //simpleBlock(block, model);
+
+
+            } else if (block instanceof ARFOAcaciaLeavesBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/acacia_leaves"))
                         .texture("all", "minecraft:block/acacia_leaves");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("dark_oak_leaves")) {
+            } else if (block instanceof ARFODarkOakLeavesBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/dark_oak_leaves"))
                         .texture("all", "minecraft:block/dark_oak_leaves");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("oak_leaves")) {
+            } else if (block instanceof ARFOOakLeavesBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/oak_leaves"))
                         .texture("all", "minecraft:block/oak_leaves");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("jungle_leaves")) {
+            } else if (block instanceof ARFOJungleLeavesBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/jungle_leaves"))
                         .texture("all", "minecraft:block/jungle_leaves");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("glowing")) {
+            } else if (block instanceof ARFOGlowingGrassBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/grass_block"))
                         .texture("all", "minecraft:block/grass_block_top");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("grass_block")) {
+            } else if (block instanceof ARFOSpreadableGrassBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/grass_block"))
                         .texture("all", "minecraft:block/grass_block_top");
 
@@ -757,37 +812,85 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_flower_pot_cross"))
                         .texture("plant", "minecraft:block/fern");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("fern") && !block.toString().contains("large")) {
+            } else if (block instanceof ARFOFernBlock) {
+
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/fern");
-                simpleBlock(block, model);
-            } else if (block.toString().contains("grass") && !block.toString().contains("tall") && !block.toString().contains("slab") && !block.toString().contains("vine")) {
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/fern");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+
+                //simpleBlock(block, model);
+            } else if (block instanceof ARFOGrass) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/grass");
-                simpleBlock(block, model);
-            } else if (block.toString().contains("sugar_cane")) {
+
+                ModelFile slab_model = models().withExistingParent(name + "_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/grass");
+
+                getVariantBuilder(block)
+                        .partialState().with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(model))
+                        .partialState().with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_model));
+
+
+                //simpleBlock(block, model);
+            } else if (block instanceof ARFOSugarCaneBlock) {
                 ModelFile model = models().withExistingParent(name, new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/sugar_cane");
                 simpleBlock(block, model);
-            } else if (block.toString().contains("fern") && block.toString().contains("large")) {
+            } else if (block instanceof ARFOLargeFernBlock) {
                 ModelFile bottom = models().withExistingParent(name + "_bottom", new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/large_fern_bottom");
                 ModelFile top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/large_fern_top");
 
+                ModelFile slab_bottom = models().withExistingParent(name + "_bottom_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/large_fern_bottom");
+                ModelFile slab_top = models().withExistingParent(name + "_top_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/large_fern_top");
+
                 getVariantBuilder(block)
-                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).setModels(new ConfiguredModel(bottom))
-                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).setModels(new ConfiguredModel(top));
-            } else if (block.toString().contains("grass") && block.toString().contains("tall")) {
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(bottom))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(top))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_bottom))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_top));
+
+
+            } else if (block instanceof ARFOTallGrass) {
                 ModelFile bottom = models().withExistingParent(name + "_bottom", new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/tall_grass_bottom");
                 ModelFile top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/tinted_cross"))
                         .texture("cross", "minecraft:block/tall_grass_top");
 
+                ModelFile slab_bottom = models().withExistingParent(name + "_bottom_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/tall_grass_bottom");
+                ModelFile slab_top = models().withExistingParent(name + "_top_down", new ResourceLocation("arfo:block/tinted_cross_down"))
+                        .texture("cross", "minecraft:block/tall_grass_top");
+
                 getVariantBuilder(block)
-                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).setModels(new ConfiguredModel(bottom))
-                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).setModels(new ConfiguredModel(top));
-            } else if (block.toString().contains("vine")) {
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(bottom))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(BlockStateProperties.OPEN, false)
+                        .setModels(new ConfiguredModel(top))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_bottom))
+                        .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(BlockStateProperties.OPEN, true)
+                        .setModels(new ConfiguredModel(slab_top));
+
+
+            } else if (block instanceof ARFOVinesBlock) {
 
                 ModelFile vine_1 = models().getExistingFile(new ResourceLocation("minecraft:vine_1"));
                 ModelFile vine_u = models().getExistingFile(new ResourceLocation("minecraft:vine_u"));

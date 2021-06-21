@@ -5,6 +5,10 @@ import com.finallion.arfo.client.textures.Renders;
 
 
 import com.finallion.arfo.common.loot.GrassLootModifiers;
+import com.finallion.arfo.compat.BOP.BOPBlocks;
+import com.finallion.arfo.compat.BOP.BOPFluids;
+import com.finallion.arfo.compat.BOP.BOPItems;
+import com.finallion.arfo.compat.BOP.BOPRender;
 import com.finallion.arfo.compat.BYG.BYGBlocks;
 import com.finallion.arfo.compat.BYG.BYGFluids;
 import com.finallion.arfo.compat.BYG.BYGItems;
@@ -37,6 +41,11 @@ public class ArtificialFoliage {
 
     //TODO overgrown dacite and stone recipes with tags
 
+    //TODO different flowering leaves
+
+    //TODO spruce and birch leaves carpets
+
+
     public static final String MODID = "arfo";
     public static final Logger LOGGER = LogManager.getLogger();
     public static boolean isClient = false;
@@ -50,15 +59,10 @@ public class ArtificialFoliage {
 
     public static ItemGroup itemGroupAddon = new ItemGroup("arfo") {
         public ItemStack makeIcon() {
-            return new ItemStack(ARFOItems.BADLANDS_DYE);
-        }
-    };
-
-    public static ItemGroup itemGroupAddonTwo = new ItemGroup("arfo") {
-        public ItemStack makeIcon() {
             return new ItemStack(BYGItems.BYG_NETHER_DYE);
         }
     };
+
 
 
 
@@ -75,6 +79,8 @@ public class ArtificialFoliage {
         LOGGER.debug("ArFo: Traverse Renders initialized...");
         BYGRender.init();
         LOGGER.debug("ArFo: BYG Renders initialized...");
+        BOPRender.init();
+        LOGGER.debug("ArFo: BOP Renders initialized...");
 
         LOGGER.info("ArFo: \"Client Setup\" Event Complete!");
     }
@@ -91,6 +97,8 @@ public class ArtificialFoliage {
             LOGGER.debug("ArFo: Traverse Blocks initialized...");
             BYGBlocks.init();
             LOGGER.debug("ArFo: BYG Blocks initialized...");
+            BOPBlocks.init();
+            LOGGER.debug("ArFo: BOP Blocks initialized...");
             ARFOBlocks.blocksList.forEach(block -> event.getRegistry().register(block));
 
 
@@ -107,6 +115,8 @@ public class ArtificialFoliage {
             LOGGER.debug("ArFo: Traverse Items initialized...");
             BYGItems.init();
             LOGGER.debug("ArFo: BYG Items initialized...");
+            BOPItems.init();
+            LOGGER.debug("ArFo: BOP Items initialized...");
             ARFOItems.itemsList.forEach(item -> event.getRegistry().register(item));
 
             ArtificialFoliage.LOGGER.info("ArFo: Items registered!");
@@ -121,6 +131,8 @@ public class ArtificialFoliage {
             LOGGER.debug("ArFo: Traverse Fluids initialized...");
             BYGFluids.init();
             LOGGER.debug("ArFo: BYG Fluids initialized...");
+            BOPFluids.init();
+            LOGGER.debug("ArFo: BOP Fluids initialized...");
             ARFOFluids.fluidList.forEach(fluid -> event.getRegistry().register(fluid));
 
             ArtificialFoliage.LOGGER.info("ArFo: Fluids registered!");

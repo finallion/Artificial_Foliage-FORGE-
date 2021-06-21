@@ -3,13 +3,13 @@ loaderVersion="[35,)"
 license="All rights reserved"
 [[mods]]
 modId="arfo"
-version="2.3"
+version="2.5"
 displayName="Artificial Foliage"
 logoFile="examplemod.png"
 credits="Thanks for this example mod goes to Java"
 authors="Finallion"
 description='''
-Grass blocks, grass slabs, leaves, grass, fern, leaf carpet and more in every modded or vanilla biome color!
+Grass blocks, grass slabs, leaves, grass, ferns, leaf carpets and more in every modded or vanilla biome color!
 '''
 
 [[dependencies.arfo]]

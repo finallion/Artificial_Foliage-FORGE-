@@ -45,6 +45,10 @@ public class ARFOLangProvider extends LanguageProvider {
             return buildName.replace("Byg", "BYG");
         }
 
+        if (buildName.contains("Bop")) {
+            return buildName.replace("Bop", "BOP");
+        }
+
         return buildName;
     }
 
@@ -60,6 +64,11 @@ public class ARFOLangProvider extends LanguageProvider {
         if (buildName.contains("Byg")) {
             buildName = buildName.replace("Byg", "BYG");
         }
+
+        if (buildName.contains("Bop")) {
+            buildName = buildName.replace("Bop", "BOP");
+        }
+
 
         if (buildName.contains("Dye")) {
             return buildName.replace("Dye", "Pigment");
