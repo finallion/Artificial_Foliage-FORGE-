@@ -16,6 +16,7 @@ import net.minecraft.data.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ITag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -2595,6 +2596,13 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_item", has(Items.BONE_MEAL))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "artificial_stone_soil"));
 
+        ShapedRecipeBuilder.shaped(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING, 1)
+                .define('X', ARFOItemTags.CORALS)
+                .define('Y', Items.BONE_MEAL)
+                .pattern("XY ")
+                .unlockedBy("has_item", has(Items.BONE_MEAL))
+                .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "artificial_coral_sapling"));
+
         oddityBlock(consumer, ARFOBlocks.ALPHA_GRASS_BLOCK, "alpha_grass_block", Items.LIME_DYE, ARFOItemTags.GRASS_BLOCKS);
         oddityBlock(consumer, ARFOBlocks.ALPHA_LEAVES, "alpha_leaves", Items.LIME_DYE, ARFOItemTags.LEAVES);
 
@@ -2699,6 +2707,18 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
 
 
     }
+
+    /*
+
+
+
+    RECIPES SHAPES
+
+
+
+     */
+
+
 
 
     // artificial soil, alpha stuff

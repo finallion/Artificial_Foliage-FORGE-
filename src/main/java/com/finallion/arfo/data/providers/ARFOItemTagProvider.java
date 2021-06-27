@@ -65,6 +65,8 @@ public class ARFOItemTagProvider extends ItemTagsProvider {
         this.tag(ARFOItemTags.DARK_OAK_LEAVES).add(Items.DARK_OAK_LEAVES);
         this.tag(ARFOItemTags.JUNGLE_LEAVES).add(Items.JUNGLE_LEAVES);
 
+        this.tag(ARFOItemTags.CORALS).add(Items.BRAIN_CORAL).add(Items.BUBBLE_CORAL).add(Items.HORN_CORAL).add(Items.TUBE_CORAL).add(Items.FIRE_CORAL).add(Items.BRAIN_CORAL_FAN).add(Items.BUBBLE_CORAL_FAN).add(Items.HORN_CORAL_FAN).add(Items.TUBE_CORAL_FAN).add(Items.FIRE_CORAL_FAN);
+
         this.tag(ARFOItemTags.FROZEN_DYES).add(ARFOItems.SNOWY_BEACH_DYE).add(ARFOItems.SNOWY_DYE);
         this.tag(ARFOItemTags.COLD_DYES).add(ARFOItems.TAIGA_DYE).add(ARFOItems.MEGA_TAIGA_DYE).add(ARFOItems.MOUNTAINS_DYE);
         this.tag(ARFOItemTags.WARM_DYES).add(ARFOItems.MUSHROOM_FIELDS_DYE).add(ARFOItems.JUNGLE_DYE).add(ARFOItems.SAVANNA_DYE);

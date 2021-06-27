@@ -33,6 +33,8 @@ public class ARFOItemTags {
 
     public static final ITag.INamedTag<Item> DYES = createTag("dyes");
 
+    public static final ITag.INamedTag<Item> CORALS = createTag("corals");
+
     public static final ITag.INamedTag<Item> COLD_DYES = createTag("cold_dyes");
     public static final ITag.INamedTag<Item> FROZEN_DYES = createTag("frozen_dyes");
     public static final ITag.INamedTag<Item> SWAMP_DYES = createTag("swamp_dyes");

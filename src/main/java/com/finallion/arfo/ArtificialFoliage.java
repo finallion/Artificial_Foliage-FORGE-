@@ -59,7 +59,7 @@ public class ArtificialFoliage {
 
     public static ItemGroup itemGroupAddon = new ItemGroup("arfo") {
         public ItemStack makeIcon() {
-            return new ItemStack(BYGItems.BYG_NETHER_DYE);
+            return new ItemStack(BOPItems.BOP_GROVE_DYE);
         }
     };
 

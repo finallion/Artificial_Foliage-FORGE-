@@ -1,9 +1,6 @@
 package com.finallion.arfo.data.providers;
 
-import com.finallion.arfo.common.blocks.ARFOLargeFernBlock;
-import com.finallion.arfo.common.blocks.ARFOSugarCaneBlock;
-import com.finallion.arfo.common.blocks.ARFOTallGrass;
-import com.finallion.arfo.common.blocks.ARFOVinesBlock;
+import com.finallion.arfo.common.blocks.*;
 import com.finallion.arfo.compat.Traverse.TraverseBlocks;
 import com.finallion.arfo.data.BaseLootTableProvider;
 import com.finallion.arfo.init.ARFOBlocks;
@@ -29,7 +26,7 @@ public class ARFOLootTableProvider extends BaseLootTableProvider {
                 lootTables.put(b, createPottedTable(b.toString(), b));
             } else if (b.toString().contains("slab")) {
                 lootTables.put(b, createSlabTable(b.toString(), b));
-            } else if (b.toString().contains("grass_block") || b.toString().contains("overgrown") || b.toString().contains("soil")) {
+            } else if (b.toString().contains("grass_block") || b.toString().contains("overgrown") || b.toString().contains("soil") || b instanceof ARFOCoralSapling) {
                 lootTables.put(b, createStandardTable(b.toString(), b));
             } else if (b instanceof ARFOSugarCaneBlock) {
                 lootTables.put(b, createStandardTable(b.toString(), Blocks.SUGAR_CANE));

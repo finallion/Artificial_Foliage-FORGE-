@@ -63,6 +63,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
         blocks.remove(ARFOBlocks.FROZEN_OCEAN_WATER);
         blocks.remove(ARFOBlocks.WARM_OCEAN_WATER);
         blocks.remove(ARFOBlocks.LUKEWARM_OCEAN_WATER);
+        blocks.remove(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING);
 
         blocks.remove(BYGBlocks.BYG_EMBUR_NYLIUM_SLAB);
         blocks.remove(BYGBlocks.BYG_SYTHIAN_NYLIUM_SLAB);
@@ -695,7 +696,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 String grassBlockName = "";
 
                 for (Block b : BlockMapping.slabAndBlocks.keySet()) {
-                    if (BlockMapping.slabAndBlocks.get(b).is(block)) {
+                    if (BlockMapping.slabAndBlocks.get(b).is(block) && !b.toString().contains("glowing")) {
                         grassBlockName = Registry.BLOCK.getKey(b).getPath();
                     }
                 }

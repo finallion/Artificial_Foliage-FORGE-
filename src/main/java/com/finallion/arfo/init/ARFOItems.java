@@ -478,6 +478,7 @@ public class ARFOItems {
     public static final Item SWAMP_WATER_BUCKET = createItem(new BucketItem(ARFOFluids.STILL_SWAMP_WATER, new Item.Properties().tab(ArtificialFoliage.itemGroup)), "swamp_water_bucket");
     public static final Item OCEAN_WATER_BUCKET = createItem(new BucketItem(ARFOFluids.STILL_OCEAN_WATER, new Item.Properties().tab(ArtificialFoliage.itemGroup)), "ocean_water_bucket");
 
+    public static final Item ARTIFICIAL_CORAL_SAPLING = createItem(new BlockItem(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING, new Item.Properties().tab(ArtificialFoliage.itemGroup)), Registry.BLOCK.getKey(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING));
 
 
 

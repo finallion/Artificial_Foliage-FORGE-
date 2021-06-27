@@ -487,6 +487,8 @@ public class ARFOBlocks {
     public static final Block MOUNTAINS_OVERGROWN_NETHERRACK_SLAB = ARFOBlocks.createBlock(new ARFOSpreadableNetherrackSlab(), "mountains_overgrown_netherrack_slab");
 
 
+    public static final Block ARTIFICIAL_CORAL_SAPLING = createBlock(new ARFOCoralSapling(), "artificial_coral_sapling");
+
 
 
     public static Block createPottedBlock(Block blockForPot, String id) {

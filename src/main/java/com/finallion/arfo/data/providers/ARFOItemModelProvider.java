@@ -32,7 +32,7 @@ public class ARFOItemModelProvider extends ItemModelProvider {
         for (Item item : items) {
             String name = Registry.ITEM.getKey(item).getPath();
 
-            if (item instanceof ARFODyeItem) {
+            if (item instanceof ARFODyeItem  || name.contains("coral")) {
                 registerBasicARFOItem(name);
             } else if (name.contains("leaves") || name.contains("grass_block") || name.contains("slab") || name.contains("soil") || name.contains("glowing") || name.contains("overgrown")) {
                 registerBlockItemModel(name);

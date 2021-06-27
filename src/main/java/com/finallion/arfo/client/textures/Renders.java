@@ -341,6 +341,7 @@ public class Renders {
         RenderTypeLookup.setRenderLayer(ARFOBlocks.POTTED_SNOWY_BEACH_FERN, POTTED_BLOCK_LAYER);
         RenderTypeLookup.setRenderLayer(ARFOBlocks.POTTED_SNOWY_FERN, POTTED_BLOCK_LAYER);
 
+        RenderTypeLookup.setRenderLayer(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING, POTTED_BLOCK_LAYER);
 
         RenderTypeLookup.setRenderLayer(ARFOFluids.STILL_COLD_OCEAN_WATER, RenderType.translucent());
         RenderTypeLookup.setRenderLayer(ARFOFluids.FLOWING_COLD_OCEAN_WATER, RenderType.translucent());
