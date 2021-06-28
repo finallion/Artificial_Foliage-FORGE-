@@ -2658,7 +2658,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
 
 
         ShapelessRecipeBuilder.shapeless(TraverseItems.TRAVERSE_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.RED_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "traverse_dye"));
 
@@ -2672,34 +2672,34 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         slabBlockTwoItems(consumer, BYGBlocks.BYG_PODZOL_DACITE_SLAB, "byg_podzol_dacite_slab", Items.DIORITE, Items.PODZOL);
 
         ShapelessRecipeBuilder.shapeless(BYGItems.BYG_FOREST_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.LIME_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "byg_forest_dye"));
 
         ShapelessRecipeBuilder.shapeless(BYGItems.BYG_LOWLANDS_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.YELLOW_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "byg_lowlands_dye"));
 
         ShapelessRecipeBuilder.shapeless(BYGItems.BYG_MOUNTAINS_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.BLUE_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "byg_mountains_dye"));
 
         ShapelessRecipeBuilder.shapeless(BYGItems.BYG_NETHER_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.PURPLE_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "byg_nether_dye"));
 
 
         ShapelessRecipeBuilder.shapeless(BOPItems.BOP_GROVE_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.GREEN_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "bop_grove_dye"));
 
 
         ShapelessRecipeBuilder.shapeless(BOPItems.BOP_FLATLAND_DYE, 1)
-                .requires(ARFOItemTags.DYES)
+                .requires(Items.ORANGE_DYE)
                 .unlockedBy("has_item", has(ARFOItemTags.DYES))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "bop_flatland_dye"));
 
@@ -2766,7 +2766,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XYX")
                 .pattern("XXX")
                 .group(groupName)
-                .unlockedBy("has_item", has(originBlock))
+                //.unlockedBy("has_item", has(originBlock))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2779,7 +2779,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XXX")
                 .pattern("XYZ")
                 .group(groupName)
-                .unlockedBy("has_item", has(dyePlus))
+                //.unlockedBy("has_item", has(dyePlus))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
 
     }
@@ -2793,7 +2793,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XXX")
                 .pattern("XYZ")
                 .group(groupName)
-                .unlockedBy("has_item", has(dyePlus))
+                //.unlockedBy("has_item", has(dyePlus))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2856,7 +2856,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('Z', dyePlus)
                 .pattern("XYZ")
                 .group(groupName)
-                .unlockedBy("has_item", has(plantTag))
+                //.unlockedBy("has_item", has(plantTag))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2877,7 +2877,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('Y', dyeTag)
                 .define('Z', dyePlus)
                 .pattern("XYZ")
-                .unlockedBy("has_item", has(Items.BUCKET))
+                //.unlockedBy("has_item", has(Items.BUCKET))
                 .group(group)
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
