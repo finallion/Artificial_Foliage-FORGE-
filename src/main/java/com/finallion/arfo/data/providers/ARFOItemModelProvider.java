@@ -1,7 +1,10 @@
 package com.finallion.arfo.data.providers;
 
 import com.finallion.arfo.ArtificialFoliage;
+import com.finallion.arfo.common.blocks.*;
 import com.finallion.arfo.common.items.ARFODyeItem;
+import com.finallion.arfo.init.ARFOBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -28,28 +31,38 @@ public class ARFOItemModelProvider extends ItemModelProvider {
                 .filter(i -> ArtificialFoliage.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
-
         for (Item item : items) {
             String name = Registry.ITEM.getKey(item).getPath();
-
-            if (item instanceof ARFODyeItem  || name.contains("coral")) {
+            if (item instanceof ARFODyeItem || name.contains("coral")) {
                 registerBasicARFOItem(name);
-            } else if (name.contains("leaves") || name.contains("grass_block") || name.contains("slab") || name.contains("soil") || name.contains("glowing") || name.contains("overgrown")) {
-                registerBlockItemModel(name);
-            } else if (name.contains("sugar_cane")) {
-                registerBasicItem(name, "sugar_cane");
-            } else if (name.contains("vine")) {
-                registerBasicItem(name, "vine");
-            } else if (name.contains("tall") && name.contains("grass")) {
-                registerBasicItem(name, "tall_grass_top");
-            } else if (name.contains("large") && name.contains("fern")) {
-                registerBasicItem(name, "large_fern_top");
-            } else if (name.contains("grass")) {
-                registerBasicItem(name, "grass");
-            } else if (name.contains("fern")) {
-                registerBasicItem(name, "fern");
             } else if (name.contains("water_bucket")) {
                 registerBasicARFOItem(name);
+            }
+        }
+
+        for (Block block : ARFOBlocks.blocksList) {
+            String name = Registry.BLOCK.getKey(block).getPath();
+
+            if (block instanceof ARFOSpreadableBlock || block instanceof ARFOSpreadableSlab || block instanceof ARFOStoneSoilBlock || block instanceof ARFOSoilBlock || block instanceof ARFOAcaciaLeavesBlock || block instanceof ARFOJungleLeavesBlock || block instanceof ARFOOakLeavesBlock || block instanceof ARFODarkOakLeavesBlock || block instanceof ARFOGlowingNyliumBlock || block instanceof ARFONyliumSlab || block instanceof ARFOSmallSlab || block instanceof ARFOSlab || block instanceof ARFOLeavesCarpetBlock) {
+                registerBlockItemModel(name);
+            } else if (block instanceof ARFOSugarCaneBlock) {
+                registerBasicItem(name, "sugar_cane");
+            } else if (block instanceof ARFOVinesBlock) {
+                registerBasicItem(name, "vine");
+            } else if (block instanceof ARFOTallGrass) {
+                registerBasicItem(name, "tall_grass_top");
+            } else if (block instanceof ARFOLargeFernBlock) {
+                registerBasicItem(name, "large_fern_top");
+            } else if (block instanceof ARFOGrass) {
+                registerBasicItem(name, "grass");
+            } else if (block instanceof ARFOFernBlock) {
+                registerBasicItem(name, "fern");
+            } else if (block.is(ARFOBlocks.ALPHA_LEAVES)) {
+                registerBlockItemModel(name);
+            } else if (block.is(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING)) {
+                registerSpecialARFOItem(name);
+            } else {
+                System.out.println("Unregistered Block: " + name);
             }
         }
     }
@@ -65,6 +78,10 @@ public class ARFOItemModelProvider extends ItemModelProvider {
 
     private void registerBasicItem(String name, String type) {
         singleTexture(name, mcLoc("item/generated"), "layer0", mcLoc("block/" + type));
+    }
+
+    private void registerSpecialARFOItem(String name) {
+        singleTexture(name, mcLoc("item/generated"), "layer0", modLoc("blocks/" + name));
     }
 
     @Nonnull

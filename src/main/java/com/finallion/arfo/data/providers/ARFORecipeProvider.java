@@ -2711,6 +2711,10 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, "bop_flatland_dye"));
 
 
+        slabBlockMinusGroup(consumer, ARFOBlocks.BIRCH_LEAVES_CARPET, "birch_leaves_carpet", Blocks.BIRCH_LEAVES);
+        slabBlockMinusGroup(consumer, ARFOBlocks.SPRUCE_LEAVES_CARPET, "spruce_leaves_carpet", Blocks.SPRUCE_LEAVES);
+
+
 
 
     }
