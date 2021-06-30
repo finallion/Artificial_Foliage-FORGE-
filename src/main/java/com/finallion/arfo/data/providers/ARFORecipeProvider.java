@@ -230,6 +230,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         slabBlock(consumer, ARFOBlocks.WATERS_GRASS_SLAB, "waters_grass_slabs", ARFOBlocks.WATERS_GRASS_BLOCK, "grass_slab_blocks");
 
         // grass and ferns
+        /*
         plantBlock(consumer, ARFOBlocks.BADLANDS_GRASS, "badlands_grass", ARFOItems.BADLANDS_DYE, ARFOItemTags.GRASS, "grass");
         plantBlock(consumer, ARFOBlocks.SAVANNA_GRASS, "savanna_grass", ARFOItems.SAVANNA_DYE, ARFOItemTags.GRASS, "grass");
         plantBlock(consumer, ARFOBlocks.JUNGLE_GRASS, "tropical_grass", ARFOItems.JUNGLE_DYE, ARFOItemTags.GRASS, "grass");
@@ -302,6 +303,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         plantBlock(consumer, ARFOBlocks.LARGE_SNOWY_BEACH_FERN, "tall_snowy_beach_fern", ARFOItems.SNOWY_BEACH_DYE, ARFOItemTags.LARGE_FERNS, "tall_ferns");
         plantBlock(consumer, ARFOBlocks.LARGE_WATERS_FERN, "tall_waters_fern", ARFOItems.WATERS_DYE, ARFOItemTags.LARGE_FERNS, "tall_ferns");
 
+        */
         // vines
         plantBlock(consumer, ARFOBlocks.BADLANDS_VINE, "badlands_vine", ARFOItems.BADLANDS_DYE, ARFOItemTags.VINES, "vines");
         plantBlock(consumer, ARFOBlocks.SAVANNA_VINE, "savanna_vine", ARFOItems.SAVANNA_DYE, ARFOItemTags.VINES, "vines");
@@ -595,6 +597,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         slabBlock(consumer, TraverseBlocks.TRAVERSE_WOODED_ISLAND_GRASS_SLAB, "traverse_wooded_island_grass_slab", TraverseBlocks.TRAVERSE_WOODED_ISLAND_GRASS_BLOCK, "grass_slab_blocks");
         slabBlock(consumer, TraverseBlocks.TRAVERSE_WOODLANDS_GRASS_SLAB, "traverse_woodlands_grass_slab", TraverseBlocks.TRAVERSE_WOODLANDS_GRASS_BLOCK, "grass_slab_blocks");
 
+        /*
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_ARID_HIGHLANDS_GRASS, "traverse_arid_highlands_grass", ARFOItems.SAVANNA_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_AUTUMNAL_WOODS_GRASS, "traverse_autumnal_woods_grass", ARFOItems.BIRCH_FOREST_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_CLIFFS_GRASS, "traverse_cliffs_grass", ARFOItems.MOUNTAINS_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.GRASS, "grass");
@@ -647,6 +650,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         plantBlockPlus(consumer, TraverseBlocks.LARGE_TRAVERSE_WOODED_ISLAND_FERN, "large_traverse_wooded_island_fern", ARFOItems.FOREST_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
         plantBlockPlus(consumer, TraverseBlocks.LARGE_TRAVERSE_WOODLANDS_FERN, "large_traverse_woodlands_fern", ARFOItems.TAIGA_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
 
+        */
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_ARID_HIGHLANDS_VINE, "traverse_arid_highlands_vine", ARFOItems.SAVANNA_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_AUTUMNAL_WOODS_VINE, "traverse_autumnal_woods_vine", ARFOItems.BIRCH_FOREST_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, TraverseBlocks.TRAVERSE_CLIFFS_VINE, "traverse_cliffs_vine", ARFOItems.MOUNTAINS_DYE, TraverseItems.TRAVERSE_DYE, ARFOItemTags.VINES, "vines");
@@ -1249,6 +1253,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         slabBlock(consumer, BYGBlocks.BYG_ROSE_FIELDS_GRASS_SLAB, "byg_rose_fields_grass_slab", BYGBlocks.BYG_ROSE_FIELDS_GRASS_BLOCK, "grass_slab_blocks");
         slabBlock(consumer, BYGBlocks.BYG_SHRUB_LANDS_GRASS_SLAB, "byg_shrub_lands_grass_slab", BYGBlocks.BYG_SHRUB_LANDS_GRASS_BLOCK, "grass_slab_blocks");
 
+        /*
         plantBlockPlus(consumer, BYGBlocks.BYG_ANCIENT_FOREST_GRASS, "byg_ancient_forest_grass", ARFOItems.DARK_FOREST_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, BYGBlocks.BYG_ASPEN_FOREST_GRASS, "byg_aspen_forest_grass", ARFOItems.BIRCH_FOREST_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, BYGBlocks.BYG_CHERRY_BLOSSOM_FOREST_GRASS, "byg_cherry_blossom_forest_grass", Items.PINK_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.GRASS, "grass");
@@ -1428,6 +1433,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         plantBlockPlus(consumer, BYGBlocks.LARGE_BYG_ROSE_FIELDS_FERN, "large_byg_rose_fields_fern", ARFOItems.FOREST_DYE, BYGItems.BYG_LOWLANDS_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
         plantBlockPlus(consumer, BYGBlocks.LARGE_BYG_SHRUB_LANDS_FERN, "large_byg_shrub_lands_fern", ARFOItems.BADLANDS_DYE, BYGItems.BYG_LOWLANDS_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
 
+        */
         plantBlockPlus(consumer, BYGBlocks.BYG_ANCIENT_FOREST_VINE, "byg_ancient_forest_vine", ARFOItems.DARK_FOREST_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, BYGBlocks.BYG_ASPEN_FOREST_VINE, "byg_aspen_forest_vine", ARFOItems.BIRCH_FOREST_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, BYGBlocks.BYG_CHERRY_BLOSSOM_FOREST_VINE, "byg_cherry_blossom_forest_vine", Items.PINK_DYE, BYGItems.BYG_FOREST_DYE, ARFOItemTags.VINES, "vines");
@@ -2163,6 +2169,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         glowBlock(consumer, BOPBlocks.GLOWING_BOP_ORIGIN_VALLEY_GRASS_BLOCK, "glowing_bop_origin_valley_grass_block", BOPBlocks.BOP_ORIGIN_VALLEY_GRASS_BLOCK, "glowing_grass_blocks");
         glowBlock(consumer, BOPBlocks.GLOWING_BOP_FUNGAL_FIELD_VARIANT_GRASS_BLOCK, "glowing_bop_fungal_field_variant_grass_block", BOPBlocks.BOP_FUNGAL_FIELD_VARIANT_GRASS_BLOCK, "glowing_grass_blocks");
 
+        /*
         plantBlockPlus(consumer, BOPBlocks.BOP_BAMBOO_BLOSSOM_GROVE_GRASS, "bop_bamboo_blossom_grove_grass", ARFOItems.JUNGLE_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, BOPBlocks.BOP_BURNT_FOREST_GRASS, "bop_burnt_forest_grass", ARFOItems.BADLANDS_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.GRASS, "grass");
         plantBlockPlus(consumer, BOPBlocks.BOP_CHERRY_BLOSSOM_GROVE_GRASS, "bop_cherry_blossom_grove_grass", ARFOItems.BIRCH_FOREST_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.GRASS, "grass");
@@ -2301,6 +2308,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         plantBlockPlus(consumer, BOPBlocks.LARGE_BOP_ORIGIN_VALLEY_FERN, "large_bop_origin_valley_fern", ARFOItems.MOUNTAINS_DYE, BOPItems.BOP_FLATLAND_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
         plantBlockPlus(consumer, BOPBlocks.LARGE_BOP_FUNGAL_FIELD_VARIANT_FERN, "large_bop_fungal_field_variant_fern", Items.CYAN_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.LARGE_FERNS, "large_ferns");
 
+         */
         plantBlockPlus(consumer, BOPBlocks.BOP_BAMBOO_BLOSSOM_GROVE_VINE, "bop_bamboo_blossom_grove_vine", ARFOItems.JUNGLE_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, BOPBlocks.BOP_BURNT_FOREST_VINE, "bop_burnt_forest_vine", ARFOItems.BADLANDS_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.VINES, "vines");
         plantBlockPlus(consumer, BOPBlocks.BOP_CHERRY_BLOSSOM_GROVE_VINE, "bop_cherry_blossom_grove_vine", ARFOItems.BIRCH_FOREST_DYE, BOPItems.BOP_GROVE_DYE, ARFOItemTags.VINES, "vines");
@@ -2766,7 +2774,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XYX")
                 .pattern("XXX")
                 .group(groupName)
-                //.unlockedBy("has_item", has(originBlock))
+                .unlockedBy("has_item", has(originBlock))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2779,7 +2787,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XXX")
                 .pattern("XYZ")
                 .group(groupName)
-                //.unlockedBy("has_item", has(dyePlus))
+                .unlockedBy("has_item", has(dyePlus))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
 
     }
@@ -2793,7 +2801,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .pattern("XXX")
                 .pattern("XYZ")
                 .group(groupName)
-                //.unlockedBy("has_item", has(dyePlus))
+                .unlockedBy("has_item", has(dyePlus))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2856,7 +2864,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('Z', dyePlus)
                 .pattern("XYZ")
                 .group(groupName)
-                //.unlockedBy("has_item", has(plantTag))
+                .unlockedBy("has_item", has(plantTag))
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }
 
@@ -2877,7 +2885,7 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('Y', dyeTag)
                 .define('Z', dyePlus)
                 .pattern("XYZ")
-                //.unlockedBy("has_item", has(Items.BUCKET))
+                .unlockedBy("has_item", has(Items.BUCKET))
                 .group(group)
                 .save(consumer, new ResourceLocation(ArtificialFoliage.MODID, blockName));
     }

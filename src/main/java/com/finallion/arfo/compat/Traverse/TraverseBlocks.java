@@ -9,7 +9,6 @@ public class TraverseBlocks {
 
     public static void init() { }
 
-    public static final Block TRAVERSE_CLIFFS_WATER = ARFOBlocks.createFluidBlock(TraverseFluids.STILL_TRAVERSE_CLIFFS_WATER, "traverse_cliffs_water");
     public static final Block TRAVERSE_LUSH_SWAMP_WATER = ARFOBlocks.createFluidBlock(TraverseFluids.STILL_TRAVERSE_LUSH_SWAMP_WATER, "traverse_lush_swamp_water");
     public static final Block TRAVERSE_MINI_JUNGLE_WATER = ARFOBlocks.createFluidBlock(TraverseFluids.STILL_TRAVERSE_MINI_JUNGLE_WATER, "traverse_mini_jungle_water");
 

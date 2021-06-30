@@ -18,9 +18,6 @@ public class TraverseFluids {
 
     }
 
-    public static final FlowingFluid STILL_TRAVERSE_CLIFFS_WATER = ARFOFluids.createFluid(new CliffsWater.Source(), "still_traverse_cliffs_water");
-    public static final FlowingFluid FLOWING_TRAVERSE_CLIFFS_WATER = ARFOFluids.createFluid(new CliffsWater.Flowing(), "flowing_traverse_cliffs_water");
-
     public static final FlowingFluid STILL_TRAVERSE_LUSH_SWAMP_WATER = ARFOFluids.createFluid(new TraverseLushSwampWater.Source(), "still_traverse_lush_swamp_water");
     public static final FlowingFluid FLOWING_TRAVERSE_LUSH_SWAMP_WATER = ARFOFluids.createFluid(new TraverseLushSwampWater.Flowing(), "flowing_traverse_lush_swamp_water");
 

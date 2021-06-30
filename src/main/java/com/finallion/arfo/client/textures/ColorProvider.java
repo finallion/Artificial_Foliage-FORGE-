@@ -44,13 +44,6 @@ public class ColorProvider {
     }
 
 
-    /*
-    public static IItemColor setStaticItemColorProvider(double x, double y, int color, BiomeAmbience.GrassColorModifier modifier) {
-        return (stack, index) -> index == 0 ? modifier.modifyColor(x, y, color) : BiomeAmbience.GrassColorModifier.SWAMP.modifyColor(x, y, 6975545);
-    }
-
-     */
-
     // dynamic grass block colors
     public static final IBlockColor JUNGLE_COLOR = setDynamicBlockColorProvider(0.95, 0.9);
     public static final IBlockColor SAVANNA_COLOR = setDynamicBlockColorProvider(1.0, 0.0);

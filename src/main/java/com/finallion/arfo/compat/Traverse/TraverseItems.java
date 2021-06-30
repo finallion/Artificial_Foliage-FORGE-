@@ -310,7 +310,6 @@ public class TraverseItems {
     public static final Item TRAVERSE_BROWN_AUTUMNAL_LEAVES_CARPET = ARFOItems.createItem(new BlockItem(TraverseBlocks.TRAVERSE_BROWN_AUTUMNAL_LEAVES_CARPET, new Item.Properties().tab(ArtificialFoliage.itemGroupAddon)), Registry.BLOCK.getKey(TraverseBlocks.TRAVERSE_BROWN_AUTUMNAL_LEAVES_CARPET));
     public static final Item TRAVERSE_DYE = ARFOItems.createItem(new ARFODyeItem(new Item.Properties().tab(ArtificialFoliage.itemGroupAddon)), "traverse_dye");
 
-    public static final Item TRAVERSE_CLIFFS_WATER_BUCKET = ARFOItems.createItem(new BucketItem(TraverseFluids.STILL_TRAVERSE_CLIFFS_WATER, new Item.Properties().tab(ArtificialFoliage.itemGroupAddon)), "traverse_cliffs_water_bucket");
     public static final Item TRAVERSE_LUSH_SWAMP_WATER_BUCKET = ARFOItems.createItem(new BucketItem(TraverseFluids.STILL_TRAVERSE_LUSH_SWAMP_WATER, new Item.Properties().tab(ArtificialFoliage.itemGroupAddon)), "traverse_lush_swamp_water_bucket");
     public static final Item TRAVERSE_MINI_JUNGLE_WATER_BUCKET = ARFOItems.createItem(new BucketItem(TraverseFluids.STILL_TRAVERSE_MINI_JUNGLE_WATER, new Item.Properties().tab(ArtificialFoliage.itemGroupAddon)), "traverse_mini_jungle_water_bucket");
 
