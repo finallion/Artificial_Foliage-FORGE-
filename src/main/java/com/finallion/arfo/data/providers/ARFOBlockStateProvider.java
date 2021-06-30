@@ -93,7 +93,6 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
         blocks.remove(BOPBlocks.BOP_WETLAND_WATER);
 
         blocks.remove(TraverseBlocks.TRAVERSE_MINI_JUNGLE_WATER);
-        blocks.remove(TraverseBlocks.TRAVERSE_CLIFFS_WATER);
         blocks.remove(TraverseBlocks.TRAVERSE_LUSH_SWAMP_WATER);
         blocks.remove(TraverseBlocks.TRAVERSE_RED_AUTUMNAL_LEAVES_CARPET);
         blocks.remove(TraverseBlocks.TRAVERSE_ORANGE_AUTUMNAL_LEAVES_CARPET);

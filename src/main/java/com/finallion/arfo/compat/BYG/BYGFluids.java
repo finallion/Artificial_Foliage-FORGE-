@@ -1,9 +1,6 @@
 package com.finallion.arfo.compat.BYG;
 
 import com.finallion.arfo.compat.BYG.fluids.*;
-import com.finallion.arfo.compat.Traverse.fluids.CliffsWater;
-import com.finallion.arfo.compat.Traverse.fluids.MiniJungleWater;
-import com.finallion.arfo.compat.Traverse.fluids.TraverseLushSwampWater;
 import com.finallion.arfo.init.ARFOFluids;
 import net.minecraft.fluid.FlowingFluid;
 

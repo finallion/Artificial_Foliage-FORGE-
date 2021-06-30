@@ -2640,7 +2640,6 @@ public class ARFORecipeProvider extends RecipeProvider implements IConditionBuil
         waterBucket(consumer, ARFOItems.SWAMP_WATER_BUCKET, "swamp_water_bucket", ARFOItemTags.SWAMP_DYES, "water_buckets");
         waterBucket(consumer, ARFOItems.OCEAN_WATER_BUCKET, "ocean_water_bucket", ARFOItemTags.MODERATE_DYES, "water_buckets");
 
-        waterBucketPlus(consumer, TraverseItems.TRAVERSE_CLIFFS_WATER_BUCKET, "traverse_cliffs_water_bucket", TraverseItems.TRAVERSE_DYE, ARFOItemTags.COLD_DYES, "water_buckets");
         waterBucketPlus(consumer, TraverseItems.TRAVERSE_MINI_JUNGLE_WATER_BUCKET, "traverse_mini_jungle_water_bucket", TraverseItems.TRAVERSE_DYE, ARFOItemTags.WARM_DYES, "water_buckets");
         waterBucketPlus(consumer, TraverseItems.TRAVERSE_LUSH_SWAMP_WATER_BUCKET, "traverse_lush_swamp_water_bucket", TraverseItems.TRAVERSE_DYE, ARFOItemTags.SWAMP_DYES, "water_buckets");
 

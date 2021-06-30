@@ -1,14 +1,11 @@
 package com.finallion.arfo.compat.Traverse;
 
-import com.finallion.arfo.ArtificialFoliage;
-import com.finallion.arfo.common.fluids.*;
-import com.finallion.arfo.compat.Traverse.fluids.CliffsWater;
+
 import com.finallion.arfo.compat.Traverse.fluids.MiniJungleWater;
 import com.finallion.arfo.compat.Traverse.fluids.TraverseLushSwampWater;
-import com.finallion.arfo.init.ARFOBlocks;
 import com.finallion.arfo.init.ARFOFluids;
 import net.minecraft.fluid.FlowingFluid;
-import net.minecraft.util.ResourceLocation;
+
 
 
 
