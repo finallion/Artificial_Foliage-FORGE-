@@ -56,7 +56,7 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
 
     @Override
     public boolean isValidBonemealTarget(IBlockReader p_176473_1_, BlockPos p_176473_2_, BlockState state, boolean p_176473_4_) {
-        if (state.getBlock().is(ARFOBlocks.MYCELIUM_SLAB) || state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BYG_MEADOW_GRASS_SLAB)) {
+        if (state.getBlock().is(ARFOBlocks.MYCELIUM_SLAB) || state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB)) {
             return false;
         }
         return p_176473_1_.getBlockState(p_176473_2_.above()).isAir();
@@ -64,7 +64,7 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
 
     @Override
     public boolean isBonemealSuccess(World world, Random random, BlockPos pos, BlockState state) {
-        if (state.getBlock().is(ARFOBlocks.MYCELIUM_SLAB) || state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BYG_MEADOW_GRASS_SLAB)) {
+        if (state.getBlock().is(ARFOBlocks.MYCELIUM_SLAB) || state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB)) {
             return false;
         }
 
@@ -85,9 +85,6 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
         boolean large = false;
         List<Block> features = new ArrayList<>();
 
-
-        // needs massive rework
-        //TODO check if block is instance and get direct without for-loop
         for (Block b1 : BlockMapping.slabAndBlocks.keySet()) {
             if (BlockMapping.slabAndBlocks.get(b1).is(blockState.getBlock())) {
                 features = grassFeatures.get(b1);
@@ -206,8 +203,8 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
             world.setBlock(pos, ARFOBlocks.ARTIFICIAL_STONE_SOIL_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
         } else if (block instanceof ARFOSpreadableNetherrackSlab) {
             world.setBlock(pos, ARFOBlocks.NETHERRACK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
-        } else if (block.is(BYGBlocks.BYG_MEADOW_GRASS_SLAB)) {
-            world.setBlock(pos, BYGBlocks.BYG_MEADOW_DIRT_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
+        } else if (block.is(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB)) {
+            world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_MEADOW_DIRT_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
         } else if (block instanceof ARFOSpreadableGrassSlab) {
             world.setBlock(pos, ARFOBlocks.ARTIFICIAL_SOIL_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, state.getValue(SlabBlock.TYPE)).setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED)), 3);
         } else {
@@ -226,7 +223,7 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
 
 
                     if (newState.is(Blocks.DIRT)) { // vanilla grass slab/mycelium to dirt
-                        if ((state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BYG_MEADOW_GRASS_SLAB)) && !world.getBlockState(newPos.above()).getMaterial().isSolid()) {
+                        if ((state.getBlock().is(ARFOBlocks.GRASS_SLAB) || state.getBlock().is(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB)) && !world.getBlockState(newPos.above()).getMaterial().isSolid()) {
                             world.setBlock(newPos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
                         } else if (state.getBlock().is(ARFOBlocks.MYCELIUM_SLAB)) {
                             world.setBlock(newPos, Blocks.MYCELIUM.defaultBlockState(), 3);
@@ -249,12 +246,12 @@ public class ARFOSpreadableSlab extends SlabBlock implements IGrowable {
                             }
                         }
 
-                    } else if (newState.is(BYGBlocks.BYG_MEADOW_DIRT_SLAB)) { // meadow grass slab to meadow dirt slab
-                        if (state.getBlock().is(BYGBlocks.BYG_MEADOW_GRASS_SLAB) && !world.getBlockState(newPos.above()).getMaterial().isSolid()) {
+                    } else if (newState.is(BYGBlocks.BIOMESYOULLGO_MEADOW_DIRT_SLAB)) { // meadow grass slab to meadow dirt slab
+                        if (state.getBlock().is(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB) && !world.getBlockState(newPos.above()).getMaterial().isSolid()) {
                             if (newState.getValue(TYPE) == SlabType.BOTTOM) {
-                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, BYGBlocks.BYG_MEADOW_GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                if (!newState.getValue(WATERLOGGED)) world.setBlock(newPos, BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             } else {
-                                world.setBlock(newPos, BYGBlocks.BYG_MEADOW_GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
+                                world.setBlock(newPos, BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, newState.getValue(SlabBlock.TYPE)).setValue(SNOWY, world.getBlockState(newPos.above()).is(Blocks.SNOW)).setValue(SlabBlock.WATERLOGGED, newState.getValue(SlabBlock.WATERLOGGED)), 3);
                             }
                         }
                     } else if (newState.is(ARFOBlocks.ARTIFICIAL_SOIL)) { // arfo grass slab to arfo dirt

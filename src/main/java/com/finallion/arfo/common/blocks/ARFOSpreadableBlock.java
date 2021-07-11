@@ -65,13 +65,19 @@ public class ARFOSpreadableBlock extends SpreadableSnowyDirtBlock implements IGr
         BlockState failState = Blocks.AIR.defaultBlockState();
         MapUtils.initMap(grassFeatures);
         boolean large = false;
-        List<Block> features = new ArrayList<>();
 
+        /*
+        List<Block> features = new ArrayList<>();
 
         //TODO check if block is instance and get direct without for-loop
         for (Block b2 : grassFeatures.keySet()) {
             if (blockState.getBlock().is(b2)) features = grassFeatures.get(b2);
         }
+
+         */
+
+
+        List<Block> features = grassFeatures.get(this.getBlock());
 
         label48:
         for (int i = 0; i < 128; ++i) {
