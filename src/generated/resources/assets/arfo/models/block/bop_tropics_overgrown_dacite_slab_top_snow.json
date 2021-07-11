@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "particle": "arfo:blocks/byg_overgrown_dacite_bottom",
-    "bottom": "arfo:blocks/byg_overgrown_dacite_bottom",
+    "particle": "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom",
+    "bottom": "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom",
     "top": "minecraft:block/snow",
-    "side": "arfo:blocks/byg_overgrown_dacite_snow_side"
+    "side": "arfo:blocks/biomesyoullgo_overgrown_dacite_snow_side"
   },
   "elements": [
     {

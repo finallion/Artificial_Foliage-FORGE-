@@ -65,24 +65,24 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
         blocks.remove(ARFOBlocks.LUKEWARM_OCEAN_WATER);
         blocks.remove(ARFOBlocks.ARTIFICIAL_CORAL_SAPLING);
 
-        blocks.remove(BYGBlocks.BYG_EMBUR_NYLIUM_SLAB);
-        blocks.remove(BYGBlocks.BYG_SYTHIAN_NYLIUM_SLAB);
-        blocks.remove(BYGBlocks.BYG_PODZOL_DACITE_SLAB);
-        blocks.remove(BYGBlocks.BYG_BLUE_NETHERRACK_SLAB);
-        blocks.remove(BYGBlocks.BYG_OVERGROWN_CRIMSON_BLACKSTONE_SLAB);
-        blocks.remove(BYGBlocks.BYG_MYCELIUM_NETHERRACK_SLAB);
-        blocks.remove(BYGBlocks.BYG_MEADOW_DIRT_SLAB);
-        blocks.remove(BYGBlocks.BYG_MEADOW_GRASS_SLAB);
-        blocks.remove(BYGBlocks.BYG_ETHEREAL_ISLANDS_WATER);
-        blocks.remove(BYGBlocks.BYG_BULBIS_GARDENS_WATER);
-        blocks.remove(BYGBlocks.BYG_CRAG_GARDENS_WATER);
-        blocks.remove(BYGBlocks.BYG_DEAD_SEA_WATER);
-        blocks.remove(BYGBlocks.BYG_GLOWSHROOM_BAYOU_WATER);
-        blocks.remove(BYGBlocks.BYG_IMPARIUS_GROVE_WATER);
-        blocks.remove(BYGBlocks.BYG_POLLUTED_LAKE_WATER);
-        blocks.remove(BYGBlocks.BYG_SHULKREN_FOREST_WATER);
-        blocks.remove(BYGBlocks.BYG_TROPICAL_ISLAND_WATER);
-        blocks.remove(BYGBlocks.BYG_VIBRANT_SWAMPLAND_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_EMBUR_NYLIUM_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_SYTHIAN_NYLIUM_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_PODZOL_DACITE_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_BLUE_NETHERRACK_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_OVERGROWN_CRIMSON_BLACKSTONE_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_MYCELIUM_NETHERRACK_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_MEADOW_DIRT_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_BULBIS_GARDENS_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_CRAG_GARDENS_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_DEAD_SEA_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_IMPARIUS_GROVE_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_POLLUTED_LAKE_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_SHULKREN_FOREST_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_TROPICAL_ISLAND_WATER);
+        blocks.remove(BYGBlocks.BIOMESYOULLGO_VIBRANT_SWAMPLAND_WATER);
 
         blocks.remove(BOPBlocks.BOP_BAYOU_WATER);
         blocks.remove(BOPBlocks.BOP_MYSTIC_GROVE_WATER);
@@ -205,10 +205,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
 
             } else if (block.toString().contains("overgrown_stone") && !block.toString().contains("slab")) {
                 ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_side")
                         .texture("bottom", "minecraft:block/stone")
-                        .texture("top","arfo:blocks/byg_overgrown_stone_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_stone_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_stone_side_overlay")
                         .texture("particle", "minecraft:block/stone")
                         .element()
                         .from(0, 0, 0)
@@ -232,7 +232,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
 
 
                 ModelFile snow = models().cubeBottomTop("overgrown_stone_snowy",
-                        new ResourceLocation("arfo:blocks/byg_overgrown_stone_snow_side"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_stone_snow_side"),
                         new ResourceLocation("minecraft:block/stone"),
                         new ResourceLocation("minecraft:block/snow"))
                         .texture("particle", "minecraft:block/stone");
@@ -259,9 +259,9 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
                         .texture("particle", "minecraft:block/stone")
                         .texture("bottom", "minecraft:block/stone")
-                        .texture("top", "arfo:blocks/byg_overgrown_stone_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_stone_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_stone_side_overlay")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 8, 16)
@@ -285,7 +285,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .texture("particle", "minecraft:block/stone")
                         .texture("bottom", "minecraft:block/stone")
                         .texture("top", "minecraft:block/snow")
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_snow_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_snow_side")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 8, 16)
@@ -300,9 +300,9 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
                         .texture("particle", "minecraft:block/stone")
                         .texture("bottom", "minecraft:block/stone")
-                        .texture("top", "arfo:blocks/byg_overgrown_stone_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_stone_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_stone_side_overlay")
                         .element()
                         .from(0, 8, 0)
                         .to(16, 16, 16)
@@ -326,7 +326,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .texture("particle", "minecraft:block/stone")
                         .texture("bottom", "minecraft:block/stone")
                         .texture("top", "minecraft:block/snow")
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_snow_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_snow_side")
                         .element()
                         .from(0, 8, 0)
                         .to(16, 16, 16)
@@ -339,10 +339,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_stone_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_stone_side")
                         .texture("bottom", "minecraft:block/stone")
-                        .texture("top","arfo:blocks/byg_overgrown_stone_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_stone_side_overlay")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_stone_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_stone_side_overlay")
                         .texture("particle", "minecraft:block/stone")
                         .element()
                         .from(0, 0, 0)
@@ -364,7 +364,7 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile snow_block = models().cubeBottomTop("overgrown_stone_snowy",
-                        new ResourceLocation("arfo:blocks/byg_overgrown_stone_snow_side"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_stone_snow_side"),
                         new ResourceLocation("minecraft:block/stone"),
                         new ResourceLocation("minecraft:block/snow"))
                         .texture("particle", "minecraft:block/stone");
@@ -398,9 +398,9 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
                         .texture("particle", "minecraft:block/netherrack")
                         .texture("bottom", "minecraft:block/netherrack")
-                        .texture("top", "arfo:blocks/byg_overgrown_netherrack_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_netherrack_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 8, 16)
@@ -424,9 +424,9 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                 ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
                         .texture("particle", "minecraft:block/netherrack")
                         .texture("bottom", "minecraft:block/netherrack")
-                        .texture("top", "arfo:blocks/byg_overgrown_netherrack_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_netherrack_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay")
                         .element()
                         .from(0, 8, 0)
                         .to(16, 16, 16)
@@ -447,10 +447,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side")
                         .texture("bottom", "minecraft:block/netherrack")
-                        .texture("top","arfo:blocks/byg_overgrown_netherrack_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_netherrack_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay")
                         .texture("particle", "minecraft:block/netherrack")
                         .element()
                         .from(0, 0, 0)
@@ -491,11 +491,11 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
 
 
                 ModelFile slab = models().withExistingParent(name, new ResourceLocation("minecraft:block/slab"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("top", "arfo:blocks/byg_overgrown_dacite_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_dacite_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_dacite_side_overlay")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 8, 16)
@@ -516,10 +516,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile slab_snow = models().withExistingParent(name + "_snow", new ResourceLocation("minecraft:block/slab"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
                         .texture("top", "minecraft:block/snow")
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_snow_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_snow_side")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 8, 16)
@@ -532,11 +532,11 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile slab_top = models().withExistingParent(name + "_top", new ResourceLocation("minecraft:block/slab"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("top", "arfo:blocks/byg_overgrown_dacite_top")
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("top", "arfo:blocks/biomesyoullgo_overgrown_dacite_top")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_side")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_dacite_side_overlay")
                         .element()
                         .from(0, 8, 0)
                         .to(16, 16, 16)
@@ -557,10 +557,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile slab_top_snow = models().withExistingParent(name + "_top_snow", new ResourceLocation("minecraft:block/slab"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
                         .texture("top", "minecraft:block/snow")
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_snow_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_snow_side")
                         .element()
                         .from(0, 8, 0)
                         .to(16, 16, 16)
@@ -573,11 +573,11 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile grass_block = models().withExistingParent(grassBlockName, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("top","arfo:blocks/byg_overgrown_dacite_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_side")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_dacite_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 16, 16)
@@ -598,10 +598,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile snow_block = models().cubeBottomTop("overgrown_dacite_snowy",
-                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_snow_side"),
-                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_bottom"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_dacite_snow_side"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_dacite_bottom"),
                         new ResourceLocation("minecraft:block/snow"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom");
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom");
 
                 getVariantBuilder(block)
                         .partialState().with(BlockStateProperties.SNOWY, false).with(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM)
@@ -619,10 +619,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
 
             } else if (block.toString().contains("overgrown_netherrack") && !block.toString().contains("slab")) {
                 ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_netherrack_side")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side")
                         .texture("bottom", "minecraft:block/netherrack")
-                        .texture("top","arfo:blocks/byg_overgrown_netherrack_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_netherrack_side_overlay")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_netherrack_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay")
                         .texture("particle", "minecraft:block/netherrack")
                         .element()
                         .from(0, 0, 0)
@@ -652,11 +652,11 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
 
             } else if (block.toString().contains("overgrown_dacite") && !block.toString().contains("slab")) {
                 ModelFile normal = models().withExistingParent(name, new ResourceLocation("minecraft:block/block"))
-                        .texture("side", "arfo:blocks/byg_overgrown_dacite_side")
-                        .texture("bottom", "arfo:blocks/byg_overgrown_dacite_bottom")
-                        .texture("top","arfo:blocks/byg_overgrown_dacite_top")
-                        .texture("overlay", "arfo:blocks/byg_overgrown_dacite_side_overlay")
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom")
+                        .texture("side", "arfo:blocks/biomesyoullgo_overgrown_dacite_side")
+                        .texture("bottom", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
+                        .texture("top","arfo:blocks/biomesyoullgo_overgrown_dacite_top")
+                        .texture("overlay", "arfo:blocks/biomesyoullgo_overgrown_dacite_side_overlay")
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom")
                         .element()
                         .from(0, 0, 0)
                         .to(16, 16, 16)
@@ -677,10 +677,10 @@ public class ARFOBlockStateProvider extends BlockStateProvider {
                         .end();
 
                 ModelFile snow = models().cubeBottomTop("overgrown_dacite_snowy",
-                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_snow_side"),
-                        new ResourceLocation("arfo:blocks/byg_overgrown_dacite_bottom"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_dacite_snow_side"),
+                        new ResourceLocation("arfo:blocks/biomesyoullgo_overgrown_dacite_bottom"),
                         new ResourceLocation("minecraft:block/snow"))
-                        .texture("particle", "arfo:blocks/byg_overgrown_dacite_bottom");
+                        .texture("particle", "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom");
 
                 getVariantBuilder(block)
                         .partialState().with(BlockStateProperties.SNOWY, false)

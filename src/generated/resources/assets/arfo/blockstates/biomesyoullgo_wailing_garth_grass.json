@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "arfo:block/biomesyoullgo_wailing_garth_grass"
+    },
+    "open=true": {
+      "model": "arfo:block/biomesyoullgo_wailing_garth_grass_down"
+    }
+  }
+}

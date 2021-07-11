@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "side": "arfo:blocks/byg_overgrown_netherrack_side",
+    "side": "arfo:blocks/biomesyoullgo_overgrown_netherrack_side",
     "bottom": "minecraft:block/netherrack",
-    "top": "arfo:blocks/byg_overgrown_netherrack_top",
-    "overlay": "arfo:blocks/byg_overgrown_netherrack_side_overlay",
+    "top": "arfo:blocks/biomesyoullgo_overgrown_netherrack_top",
+    "overlay": "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay",
     "particle": "minecraft:block/netherrack"
   },
   "elements": [

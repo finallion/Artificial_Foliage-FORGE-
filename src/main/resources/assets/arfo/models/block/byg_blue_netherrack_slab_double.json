@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "arfo:blocks/byg_blue_netherrack"
-  }
-}

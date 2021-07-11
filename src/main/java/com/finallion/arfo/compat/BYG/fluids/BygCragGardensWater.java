@@ -17,25 +17,25 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class BygCragGardensWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return BYGFluids.FLOWING_BYG_CRAG_GARDENS_WATER;
+        return BYGFluids.FLOWING_BIOMESYOULLGO_CRAG_GARDENS_WATER;
     }
 
     public Fluid getSource() {
-        return BYGFluids.STILL_BYG_CRAG_GARDENS_WATER;
+        return BYGFluids.STILL_BIOMESYOULLGO_CRAG_GARDENS_WATER;
     }
 
     public Item getBucket() {
-        return BYGItems.BYG_CRAG_GARDENS_WATER_BUCKET;
+        return BYGItems.BIOMESYOULLGO_CRAG_GARDENS_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return BYGBlocks.BYG_CRAG_GARDENS_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return BYGBlocks.BIOMESYOULLGO_CRAG_GARDENS_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
-                .translationKey("block.arfo.byg_crag_gardens_water")
+                .translationKey("block.arfo.biomesyoullgo_crag_gardens_water")
                 .color(0xff7CABD3) //8170451
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);

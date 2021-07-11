@@ -17,25 +17,25 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class BygEtherealIslandsWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return BYGFluids.FLOWING_BYG_ETHEREAL_ISLANDS_WATER;
+        return BYGFluids.FLOWING_BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER;
     }
 
     public Fluid getSource() {
-        return BYGFluids.STILL_BYG_ETHEREAL_ISLANDS_WATER;
+        return BYGFluids.STILL_BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER;
     }
 
     public Item getBucket() {
-        return BYGItems.BYG_ETHEREAL_ISLANDS_WATER_BUCKET;
+        return BYGItems.BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return BYGBlocks.BYG_ETHEREAL_ISLANDS_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return BYGBlocks.BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
-                .translationKey("block.arfo.byg_ethereal_islands_water")
+                .translationKey("block.arfo.biomesyoullgo_ethereal_islands_water")
                 .color(0xff3B9877) //3905655
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);

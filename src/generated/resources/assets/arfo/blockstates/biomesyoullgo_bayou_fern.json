@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "arfo:block/biomesyoullgo_bayou_fern"
+    },
+    "open=true": {
+      "model": "arfo:block/biomesyoullgo_bayou_fern_down"
+    }
+  }
+}

@@ -52,8 +52,8 @@ public class ARFONyliumSlab extends SlabBlock implements IGrowable {
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random r) {
         if (!canBeNylium(state, world, pos)) {
-            if (state.is(BYGBlocks.BYG_EMBUR_NYLIUM_SLAB)) {
-                world.setBlockAndUpdate(pos, BYGBlocks.BYG_BLUE_NETHERRACK_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+            if (state.is(BYGBlocks.BIOMESYOULLGO_EMBUR_NYLIUM_SLAB)) {
+                world.setBlockAndUpdate(pos, BYGBlocks.BIOMESYOULLGO_BLUE_NETHERRACK_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
             } else {
                 world.setBlockAndUpdate(pos, ARFOBlocks.NETHERRACK_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
             }
@@ -129,19 +129,19 @@ public class ARFONyliumSlab extends SlabBlock implements IGrowable {
             }
 
 
-            if (blockState.is(BYGBlocks.BYG_EMBUR_NYLIUM_SLAB)) {
+            if (blockState.is(BYGBlocks.BIOMESYOULLGO_EMBUR_NYLIUM_SLAB)) {
                 bl3 = true;
                 //break;
             }
-            if (blockState.is(BYGBlocks.BYG_SYTHIAN_NYLIUM_SLAB)) {
+            if (blockState.is(BYGBlocks.BIOMESYOULLGO_SYTHIAN_NYLIUM_SLAB)) {
                 bl4 = true;
                 //break;
             }
-            if (blockState.is(BYGBlocks.BYG_OVERGROWN_CRIMSON_BLACKSTONE_SLAB)) {
+            if (blockState.is(BYGBlocks.BIOMESYOULLGO_OVERGROWN_CRIMSON_BLACKSTONE_SLAB)) {
                 bl5 = true;
                 //break;
             }
-            if (blockState.is(BYGBlocks.BYG_MYCELIUM_NETHERRACK_SLAB)) {
+            if (blockState.is(BYGBlocks.BIOMESYOULLGO_MYCELIUM_NETHERRACK_SLAB)) {
                 bl6 = true;
                 //break;
             }
@@ -159,16 +159,16 @@ public class ARFONyliumSlab extends SlabBlock implements IGrowable {
             } else if (bl2) {
                 world.setBlock(pos, ARFOBlocks.CRIMSON_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl3) {
-                world.setBlock(pos, BYGBlocks.BYG_EMBUR_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_EMBUR_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl4) {
-                world.setBlock(pos, BYGBlocks.BYG_SYTHIAN_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_SYTHIAN_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl5) {
-                world.setBlock(pos, BYGBlocks.BYG_OVERGROWN_CRIMSON_BLACKSTONE_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_OVERGROWN_CRIMSON_BLACKSTONE_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             } else if (bl6) {
-                world.setBlock(pos, BYGBlocks.BYG_MYCELIUM_NETHERRACK_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+                world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_MYCELIUM_NETHERRACK_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
             }
-        } else if (state.is(BYGBlocks.BYG_BLUE_NETHERRACK_SLAB) && bl3) {
-            world.setBlock(pos, BYGBlocks.BYG_EMBUR_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
+        } else if (state.is(BYGBlocks.BIOMESYOULLGO_BLUE_NETHERRACK_SLAB) && bl3) {
+            world.setBlock(pos, BYGBlocks.BIOMESYOULLGO_EMBUR_NYLIUM_SLAB.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 3);
         } else if (state.is(this)) {
             if (state.getValue(TYPE) != SlabType.BOTTOM) {
                 growNetherGrass(world, random, pos, state);
@@ -180,7 +180,7 @@ public class ARFONyliumSlab extends SlabBlock implements IGrowable {
     public void growNetherGrass(ServerWorld p_225535_1_, Random p_225535_2_, BlockPos p_225535_3_, BlockState p_225535_4_) {
         BlockState blockstate = p_225535_1_.getBlockState(p_225535_3_);
         BlockPos blockpos = p_225535_3_.above();
-        if (blockstate.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB) || blockstate.is(BYGBlocks.BYG_OVERGROWN_CRIMSON_BLACKSTONE_SLAB)) {
+        if (blockstate.is(ARFOBlocks.CRIMSON_NYLIUM_SLAB) || blockstate.is(BYGBlocks.BIOMESYOULLGO_OVERGROWN_CRIMSON_BLACKSTONE_SLAB)) {
             if (blockstate.getValue(TYPE) != SlabType.BOTTOM) {
                 NetherVegetationFeature.place(p_225535_1_, p_225535_2_, blockpos, Features.Configs.CRIMSON_FOREST_CONFIG, 1, 1);
             }

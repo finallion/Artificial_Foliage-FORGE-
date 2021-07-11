@@ -17,25 +17,25 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class BygDeadSeaWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return BYGFluids.FLOWING_BYG_DEAD_SEA_WATER;
+        return BYGFluids.FLOWING_BIOMESYOULLGO_DEAD_SEA_WATER;
     }
 
     public Fluid getSource() {
-        return BYGFluids.STILL_BYG_DEAD_SEA_WATER;
+        return BYGFluids.STILL_BIOMESYOULLGO_DEAD_SEA_WATER;
     }
 
     public Item getBucket() {
-        return BYGItems.BYG_DEAD_SEA_WATER_BUCKET;
+        return BYGItems.BIOMESYOULLGO_DEAD_SEA_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return BYGBlocks.BYG_DEAD_SEA_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return BYGBlocks.BIOMESYOULLGO_DEAD_SEA_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
-                .translationKey("block.arfo.byg_dead_sea_water")
+                .translationKey("block.arfo.biomesyoullgo_dead_sea_water")
                 .color(0xffC0C0C0) //12632256
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);

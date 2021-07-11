@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dark_oak_leaves",
+  "pattern": [
+    "XXX",
+    "XYZ"
+  ],
+  "key": {
+    "X": {
+      "tag": "arfo:dark_oak_leaves"
+    },
+    "Y": {
+      "item": "arfo:birch_forest_dye"
+    },
+    "Z": {
+      "item": "arfo:biomesyoullgo_forest_dye"
+    }
+  },
+  "result": {
+    "item": "arfo:biomesyoullgo_aspen_forest_dark_oak_leaves",
+    "count": 4
+  }
+}

@@ -40,8 +40,6 @@ import javax.annotation.Nonnull;
 public class ArtificialFoliage {
 
     //TODO overgrown dacite and stone recipes with tags
-    //TODO different flowering leaves
-    //TODO spruce and birch leaves carpets
 
 
     public static final String MODID = "arfo";

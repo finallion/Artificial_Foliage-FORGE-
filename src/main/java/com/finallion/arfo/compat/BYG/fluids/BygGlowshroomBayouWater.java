@@ -17,25 +17,25 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class BygGlowshroomBayouWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return BYGFluids.FLOWING_BYG_GLOWSHROOM_BAYOU_WATER;
+        return BYGFluids.FLOWING_BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER;
     }
 
     public Fluid getSource() {
-        return BYGFluids.STILL_BYG_GLOWSHROOM_BAYOU_WATER;
+        return BYGFluids.STILL_BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER;
     }
 
     public Item getBucket() {
-        return BYGItems.BYG_GLOWSHROOM_BAYOU_WATER_BUCKET;
+        return BYGItems.BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return BYGBlocks.BYG_GLOWSHROOM_BAYOU_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return BYGBlocks.BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
-                .translationKey("block.arfo.byg_glowshroom_bayou_water")
+                .translationKey("block.arfo.biomesyoullgo_glowshroom_bayou_water")
                 .color(0xff497A4E) //4815438
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);

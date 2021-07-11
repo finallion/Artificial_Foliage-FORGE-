@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "side": "arfo:blocks/byg_overgrown_dacite_side",
-    "bottom": "arfo:blocks/byg_overgrown_dacite_bottom",
-    "top": "arfo:blocks/byg_overgrown_dacite_top",
-    "overlay": "arfo:blocks/byg_overgrown_dacite_side_overlay",
-    "particle": "arfo:blocks/byg_overgrown_dacite_bottom"
+    "side": "arfo:blocks/biomesyoullgo_overgrown_dacite_side",
+    "bottom": "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom",
+    "top": "arfo:blocks/biomesyoullgo_overgrown_dacite_top",
+    "overlay": "arfo:blocks/biomesyoullgo_overgrown_dacite_side_overlay",
+    "particle": "arfo:blocks/biomesyoullgo_overgrown_dacite_bottom"
   },
   "elements": [
     {

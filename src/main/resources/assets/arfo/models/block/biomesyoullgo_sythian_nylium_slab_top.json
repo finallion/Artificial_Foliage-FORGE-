@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "top": "arfo:blocks/biomesyoullgo_sythian_nylium_top",
+    "bottom": "arfo:blocks/biomesyoullgo_blue_netherrack",
+    "side": "arfo:blocks/biomesyoullgo_sythian_nylium_side"
+  }
+}

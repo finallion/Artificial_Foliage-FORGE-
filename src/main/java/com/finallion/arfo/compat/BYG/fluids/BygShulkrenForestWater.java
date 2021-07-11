@@ -17,25 +17,25 @@ import net.minecraftforge.fluids.FluidAttributes;
 public abstract class BygShulkrenForestWater extends ARFOWater {
 
     public Fluid getFlowing() {
-        return BYGFluids.FLOWING_BYG_SHULKREN_FOREST_WATER;
+        return BYGFluids.FLOWING_BIOMESYOULLGO_SHULKREN_FOREST_WATER;
     }
 
     public Fluid getSource() {
-        return BYGFluids.STILL_BYG_SHULKREN_FOREST_WATER;
+        return BYGFluids.STILL_BIOMESYOULLGO_SHULKREN_FOREST_WATER;
     }
 
     public Item getBucket() {
-        return BYGItems.BYG_SHULKREN_FOREST_WATER_BUCKET;
+        return BYGItems.BIOMESYOULLGO_SHULKREN_FOREST_WATER_BUCKET;
     }
 
     public BlockState createLegacyBlock(FluidState p_204527_1_) {
-        return BYGBlocks.BYG_SHULKREN_FOREST_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
+        return BYGBlocks.BIOMESYOULLGO_SHULKREN_FOREST_WATER.defaultBlockState().setValue(FlowingFluidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_204527_1_)));
     }
 
     @Override
     protected FluidAttributes createAttributes() {
         return FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
-                .translationKey("block.arfo.byg_shulkren_foret_water")
+                .translationKey("block.arfo.biomesyoullgo_shulkren_foret_water")
                 .color(0xff159957) //1415511
                 .overlay(new ResourceLocation("block/water_overlay"))
                 .build(this);

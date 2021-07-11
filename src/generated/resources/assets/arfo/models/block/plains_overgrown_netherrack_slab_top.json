@@ -3,9 +3,9 @@
   "textures": {
     "particle": "minecraft:block/netherrack",
     "bottom": "minecraft:block/netherrack",
-    "top": "arfo:blocks/byg_overgrown_netherrack_top",
-    "side": "arfo:blocks/byg_overgrown_netherrack_side",
-    "overlay": "arfo:blocks/byg_overgrown_netherrack_side_overlay"
+    "top": "arfo:blocks/biomesyoullgo_overgrown_netherrack_top",
+    "side": "arfo:blocks/biomesyoullgo_overgrown_netherrack_side",
+    "overlay": "arfo:blocks/biomesyoullgo_overgrown_netherrack_side_overlay"
   },
   "elements": [
     {

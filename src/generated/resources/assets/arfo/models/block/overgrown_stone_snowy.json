@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "side": "arfo:blocks/byg_overgrown_stone_snow_side",
+    "side": "arfo:blocks/biomesyoullgo_overgrown_stone_snow_side",
     "bottom": "minecraft:block/stone",
     "top": "minecraft:block/snow",
     "particle": "minecraft:block/stone"

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "type=bottom":
+    {
+      "model": "arfo:block/biomesyoullgo_podzol_dacite_slab"
+    },
+    "type=top":
+    {
+      "model": "arfo:block/biomesyoullgo_podzol_dacite_slab_top"
+    },
+    "type=double":
+    {
+      "model": "arfo:block/biomesyoullgo_podzol_dacite_slab_double"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "side": "arfo:blocks/byg_overgrown_stone_side",
+    "side": "arfo:blocks/biomesyoullgo_overgrown_stone_side",
     "bottom": "minecraft:block/stone",
-    "top": "arfo:blocks/byg_overgrown_stone_top",
-    "overlay": "arfo:blocks/byg_overgrown_stone_side_overlay",
+    "top": "arfo:blocks/biomesyoullgo_overgrown_stone_top",
+    "overlay": "arfo:blocks/biomesyoullgo_overgrown_stone_side_overlay",
     "particle": "minecraft:block/stone"
   },
   "elements": [

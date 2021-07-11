@@ -22,35 +22,35 @@ public class BYGFluids {
 
     }
 
-    public static final FlowingFluid STILL_BYG_POLLUTED_LAKE_WATER = ARFOFluids.createFluid(new BygPollutedLakeWater.Source(), "still_byg_polluted_lake_water");
-    public static final FlowingFluid FLOWING_BYG_POLLUTED_LAKE_WATER = ARFOFluids.createFluid(new BygPollutedLakeWater.Flowing(), "flowing_byg_polluted_lake_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_POLLUTED_LAKE_WATER = ARFOFluids.createFluid(new BygPollutedLakeWater.Source(), "still_biomesyoullgo_polluted_lake_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_POLLUTED_LAKE_WATER = ARFOFluids.createFluid(new BygPollutedLakeWater.Flowing(), "flowing_biomesyoullgo_polluted_lake_water");
 
-    public static final FlowingFluid STILL_BYG_VIBRANT_SWAMPLAND_WATER = ARFOFluids.createFluid(new BygVibrantSwamplandWater.Source(), "still_byg_vibrant_swampland_water");
-    public static final FlowingFluid FLOWING_BYG_VIBRANT_SWAMPLAND_WATER = ARFOFluids.createFluid(new BygVibrantSwamplandWater.Flowing(), "flowing_byg_vibrant_swampland_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_VIBRANT_SWAMPLAND_WATER = ARFOFluids.createFluid(new BygVibrantSwamplandWater.Source(), "still_biomesyoullgo_vibrant_swampland_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_VIBRANT_SWAMPLAND_WATER = ARFOFluids.createFluid(new BygVibrantSwamplandWater.Flowing(), "flowing_biomesyoullgo_vibrant_swampland_water");
 
-    public static final FlowingFluid STILL_BYG_CRAG_GARDENS_WATER = ARFOFluids.createFluid(new BygCragGardensWater.Source(), "still_byg_crag_gardens_water");
-    public static final FlowingFluid FLOWING_BYG_CRAG_GARDENS_WATER = ARFOFluids.createFluid(new BygCragGardensWater.Flowing(), "flowing_byg_crag_gardens_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_CRAG_GARDENS_WATER = ARFOFluids.createFluid(new BygCragGardensWater.Source(), "still_biomesyoullgo_crag_gardens_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_CRAG_GARDENS_WATER = ARFOFluids.createFluid(new BygCragGardensWater.Flowing(), "flowing_biomesyoullgo_crag_gardens_water");
 
-    public static final FlowingFluid STILL_BYG_TROPICAL_ISLAND_WATER = ARFOFluids.createFluid(new BygTropicalIslandWater.Source(), "still_byg_tropical_island_water");
-    public static final FlowingFluid FLOWING_BYG_TROPICAL_ISLAND_WATER = ARFOFluids.createFluid(new BygTropicalIslandWater.Flowing(), "flowing_byg_tropical_island_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_TROPICAL_ISLAND_WATER = ARFOFluids.createFluid(new BygTropicalIslandWater.Source(), "still_biomesyoullgo_tropical_island_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_TROPICAL_ISLAND_WATER = ARFOFluids.createFluid(new BygTropicalIslandWater.Flowing(), "flowing_biomesyoullgo_tropical_island_water");
 
-    public static final FlowingFluid STILL_BYG_GLOWSHROOM_BAYOU_WATER = ARFOFluids.createFluid(new BygGlowshroomBayouWater.Source(), "still_byg_glowshroom_bayou_water");
-    public static final FlowingFluid FLOWING_BYG_GLOWSHROOM_BAYOU_WATER = ARFOFluids.createFluid(new BygGlowshroomBayouWater.Flowing(), "flowing_byg_glowshroom_bayou_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER = ARFOFluids.createFluid(new BygGlowshroomBayouWater.Source(), "still_biomesyoullgo_glowshroom_bayou_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_GLOWSHROOM_BAYOU_WATER = ARFOFluids.createFluid(new BygGlowshroomBayouWater.Flowing(), "flowing_biomesyoullgo_glowshroom_bayou_water");
 
-    public static final FlowingFluid STILL_BYG_DEAD_SEA_WATER = ARFOFluids.createFluid(new BygDeadSeaWater.Source(), "still_byg_dead_sea_water");
-    public static final FlowingFluid FLOWING_BYG_DEAD_SEA_WATER = ARFOFluids.createFluid(new BygDeadSeaWater.Flowing(), "flowing_byg_dead_sea_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_DEAD_SEA_WATER = ARFOFluids.createFluid(new BygDeadSeaWater.Source(), "still_biomesyoullgo_dead_sea_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_DEAD_SEA_WATER = ARFOFluids.createFluid(new BygDeadSeaWater.Flowing(), "flowing_biomesyoullgo_dead_sea_water");
 
-    public static final FlowingFluid STILL_BYG_BULBIS_GARDENS_WATER = ARFOFluids.createFluid(new BygBulbisGardensWater.Source(), "still_byg_bulbis_gardens_water");
-    public static final FlowingFluid FLOWING_BYG_BULBIS_GARDENS_WATER = ARFOFluids.createFluid(new BygBulbisGardensWater.Flowing(), "flowing_byg_bulbis_gardens_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_BULBIS_GARDENS_WATER = ARFOFluids.createFluid(new BygBulbisGardensWater.Source(), "still_biomesyoullgo_bulbis_gardens_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_BULBIS_GARDENS_WATER = ARFOFluids.createFluid(new BygBulbisGardensWater.Flowing(), "flowing_biomesyoullgo_bulbis_gardens_water");
 
-    public static final FlowingFluid STILL_BYG_ETHEREAL_ISLANDS_WATER = ARFOFluids.createFluid(new BygEtherealIslandsWater.Source(), "still_byg_ethereal_islands_water");
-    public static final FlowingFluid FLOWING_BYG_ETHEREAL_ISLANDS_WATER = ARFOFluids.createFluid(new BygEtherealIslandsWater.Flowing(), "flowing_byg_ethereal_islands_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER = ARFOFluids.createFluid(new BygEtherealIslandsWater.Source(), "still_biomesyoullgo_ethereal_islands_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_ETHEREAL_ISLANDS_WATER = ARFOFluids.createFluid(new BygEtherealIslandsWater.Flowing(), "flowing_biomesyoullgo_ethereal_islands_water");
 
-    public static final FlowingFluid STILL_BYG_IMPARIUS_GROVE_WATER = ARFOFluids.createFluid(new BygImpariusGroveWater.Source(), "still_byg_imparius_grove_water");
-    public static final FlowingFluid FLOWING_BYG_IMPARIUS_GROVE_WATER = ARFOFluids.createFluid(new BygImpariusGroveWater.Flowing(), "flowing_byg_imparius_grove_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_IMPARIUS_GROVE_WATER = ARFOFluids.createFluid(new BygImpariusGroveWater.Source(), "still_biomesyoullgo_imparius_grove_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_IMPARIUS_GROVE_WATER = ARFOFluids.createFluid(new BygImpariusGroveWater.Flowing(), "flowing_biomesyoullgo_imparius_grove_water");
 
-    public static final FlowingFluid STILL_BYG_SHULKREN_FOREST_WATER = ARFOFluids.createFluid(new BygShulkrenForestWater.Source(), "still_byg_shulkren_forest_water");
-    public static final FlowingFluid FLOWING_BYG_SHULKREN_FOREST_WATER = ARFOFluids.createFluid(new BygShulkrenForestWater.Flowing(), "flowing_byg_shulkren_forest_water");
+    public static final FlowingFluid STILL_BIOMESYOULLGO_SHULKREN_FOREST_WATER = ARFOFluids.createFluid(new BygShulkrenForestWater.Source(), "still_biomesyoullgo_shulkren_forest_water");
+    public static final FlowingFluid FLOWING_BIOMESYOULLGO_SHULKREN_FOREST_WATER = ARFOFluids.createFluid(new BygShulkrenForestWater.Flowing(), "flowing_biomesyoullgo_shulkren_forest_water");
 
 
 

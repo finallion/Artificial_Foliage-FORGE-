@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "type=bottom":
+    {
+      "model": "arfo:block/biomesyoullgo_blue_netherrack_slab"
+    },
+    "type=top":
+    {
+      "model": "arfo:block/biomesyoullgo_blue_netherrack_slab_top"
+    },
+    "type=double":
+    {
+      "model": "arfo:block/biomesyoullgo_blue_netherrack_slab_double"
+    }
+  }
+}

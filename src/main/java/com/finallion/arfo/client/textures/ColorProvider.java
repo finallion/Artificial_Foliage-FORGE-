@@ -554,7 +554,7 @@ public class ColorProvider {
                 return reader != null && pos != null ?  BiomeColors.getAverageGrassColor(reader, pos) : GrassColors.get(0.5D, 1.0D);
 
             }
-        }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BYG_MEADOW_GRASS_SLAB);
+        }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB);
 
 
         blockColors.register(ColorProvider.JUNGLE_COLOR, ARFOBlocks.JUNGLE_OVERGROWN_STONE, ARFOBlocks.JUNGLE_OVERGROWN_STONE_SLAB, ARFOBlocks.JUNGLE_OVERGROWN_DACITE, ARFOBlocks.JUNGLE_OVERGROWN_DACITE_SLAB, ARFOBlocks.JUNGLE_OVERGROWN_NETHERRACK, ARFOBlocks.JUNGLE_OVERGROWN_NETHERRACK_SLAB);
@@ -930,7 +930,7 @@ public class ColorProvider {
                 public int getColor(ItemStack stack, int tintIndex) {
                     return GrassColors.get(0.5D, 1.0D);
                 }
-            }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BYG_MEADOW_GRASS_SLAB);
+            }, ARFOBlocks.GRASS_SLAB, BYGBlocks.BIOMESYOULLGO_MEADOW_GRASS_SLAB);
 
 
         itemColors.register(new IItemColor() {
